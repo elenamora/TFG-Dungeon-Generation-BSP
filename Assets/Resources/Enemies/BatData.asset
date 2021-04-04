@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb80e3e6f86b4881a75b76999929c7f, type: 3}
+  m_Name: BatData
+  m_EditorClassIdentifier: 
+  enemyName: Bat
+  enemyModel: {fileID: 7932582979950147962, guid: ffbeb984731fe48468b894a1851ff7da,
+    type: 3}
+  health: 20
+  damage: 5
+  minDist: 5
+  attackSpeed: 0.5
+  patrolSpeed: 0.5
