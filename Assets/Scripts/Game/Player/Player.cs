@@ -11,12 +11,16 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     private Animator animator;
 
+    public Inventory inventory;
+
     /*** HEALTH VARIABLES ***/
+    [Header("Health")]
     public int maxHealth = 50;
     public int currentHealth;
     public StatsBar healthBar;
 
     /*** ENERGY VARIABLES ***/
+    [Header("Energy")]
     public int maxEnergy = 50;
     public int currentEnergy;
     public StatsBar energyBar;
@@ -31,6 +35,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer playerSprite;
     private SpriteRenderer weaponSprite;
 
+    /*** ATTACK VARIABLES ***/
     private bool attacking;
     private float attackTime = .2f;
     private float attackCount;
@@ -41,7 +46,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
         bars = FindObjectsOfType<StatsBar>();
 
         foreach (StatsBar bar in bars)
@@ -66,8 +70,7 @@ public class Player : MonoBehaviour
     {
         Move();
         Attack();
-        HurtFlash();
-        
+        HurtFlash();   
     }
 
     void Move()

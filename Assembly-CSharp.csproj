@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\Enemies\EnemyData.cs" />
     <Compile Include="Assets\Resources\Items\Chests\ChestData.cs" />
+    <Compile Include="Assets\Resources\Items\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Resources\Items\Inventory\Item.cs" />
     <Compile Include="Assets\Resources\Items\Loots\LootTable.cs" />
     <Compile Include="Assets\Resources\Items\PowerUps\PowerUpData.cs" />
     <Compile Include="Assets\Resources\Weapons\WeaponData.cs" />
@@ -76,8 +78,7 @@
     <Compile Include="Assets\Scripts\Game\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\Breakable.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\Chest.cs" />
-    <Compile Include="Assets\Scripts\Game\Objects\Inventory.cs" />
-    <Compile Include="Assets\Scripts\Game\Objects\Item.cs" />
+    <Compile Include="Assets\Scripts\Game\Objects\Interactable.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\PowerUp.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Weapon.cs" />
