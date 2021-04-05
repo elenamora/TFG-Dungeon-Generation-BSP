@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
-    private float range, speed, force = 50f;
+    private float range, speed;
 
     private Transform playerTransform;
     private Animator animator;
@@ -30,6 +30,9 @@ public class Enemy : MonoBehaviour
     private bool isTouching = false;
 
     private Player player;
+
+    /*** DIE VARIABLES ***/
+    public LootTable lootTable;
 
 
     /*** PATROL VARIABLES ***/
@@ -127,7 +130,11 @@ public class Enemy : MonoBehaviour
         flash = true;
         flashCount = flashTime;
 
-        if (currentHealth <= 0) { Destroy(gameObject); }
+        if (currentHealth <= 0)
+        {
+            gameObject.SetActive(false);
+            MakeLoot();    
+        }
     }
 
     private void HurtFlash()
@@ -172,6 +179,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void MakeLoot()
+    {
+        if (lootTable != null)
+        {
+            PowerUp pwup = lootTable.LootPowerUp();
+
+            if (pwup != null)
+            {
+                Instantiate(pwup, transform.position, Quaternion.identity);
+            }
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -181,27 +200,10 @@ public class Enemy : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             collision.gameObject.GetComponent<Player>().Hurt(data.damage);
 
-            /*
-            // Get contact point with the player and its center
-            Vector3 contactPoint = collision.contacts[0].point;
-            Vector3 center = collision.collider.bounds.center;
+            // The player will bounce back if we hit it
+            Vector2 dif = collision.transform.position - transform.position;
+            collision.transform.position = new Vector2(collision.transform.position.x + dif.x, collision.transform.position.y + dif.y);
 
-            playerCollision = true;
-
-            // Compare contact point and center to know in which position is the enemy relatively to the player
-            bool right = contactPoint.x > center.x;
-            bool left = contactPoint.x < center.x;
-            bool top = contactPoint.y > center.y;
-            bool bottom = contactPoint.y < center.y;
-
-            // Depending on the position the enemy will bounce back in a specific direction
-            if (right) GetComponent<Rigidbody2D>().AddForce(transform.right * force, ForceMode2D.Impulse);
-            if (left) GetComponent<Rigidbody2D>().AddForce(-transform.right * force, ForceMode2D.Impulse);
-            if (top) GetComponent<Rigidbody2D>().AddForce(transform.up * force, ForceMode2D.Impulse);
-            if (bottom) GetComponent<Rigidbody2D>().AddForce(-transform.up * force, ForceMode2D.Impulse);
-
-            // Invoke allows to call a function after a specfic amount of time
-            Invoke("FalseCollision", 0.5f);*/
         }
 
         if (collision.gameObject.CompareTag("Tile"))
@@ -229,12 +231,6 @@ public class Enemy : MonoBehaviour
             
             Patrol();
         }
-    }
-
-    void FalseCollision()
-    {
-        playerCollision = false;
-        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
 
     private void OnCollisionStay2D(Collision2D collision)

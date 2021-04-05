@@ -11,9 +11,7 @@ public class DungeonGenerator : MonoBehaviour
 	public GameObject wallTile;
 
 	public GameObject player;
-	private GameObject enemy;
 	public GameObject [] enemies;
-	//public Asset enemydata;
 
 	public GameObject bounds;
 
@@ -24,8 +22,10 @@ public class DungeonGenerator : MonoBehaviour
 	/*** SPAWN ENEMY VARIABLES ***/
 	public Spawner spawner;
 	public GameObject[] spawnedEnemies;
-	//private enum Enemies { BAT, SKELETON, BLACK };
 	public List<List<int>> enemiesInRooms;
+
+	/*** ***/
+	public GameObject[] items;
 
 	void Start()
 	{
@@ -96,10 +96,20 @@ public class DungeonGenerator : MonoBehaviour
 
 		player = Instantiate(player, new Vector3(x, y, 0f), Quaternion.identity);
 
+		int i = 0;
+		/*
+		foreach (GameObject item in items)
+        {
+			Instantiate(item, new Vector3(x, Random.Range(temp.y + 1 + i, temp.y + temp.height - 1 - i), 0f), Quaternion.identity);
+			i++;
+		}*/
+		GameObject pot = Instantiate(items[3], new Vector3(x, Random.Range(temp.y + 1 + i, temp.y + temp.height - 1 - i), 0f), Quaternion.identity);
+		GameObject redPotion = Instantiate(items[0], new Vector3(x, Random.Range(temp.y + 4, temp.y + temp.height - 4), 0f), Quaternion.identity);
+
+
+
 		//float x2 = Random.Range(temp.x + 1, temp.x + temp.width - 1);
 		//float y2 = Random.Range(temp.y + 1, temp.y + temp.height - 1);
-
-		//enemy = Instantiate(enemies[0], new Vector3(x2, y2, 0f), Quaternion.identity);
 
 	}
 
@@ -189,5 +199,9 @@ public class DungeonGenerator : MonoBehaviour
 		}
 	}
 
+	public void DrawPowerUps()
+    {
+
+    }
 
 }

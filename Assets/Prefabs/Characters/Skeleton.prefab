@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: bb58256cdd3064e78ac7cd7c42a9d0f2, type: 2}
   currentHealth: 0
+  lootTable: {fileID: 11400000, guid: 51704a276ee39439fbedc07bbb43ce64, type: 2}
 --- !u!61 &2148746836198472932
 BoxCollider2D:
   m_ObjectHideFlags: 0
