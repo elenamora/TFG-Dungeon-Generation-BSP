@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc020bdd536314728b2992642b0a0f06, type: 3}
+  m_Name: HealthPotion
+  m_EditorClassIdentifier: 
+  itemName: Health Potion
+  itemDescription: Restore your life
+  itemImage: {fileID: 21300000, guid: b2008d52fcbb9467c8fd9b3bdea03013, type: 3}
+  quantity: 0
+  usable: 1
+  unique: 0
+  data: {fileID: 11400000, guid: 7480e61d0a1d747e895bd9bc44b13d96, type: 2}

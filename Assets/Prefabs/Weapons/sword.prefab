@@ -95,4 +95,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: c469a0b8cb4b24122ac28f9517170330, type: 2}
-  damageWeapon: 0
+  damageWeapon: 10
+  player: {fileID: 0}

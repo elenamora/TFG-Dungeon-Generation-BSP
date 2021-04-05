@@ -10,7 +10,8 @@ public class Weapon : MonoBehaviour
 
     public Player player;
 
-    public void Start()
+
+    void Start()
     {
         damageWeapon = weaponData.damage;
     }
@@ -20,7 +21,6 @@ public class Weapon : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             player = FindObjectOfType<Player>();
-
             player.currentEnergy -= 5;
             player.energyBar.SetValue(player.currentEnergy);
 

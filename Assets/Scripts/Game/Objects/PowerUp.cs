@@ -9,15 +9,49 @@ public class PowerUp : MonoBehaviour
 
     private Player player;
 
+    [SerializeField]
+    private Inventory inventory;
+
+    [SerializeField]
+    private InventoryItem inventoryItem;
+
+   
+
+    void Start()
+    {
+        player = FindObjectOfType<Player>().GetComponent<Player>();
+    }
+
+    void Update()
+    {
+        
+    }
+
+    public void AddItemToInventory()
+    {
+        if (inventory && inventoryItem)
+        {
+            if (inventory.inventoryItems.Contains(inventoryItem)) { inventoryItem.quantity++; }
+
+            else
+            {
+                inventory.AddInventoryItem(inventoryItem);
+                inventoryItem.quantity += 1;
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            player = collision.gameObject.GetComponent<Player>();
+            //player = collision.gameObject.GetComponent<Player>();
 
-            player.currentHealth = player.IncreaseHealth(data.extraHealth);
+            //player.currentHealth = player.IncreaseHealth(data.extraHealth);
 
-            player.currentEnergy = player.IncreaseEnergy(data.extraEnergy);
+            //player.currentEnergy = player.IncreaseEnergy(data.extraEnergy);
+
+            AddItemToInventory();
 
             Destroy(gameObject);
         }

@@ -70,7 +70,9 @@ public class Player : MonoBehaviour
     {
         Move();
         Attack();
-        HurtFlash();   
+        HurtFlash();
+
+        UseItems();
     }
 
     void Move()
@@ -205,6 +207,23 @@ public class Player : MonoBehaviour
         energyBar.SetValue(currentEnergy);
 
         return currentEnergy;
+    }
+
+    public void UseItems()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            foreach (InventoryItem item in inventory.inventoryItems)
+            {
+                if (item.itemName == "HealthPotion" && item.quantity > 0)
+                {
+                    IncreaseHealth(item.data.extraHealth);
+                    item.quantity -= 1;
+                }
+
+            }
+        }
+
     }
 
 }

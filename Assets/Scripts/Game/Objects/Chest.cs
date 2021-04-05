@@ -31,7 +31,6 @@ public class Chest : Interactable
                 animator.SetBool("open", true);
                 StartCoroutine(OpenCo());
                 StartCoroutine(OpenedCo());
-
             }
         }
     }
@@ -58,7 +57,7 @@ public class Chest : Interactable
 
     IEnumerator OpenedCo()
     {
-        yield return new WaitForSecondsRealtime(.8f);
+        yield return new WaitForSecondsRealtime(1f);
         ChestOpened();
     }
 
