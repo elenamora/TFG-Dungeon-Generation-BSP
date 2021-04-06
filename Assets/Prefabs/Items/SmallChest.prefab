@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  item: {fileID: 11400000, guid: 37e3a96c464a24a9299d66930c25dcf7, type: 2}
+  item: {fileID: 11400000, guid: 50bd4d771e2fc452fa8a6bb4c6c2ed8d, type: 2}
   inventory: {fileID: 11400000, guid: f9ef3581cf73142dfa148e7f7261aead, type: 2}
   itemInChest: {fileID: 4254634480030532519}
   isOpen: 0

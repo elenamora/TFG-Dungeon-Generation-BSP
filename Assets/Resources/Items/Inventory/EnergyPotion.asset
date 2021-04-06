@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Energy Potion
   itemDescription: Restores your energy
-  itemImage: {fileID: 21300000, guid: 5fe3ac3e0bb0ff642ae977a183528d13, type: 3}
-  quantity: 1
+  itemImage: {fileID: 21300000, guid: 6592b916f86b19e428db6f6847c7b6dd, type: 3}
+  quantity: 0
   usable: 1
   unique: 0
   data: {fileID: 11400000, guid: 15ab0324cc62f41b1a449fe52f77f47f, type: 2}

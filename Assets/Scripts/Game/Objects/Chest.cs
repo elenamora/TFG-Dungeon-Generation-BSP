@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Chest : Interactable
 {
-    public Item item;
+    public InventoryItem item;
     public Inventory inventory;
 
     public SpriteRenderer itemInChest;
@@ -37,10 +37,10 @@ public class Chest : Interactable
 
     public void OpenChest()
     {
-        inventory.AddItem(item);
+        inventory.AddInventoryItem(item);
         inventory.item = item;
         isOpen = true;
-        itemInChest.sprite = inventory.item.itemSprite;
+        itemInChest.sprite = inventory.item.itemImage;
     }
 
     IEnumerator OpenCo()

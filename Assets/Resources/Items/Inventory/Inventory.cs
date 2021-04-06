@@ -2,23 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Inventory", menuName = "My Game/ Inventory")]
+[CreateAssetMenu(fileName = "Inventory", menuName = "My Game/ Inventory / Inventory")]
 public class Inventory : ScriptableObject
 {
-    public Item item;
-
-    public List<Item> items = new List<Item>();
+    public InventoryItem item;
 
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
 
-    public void AddItem(Item item)
-    {
-        // If we don't have the item in our inventory we will add it
-        if (!items.Contains(item))
-        {
-            items.Add(item);
-        }
-    }
 
     public void AddInventoryItem(InventoryItem item)
     {
@@ -26,6 +16,11 @@ public class Inventory : ScriptableObject
         if (!inventoryItems.Contains(item))
         {
             inventoryItems.Add(item);
+            item.quantity += 1;
+        }
+        else
+        {
+            item.quantity++;
         }
     }
 
