@@ -4,28 +4,11 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-
-    public PowerUpData data;
-
-    private Player player;
-
     [SerializeField]
     private Inventory inventory;
 
     [SerializeField]
     private InventoryItem inventoryItem;
-
-   
-
-    void Start()
-    {
-        player = FindObjectOfType<Player>().GetComponent<Player>();
-    }
-
-    void Update()
-    {
-        
-    }
 
     public void AddItemToInventory()
     {
@@ -45,14 +28,7 @@ public class PowerUp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //player = collision.gameObject.GetComponent<Player>();
-
-            //player.currentHealth = player.IncreaseHealth(data.extraHealth);
-
-            //player.currentEnergy = player.IncreaseEnergy(data.extraEnergy);
-
             AddItemToInventory();
-
             Destroy(gameObject);
         }
     }

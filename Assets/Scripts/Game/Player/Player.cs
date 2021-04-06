@@ -215,12 +215,23 @@ public class Player : MonoBehaviour
         {
             foreach (InventoryItem item in inventory.inventoryItems)
             {
-                if (item.itemName == "HealthPotion" && item.quantity > 0)
+                if (item.itemName == "Health Potion" && item.quantity > 0)
                 {
-                    IncreaseHealth(item.data.extraHealth);
+                    currentHealth = IncreaseHealth(item.data.extraHealth);
                     item.quantity -= 1;
                 }
+            }
+        }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            foreach (InventoryItem item in inventory.inventoryItems)
+            {
+                if (item.itemName == "Energy Potion" && item.quantity > 0)
+                {
+                    currentEnergy = IncreaseEnergy(item.data.extraEnergy);
+                    item.quantity -= 1;
+                }
             }
         }
 
