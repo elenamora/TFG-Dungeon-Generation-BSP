@@ -13,6 +13,7 @@ TagManager:
   - Item
   - Breakable
   - Chest
+  - Hall
   layers:
   - Default
   - TransparentFX

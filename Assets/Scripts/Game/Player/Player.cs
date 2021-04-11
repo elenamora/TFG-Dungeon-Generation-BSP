@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
 
     public void UseItems()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && currentHealth < maxHealth)
         {
             foreach (InventoryItem item in inventory.inventoryItems)
             {
@@ -223,7 +223,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && currentEnergy < maxEnergy)
         {
             foreach (InventoryItem item in inventory.inventoryItems)
             {
@@ -233,8 +233,9 @@ public class Player : MonoBehaviour
                     item.quantity -= 1;
                 }
             }
+            
         }
-
+            
     }
 
 }

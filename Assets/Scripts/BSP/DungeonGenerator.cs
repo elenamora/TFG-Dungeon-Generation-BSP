@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class DungeonGenerator : MonoBehaviour
 {
-	public int DUNGEON_W, DUNGEON_H;
+	[Header("DUNGEON VARIABLES")]
+	public int DUNGEON_W;
+	public int DUNGEON_H;
 	public int MIN_ROOM_SIZE;
 	public GameObject floorTile;
 	public GameObject hallwayTile;
 	public GameObject wallTile;
+	public GameObject bounds;
 
+	[Header("CHARACTERS")]
 	public GameObject player;
 	public GameObject [] enemies;
-
-	public GameObject bounds;
 
 	private GameObject[,] roomFloor;
 
 	public List<Rect> rooms;
 
 	/*** SPAWN ENEMY VARIABLES ***/
-	public Spawner spawner;
-	public GameObject[] spawnedEnemies;
-	public List<List<int>> enemiesInRooms;
+	private Spawner spawner;
+	private GameObject[] spawnedEnemies;
+	private List<List<int>> enemiesInRooms;
 
-	/*** ***/
+	/*** ITEMS***/
+	[Header("ITEMS")]
 	public GameObject[] items;
 
 	void Start()
@@ -45,6 +48,8 @@ public class DungeonGenerator : MonoBehaviour
 		DrawBounds(root);
 
 		DrawEnemies();
+
+		DrawBreakable();
 
 	}
 
@@ -95,17 +100,13 @@ public class DungeonGenerator : MonoBehaviour
 		float y = Random.Range(temp.y + 1, temp.y + temp.height - 1);
 
 		player = Instantiate(player, new Vector3(x, y, 0f), Quaternion.identity);
-
-		int i = 0;
 		/*
 		foreach (GameObject item in items)
         {
 			Instantiate(item, new Vector3(x, Random.Range(temp.y + 1 + i, temp.y + temp.height - 1 - i), 0f), Quaternion.identity);
 			i++;
 		}*/
-		GameObject pot = Instantiate(items[3], new Vector3(x, Random.Range(temp.y + 1 + i, temp.y + temp.height - 1 - i), 0f), Quaternion.identity);
-		GameObject redPotion = Instantiate(items[0], new Vector3(x, Random.Range(temp.y + 4, temp.y + temp.height - 4), 0f), Quaternion.identity);
-
+		GameObject chest = Instantiate(items[3], new Vector3(x, Random.Range(temp.y + 1, temp.y + temp.height - 1), 0f), Quaternion.identity);
 
 
 		//float x2 = Random.Range(temp.x + 1, temp.x + temp.width - 1);
@@ -191,17 +192,89 @@ public class DungeonGenerator : MonoBehaviour
 					if (roomFloor[i, j] == null)
 					{
 						GameObject instance = Instantiate(hallwayTile, new Vector3(i, j, 0f), Quaternion.identity);
+						instance.gameObject.tag = "Hall";
 						instance.transform.SetParent(transform);
 						roomFloor[i, j] = instance;
 					}
 				}
 			}
+			
 		}
 	}
 
-	public void DrawPowerUps()
+	public void DrawBreakable()
     {
+		foreach (Rect room in rooms)
+		{
+			//for (int i = (int)hall.x; i < hall.xMax; i++)
+			//{
+				//for (int j = (int)hall.y; j < hall.yMax; j++)
+				//{
+			int num = Random.Range(1, (int)(room.width * room.height * 0.15));
 
+			for ( int i = 0; i < num; i++)
+            {
+				List<Vector3> possiblePositions = new List<Vector3>();
+
+				Vector3 posx1 = new Vector3(Random.Range(room.x, room.xMax - .5f), room.y, 0f);
+
+				//if (!roomFloor[(int)posx1.x, (int)(posx1.y - 2f)].CompareTag("Hall")){
+				possiblePositions.Add(posx1);
+                //}
+
+				Vector3 posx2 = new Vector3(Random.Range(room.x, room.xMax- .5f), room.yMax - .5f, 0f);
+
+				//if (!roomFloor[(int)posx1.x, (int)(posx1.y + 2)].CompareTag("Hall"))
+				//{
+				possiblePositions.Add(posx2);
+				//}
+
+				Vector3 posy1 = new Vector3(room.x, Random.Range(room.y, room.yMax - .5f), 0f);
+
+				//if (!roomFloor[(int)(posx1.x - 2), (int)posx1.y].CompareTag("Hall"))
+				//{
+				possiblePositions.Add(posy1);
+				//}
+
+				Vector3 posy2 = new Vector3(room.xMax - .5f, Random.Range(room.y, room.yMax - .5f), 0f);
+
+				//if (!roomFloor[(int)(posx1.x + 2), (int)posx1.y].CompareTag("Hall"))
+				//{
+				possiblePositions.Add(posy2);
+				//}
+
+
+
+				/*
+				foreach (Vector3 pos in possiblePositions)
+				{
+					if (roomFloor[(int)pos.x, (int)(pos.y - 1.5f)].CompareTag("Hall")
+					|| roomFloor[(int)pos.x, (int)(pos.y + 1.5f)].CompareTag("Hall")
+					|| roomFloor[(int)(pos.x - 1.5f), (int)(pos.y)].CompareTag("Hall")
+					|| roomFloor[(int)(pos.x + 1.5f), (int)(pos.y)].CompareTag("Hall"))
+                    {
+						possiblePositions.Remove(pos);
+                    }
+
+				}*/
+
+				if (possiblePositions != null)
+                {
+					Vector3 pos = possiblePositions[Random.Range(0, possiblePositions.Count)];
+
+					Instantiate(items[4], pos, Quaternion.identity);
+				}
+				 
+
+			}
+
+
+
+
+
+			//}
+			//}
+		}
     }
 
 }

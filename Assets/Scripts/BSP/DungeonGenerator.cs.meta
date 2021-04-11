@@ -3,7 +3,16 @@ guid: 122a22c20e487494db4ec388462a9099
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - floorTile: {fileID: 3655886575808039511, guid: 6de8effe9037743418c0ff508fa07989,
+      type: 3}
+  - hallwayTile: {fileID: 3655886575808039511, guid: 6de8effe9037743418c0ff508fa07989,
+      type: 3}
+  - wallTile: {fileID: 960831054101345614, guid: c11c026f907b54c1f84004676d75e6f2,
+      type: 3}
+  - bounds: {fileID: 3833873884326961733, guid: 5af53112b66d846ba8285d6c749d62e5,
+      type: 3}
+  - player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

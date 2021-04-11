@@ -1,20 +1,17 @@
 ﻿<Properties StartupConfiguration="{62873BB6-A352-5450-430A-56E3FCEBDD74}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BSP/DungeonGenerator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BSP/Leaf.cs">
     <Files>
-      <File FileName="Assets/Resources/Items/Loots/LootTable.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/Player/Player.cs" />
-      <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="27" Column="11" />
-      <File FileName="Assets/Scripts/Game/Objects/Chest.cs" />
-      <File FileName="Assets/Resources/Items/Inventory/Inventory.cs" />
-      <File FileName="Assets/Resources/Items/Inventory/InventoryItem.cs" />
-      <File FileName="Assets/Scripts/Game/Inventory/InventorySlot.cs" />
-      <File FileName="Assets/Scripts/Game/Inventory/InventoryManager.cs" />
-      <File FileName="Assets/Scripts/Game/Objects/PowerUp.cs" />
+      <File FileName="Assets/Scripts/Game/Player/Player.cs" Line="132" Column="1" />
+      <File FileName="Assets/Scripts/Game/Objects/PowerUp.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="53" Column="27" />
+      <File FileName="Assets/Scripts/Game/Objects/Door.cs" Line="40" Column="32" />
+      <File FileName="Assets/Scripts/Game/Objects/Chest.cs" Line="10" Column="5" />
+      <File FileName="Assets/Scripts/BSP/Leaf.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d5737cf4-b3e4-4452-9e1a-084319cd6463" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="23f9f216-73af-4ce5-9327-55a13d3c37aa" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

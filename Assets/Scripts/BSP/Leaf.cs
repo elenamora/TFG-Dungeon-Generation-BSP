@@ -132,4 +132,9 @@ public class Leaf
 
 	}
 
+	public List<Rect> GetHallways()
+    {
+		return hallways;
+    }
+
 }
