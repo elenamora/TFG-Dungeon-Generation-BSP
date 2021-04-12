@@ -106,7 +106,8 @@ public class DungeonGenerator : MonoBehaviour
 			Instantiate(item, new Vector3(x, Random.Range(temp.y + 1 + i, temp.y + temp.height - 1 - i), 0f), Quaternion.identity);
 			i++;
 		}*/
-		GameObject chest = Instantiate(items[3], new Vector3(x, Random.Range(temp.y + 1, temp.y + temp.height - 1), 0f), Quaternion.identity);
+		GameObject smallchest = Instantiate(items[4], new Vector3(x, Random.Range(temp.y + 1, temp.y + temp.height - 1), 0f), Quaternion.identity);
+		GameObject bigchest = Instantiate(items[5], new Vector3(x, Random.Range(temp.y + 1 + 2, temp.y + temp.height - 1 - 2), 0f), Quaternion.identity);
 
 
 		//float x2 = Random.Range(temp.x + 1, temp.x + temp.width - 1);
@@ -120,8 +121,6 @@ public class DungeonGenerator : MonoBehaviour
         enemiesInRooms = spawner.EnemiesInRooms();
 
 		spawnedEnemies = new GameObject[spawner.numOfEnemies];
-
-		Debug.Log(spawner.numOfEnemies);
 
 		int numEnem = 0;
 
@@ -262,7 +261,7 @@ public class DungeonGenerator : MonoBehaviour
                 {
 					Vector3 pos = possiblePositions[Random.Range(0, possiblePositions.Count)];
 
-					Instantiate(items[4], pos, Quaternion.identity);
+					Instantiate(items[3], pos, Quaternion.identity);
 				}
 				 
 

@@ -8,11 +8,12 @@ public class Spawner
 
     private enum Enemies { BAT, SKELETON, BLACK };
 
-    // LOW (0), MEDIUM (1), HIGH (2)
+    // LOW, MEDIUM, HIGH
     private enum Evil { LOW, MEDIUM, HIGH };
     private List<Evil> evilLevel;
 
     public int minSize = 10;
+    // BAT (0), SKELETON (1), BLACK (2)
     public List<List<int>> enemiesInRooms;
 
     public GameObject[] enemyType;
@@ -114,14 +115,8 @@ public class Spawner
 
                         if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
-                            int num = Random.Range(0, 1);
-                            if (num == 1)
-                            {
-                                int enemy = Random.Range(0, 1);
-
-                                if (enemy == 0) { enemiesInRooms[i].Add(1); numOfEnemies++; }
-                                else { enemiesInRooms[i].Add(2); numOfEnemies++; }
-                            }
+                            enemiesInRooms[i].Add(2);
+                            numOfEnemies++;
                         }
 
                         else

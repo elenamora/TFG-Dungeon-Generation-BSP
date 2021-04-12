@@ -14,6 +14,7 @@ TagManager:
   - Breakable
   - Chest
   - Hall
+  - Dialog
   layers:
   - Default
   - TransparentFX

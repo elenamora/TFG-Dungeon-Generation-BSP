@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Game\Objects\PowerUp.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\Dialog.cs" />
     <Compile Include="Assets\Scripts\Game\UI\StatsBar.cs" />
     <Compile Include="Assets\Scripts\Game\WeaponList.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

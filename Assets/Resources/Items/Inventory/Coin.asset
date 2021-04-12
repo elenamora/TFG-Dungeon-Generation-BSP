@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Coin
   itemDescription: Treasure
   itemImage: {fileID: 21300000, guid: 227191c08608242988cb8174887603dd, type: 3}
-  quantity: 6
+  quantity: 0
   usable: 0
   unique: 0
   data: {fileID: 11400000, guid: 594f2e226fede4b429966e784da01a78, type: 2}

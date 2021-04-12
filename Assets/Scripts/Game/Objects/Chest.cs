@@ -6,12 +6,19 @@ using UnityEngine.UI;
 
 public class Chest : Interactable
 {
+    [Header("Inventory")]
     public InventoryItem item;
     public Inventory inventory;
 
-    public SpriteRenderer itemInChest;
+    [Header("Chest")]
+    [SerializeField] private ChestData data;
+    [SerializeField] private SpriteRenderer itemInChest;
 
-    public bool isOpen;
+    [Header("Dialog")]
+    public GameObject dialogBox;
+    //public Text dialogText;
+
+    private bool isOpen;
 
     private Animator animator;
 
@@ -28,19 +35,47 @@ public class Chest : Interactable
         {
             if (!isOpen)
             {
-                animator.SetBool("open", true);
-                StartCoroutine(OpenCo());
-                StartCoroutine(OpenedCo());
+                if (HaveItemToOpen())
+                {
+                    animator.SetBool("open", true);
+                    StartCoroutine(OpenCo());
+                    StartCoroutine(OpenedCo());
+                }
+                else
+                {
+                    //dialogText.text = "5";
+                    dialogBox.SetActive(true);
+                    StartCoroutine(DialogCo());
+                }
+                
             }
         }
     }
 
+    public bool HaveItemToOpen()
+    {
+        foreach (InventoryItem item in inventory.inventoryItems)
+        {
+            if (item.name == data.itemToOpen && item.quantity >= data.quantityOfItemToOpen) { return true; }
+        }
+        return false;
+    }
+
     public void OpenChest()
     {
+        foreach (InventoryItem item in inventory.inventoryItems)
+        {
+            if (item.name == data.itemToOpen)
+            {
+                item.quantity -= data.quantityOfItemToOpen;
+            }
+        }
+
         inventory.AddInventoryItem(item);
         inventory.item = item;
         isOpen = true;
         itemInChest.sprite = inventory.item.itemImage;
+        
     }
 
     IEnumerator OpenCo()
@@ -59,6 +94,12 @@ public class Chest : Interactable
     {
         yield return new WaitForSecondsRealtime(1f);
         ChestOpened();
+    }
+
+    IEnumerator DialogCo()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        dialogBox.SetActive(false);
     }
 
 }

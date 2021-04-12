@@ -8,4 +8,9 @@ public class ChestData : ScriptableObject
     public string chestName;
     public string chestDescription;
 
+    public string itemToOpen;
+    public int quantityOfItemToOpen;
+
+    public string info;
+
 }
