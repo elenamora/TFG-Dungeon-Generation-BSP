@@ -6,7 +6,11 @@ using UnityEngine;
 public class WeaponData : ScriptableObject
 {
     public string weaponName;
-    public string description;
+    public Sprite image;
 
     public int damage;
+    public int range;
+
+    public string description;
+
 }

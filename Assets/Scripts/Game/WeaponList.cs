@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class WeaponList : MonoBehaviour
 {
-    private GameObject[] weapons;
+    public GameObject[] weapons;
+    public WeaponData[] data;
     private int index;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +28,4 @@ public class WeaponList : MonoBehaviour
         if (weapons[index]) { weapons[index].SetActive(true); }
     }
 
-
-    public void ChooseWeapon()
-    {
-        index = 0;
-        PlayerPrefs.SetInt("WeaponSelected", index);
-        SceneManager.LoadScene("BSP");
-    }
 }

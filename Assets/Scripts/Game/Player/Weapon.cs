@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public WeaponData weaponData;
+    [SerializeField] private WeaponData weaponData;
 
     public int damageWeapon;
-
-    public Player player;
-
+    private Player player;
 
     void Start()
     {

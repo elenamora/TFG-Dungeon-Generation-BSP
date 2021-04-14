@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   weaponName: Axe
-  description: 
+  image: {fileID: 21300000, guid: 8c960920195724373833d4d27b01ee00, type: 3}
   damage: 30
+  range: 1
+  description: Short-range weapon

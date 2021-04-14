@@ -98,7 +98,7 @@ public class Chest : Interactable
 
     IEnumerator DialogCo()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(1f);
         dialogBox.SetActive(false);
     }
 
