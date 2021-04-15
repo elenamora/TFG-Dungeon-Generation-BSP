@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private WeaponData weaponData;
 
     public int damageWeapon;
-    private Player player;
+    public Player player;
 
     void Start()
     {
