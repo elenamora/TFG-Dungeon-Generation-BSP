@@ -4,21 +4,40 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private WeaponData weaponData;
+    [SerializeField] public WeaponData[] weaponData;
+    public Player player;
+    public GameObject weapon;
 
     public int damageWeapon;
-    public Player player;
 
     void Start()
     {
-        damageWeapon = weaponData.damage;
+        player = FindObjectOfType<Player>();
+        weapon = GameObject.FindGameObjectWithTag("Weapon");
+        FindWeapon();
+    }
+
+    private void FindWeapon()
+    {
+        string name = weapon.name;
+        switch (name)
+        {
+            case "sword":
+                damageWeapon = weaponData[0].damage;
+                break;
+            case "axe":
+                damageWeapon = weaponData[1].damage;
+                break;
+            case "hammer":
+                damageWeapon = weaponData[2].damage;
+                break;
+        }  
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            player = FindObjectOfType<Player>();
             player.currentEnergy -= 5;
             player.energyBar.SetValue(player.currentEnergy);
 

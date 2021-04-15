@@ -539,7 +539,6 @@ GameObject:
   - component: {fileID: 1232939510224021155}
   - component: {fileID: 1232939510224021153}
   - component: {fileID: 1232939510224021152}
-  - component: {fileID: 2139904882507264247}
   m_Layer: 5
   m_Name: weaponImg
   m_TagString: Untagged
@@ -603,23 +602,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2139904882507264247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232939510224021154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ee1720148986457d9a10bf73efa0ed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 0}
-  image: {fileID: 1232939510224021152}
-  damage: {fileID: 1232939509930564344}
-  range: {fileID: 1232939509993832111}
-  description: {fileID: 1232939510159628846}
 --- !u!1 &1232939511094401730
 GameObject:
   m_ObjectHideFlags: 0

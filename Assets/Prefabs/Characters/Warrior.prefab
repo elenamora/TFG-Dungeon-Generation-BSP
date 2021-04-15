@@ -261,9 +261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96aadb510dabd4efb92587ac6ee85f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
+  weaponData:
+  - {fileID: 11400000, guid: c469a0b8cb4b24122ac28f9517170330, type: 2}
+  - {fileID: 11400000, guid: e3e93602059b14c5eb81ed0ea33f38bf, type: 2}
+  - {fileID: 11400000, guid: bcb6b216021544143b8cb6b66dd7b710, type: 2}
   damageWeapon: 20
   player: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!60 &5166113537974450547
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -341,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e155310c19e9425e813a66079997df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapons: []
 --- !u!1 &3592167087471788633
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +529,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 74.476006
       objectReference: {fileID: 0}
+    - target: {fileID: 1193188957576153437, guid: 904c38f969bcf4b729bb77ee44f15ad1,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1193188957576153437, guid: 904c38f969bcf4b729bb77ee44f15ad1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 904c38f969bcf4b729bb77ee44f15ad1, type: 3}
 --- !u!4 &1527331583104898743 stripped
@@ -604,6 +619,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 88.18301
       objectReference: {fileID: 0}
+    - target: {fileID: 2790423151076298319, guid: 0084e2edbbc214b13a0587a4626b63b3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2790423151076298319, guid: 0084e2edbbc214b13a0587a4626b63b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0084e2edbbc214b13a0587a4626b63b3, type: 3}
 --- !u!4 &8272055127105932873 stripped
@@ -619,6 +644,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8682222933919795908}
     m_Modifications:
+    - target: {fileID: 6869480484892815416, guid: 4dbc90b94d5304a16ab30b93eddd9c52,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869480484892815416, guid: 4dbc90b94d5304a16ab30b93eddd9c52,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6869480484892815417, guid: 4dbc90b94d5304a16ab30b93eddd9c52,
         type: 3}
       propertyPath: m_RootOrder

@@ -8,7 +8,6 @@ public class WeaponSelection : MonoBehaviour
 {
     private int index = 0;
 
-
     public void ChooseWeapon()
     {
         PlayerPrefs.SetInt("WeaponSelected", index);

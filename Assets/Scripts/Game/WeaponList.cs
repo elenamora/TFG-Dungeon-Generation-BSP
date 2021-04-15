@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class WeaponList : MonoBehaviour
 {
     public GameObject[] weapons;
-    public WeaponData[] data;
     private int index;
 
 
