@@ -43,7 +43,6 @@ public class Chest : Interactable
                 }
                 else
                 {
-                    //dialogText.text = "5";
                     dialogBox.SetActive(true);
                     StartCoroutine(DialogCo());
                 }

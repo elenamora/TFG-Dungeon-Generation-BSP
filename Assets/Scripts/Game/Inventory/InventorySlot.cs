@@ -10,12 +10,13 @@ public class InventorySlot : MonoBehaviour
     //[SerializeField] private Text itemDescription;
 
     public InventoryItem item;
-    public BasicInventoryManager manager;
+    public BasicInventoryManager basicManager;
+    public InventoryManager inventoryManager;
 
     public void SetUp(InventoryItem newItem, BasicInventoryManager newManager )
     {
         item = newItem;
-        manager = newManager;
+        basicManager = newManager;
 
         if (item)
         {
@@ -24,15 +25,16 @@ public class InventorySlot : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetUp(InventoryItem newItem, InventoryManager newManager)
     {
-        
+        item = newItem;
+        inventoryManager = newManager;
+
+        if (item)
+        {
+            itemImage.sprite = item.itemImage;
+            textNum.text = "" + item.quantity;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

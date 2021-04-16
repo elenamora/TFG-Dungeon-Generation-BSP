@@ -15,14 +15,18 @@ public class BasicInventoryManager : MonoBehaviour
         {
             for (int i = 0; i < inventory.inventoryItems.Count; i++)
             {
-                GameObject temp =
+                if (inventory.inventoryItems[i].itemName != "Gem")
+                {
+                    GameObject temp =
                     Instantiate(slot, panel.transform.position, Quaternion.identity);
 
-                temp.transform.SetParent(panel.transform);
+                    temp.transform.SetParent(panel.transform);
 
-                InventorySlot newSlot = temp.GetComponent<InventorySlot>();
+                    InventorySlot newSlot = temp.GetComponent<InventorySlot>();
 
-                if (newSlot) { newSlot.SetUp(inventory.inventoryItems[i], this); }
+                    if (newSlot) { newSlot.SetUp(inventory.inventoryItems[i], this); }
+
+                }
             }
         }
     }
