@@ -234,7 +234,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 344775453
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -440,8 +440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  item: {fileID: 11400000, guid: 50bd4d771e2fc452fa8a6bb4c6c2ed8d, type: 2}
-  inventory: {fileID: 11400000, guid: f9ef3581cf73142dfa148e7f7261aead, type: 2}
+  item: {fileID: 11400000, guid: 21fc32bf7e7d9472083a565431ab71b8, type: 2}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   data: {fileID: 11400000, guid: bb7533998431c487ab255cc2e9783eb0, type: 2}
   itemInChest: {fileID: 7310677014751258261}
   dialogBox: {fileID: 683722935181574603}

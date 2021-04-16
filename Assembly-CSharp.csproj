@@ -78,6 +78,8 @@
     <Compile Include="Assets\Scripts\Game\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemy\Spawner.cs" />
     <Compile Include="Assets\Scripts\Game\GameSaveManager.cs" />
+    <Compile Include="Assets\Scripts\Game\Inventory\BagManager.cs" />
+    <Compile Include="Assets\Scripts\Game\Inventory\BasicInventoryManager.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\Breakable.cs" />
@@ -87,12 +89,12 @@
     <Compile Include="Assets\Scripts\Game\Objects\PowerUp.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Game\Player\WeaponList.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Dialog.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\WeaponCard.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\WeaponSelection.cs" />
     <Compile Include="Assets\Scripts\Game\UI\StatsBar.cs" />
-    <Compile Include="Assets\Scripts\Game\WeaponList.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

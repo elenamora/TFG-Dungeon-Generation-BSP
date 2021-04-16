@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{62873BB6-A352-5450-430A-56E3FCEBDD74}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/Inventory/InventoryManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/GameSaveManager.cs">
     <Files>
       <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/Player/Player.cs" Line="45" Column="17" />
-      <File FileName="Assets/Scripts/Game/WeaponList.cs" Line="9" Column="1" />
-      <File FileName="Assets/Scripts/Game/Player/Weapon.cs" Line="25" Column="42" />
-      <File FileName="Assets/Scripts/Game/UI/Menus/WeaponSelection.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/Game/Inventory/InventoryManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/Inventory/InventoryManager.cs" Line="30" Column="21" />
+      <File FileName="Assets/Scripts/Game/Inventory/BagManager.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/Game/Inventory/BasicInventoryManager.cs" Line="16" Column="69" />
+      <File FileName="Assets/Scripts/Game/Inventory/InventorySlot.cs" Line="10" Column="7" />
+      <File FileName="Assets/Scripts/Game/GameSaveManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c95462e5-a088-4012-9ed8-bb9f1b9f74b6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="58a23206-2962-45cc-ae6a-b1ee4d036c2f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

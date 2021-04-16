@@ -5,16 +5,14 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    [SerializeField]
-    private Text textNum;
-
-    [SerializeField]
-    private Image itemImage;
+    [SerializeField] private Text textNum;
+    [SerializeField] private Image itemImage;
+    //[SerializeField] private Text itemDescription;
 
     public InventoryItem item;
-    public InventoryManager manager;
+    public BasicInventoryManager manager;
 
-    public void SetUp(InventoryItem newItem, InventoryManager newManager )
+    public void SetUp(InventoryItem newItem, BasicInventoryManager newManager )
     {
         item = newItem;
         manager = newManager;

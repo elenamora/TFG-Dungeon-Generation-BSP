@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BigChest
   m_EditorClassIdentifier: 
   chestName: Big Chest
-  chestDescription: This chest contain the gem that you will need to move to the
+  chestDescription: This chest contains the gem that you will need to move to the
     next level
   itemToOpen: Key
   quantityOfItemToOpen: 1
