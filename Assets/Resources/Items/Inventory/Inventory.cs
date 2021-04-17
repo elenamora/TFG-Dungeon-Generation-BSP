@@ -9,6 +9,7 @@ public class Inventory : ScriptableObject
 
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
 
+    
 
     public void AddInventoryItem(InventoryItem item)
     {

@@ -45,7 +45,8 @@ public class InventoryManager : MonoBehaviour
         objectName.text = name;
     }
 
-    void Start()
+    //This function is called when the object becomes enabled and active
+    void OnEnable()
     {
         SetText("", "");
         ClearInventorySlots();

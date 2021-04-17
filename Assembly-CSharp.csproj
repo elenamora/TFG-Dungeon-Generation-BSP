@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Game\Objects\Door.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\Interactable.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\PowerUp.cs" />
+    <Compile Include="Assets\Scripts\Game\PauseManager.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Weapon.cs" />
     <Compile Include="Assets\Scripts\Game\Player\WeaponList.cs" />
