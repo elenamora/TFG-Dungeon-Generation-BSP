@@ -7,12 +7,13 @@ public class InventorySlot : MonoBehaviour
 {
     [SerializeField] private Text textNum;
     [SerializeField] private Image itemImage;
-    //[SerializeField] private Text itemDescription;
+    [SerializeField] private Text itemDescription;
 
     public InventoryItem item;
     public BasicInventoryManager basicManager;
     public InventoryManager inventoryManager;
 
+    // Assign values to the inventory slots on the game screen
     public void SetUp(InventoryItem newItem, BasicInventoryManager newManager )
     {
         item = newItem;
@@ -25,6 +26,7 @@ public class InventorySlot : MonoBehaviour
         }
     }
 
+    // Assign values to the inventory slots on the menu
     public void SetUp(InventoryItem newItem, InventoryManager newManager)
     {
         item = newItem;
@@ -34,6 +36,14 @@ public class InventorySlot : MonoBehaviour
         {
             itemImage.sprite = item.itemImage;
             textNum.text = "" + item.quantity;
+        }
+    }
+
+    public void ClickedOn()
+    {
+        if (item)
+        {
+            inventoryManager.SetText(item.itemDescription, item.name);
         }
     }
 

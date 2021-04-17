@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
 {
     public Inventory inventory;
 
+    [SerializeField] private Text objectName;
     [SerializeField] private Text description;
     [SerializeField] private GameObject slot;
     [SerializeField] private GameObject panel;
@@ -38,21 +39,15 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void SetText(string description)
+    public void SetText(string description, string name)
     {
         this.description.text = description;
+        objectName.text = name;
     }
 
     void Start()
     {
-        SetText("");
-        ClearInventorySlots();
-        MakeInventorySlots();
-    }
-
-    void Update()
-    {
-        SetText("");
+        SetText("", "");
         ClearInventorySlots();
         MakeInventorySlots();
     }
