@@ -10,6 +10,8 @@ public class PowerUp : MonoBehaviour
     [SerializeField]
     private InventoryItem inventoryItem;
 
+    public ParticleSystem ps;
+
     public void AddItemToInventory()
     {
         if (inventory && inventoryItem)
@@ -29,7 +31,9 @@ public class PowerUp : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             AddItemToInventory();
+            ParticleSystem temp = Instantiate(ps, transform.position, transform.rotation);
             Destroy(gameObject);
+            Destroy(temp, 10f);
         }
     }
 }
