@@ -109,6 +109,9 @@ public class DungeonGenerator : MonoBehaviour
 		GameObject smallchest = Instantiate(items[4], new Vector3(x, Random.Range(temp.y + 1, temp.y + temp.height - 1), 0f), Quaternion.identity);
 		GameObject bigchest = Instantiate(items[5], new Vector3(x, Random.Range(temp.y + 1 + 2, temp.y + temp.height - 1 - 2), 0f), Quaternion.identity);
 
+		Instantiate(items[6], new Vector3(temp.x, temp.yMax - 0.5f, 0f), Quaternion.identity);
+
+
 
 		//float x2 = Random.Range(temp.x + 1, temp.x + temp.width - 1);
 		//float y2 = Random.Range(temp.y + 1, temp.y + temp.height - 1);

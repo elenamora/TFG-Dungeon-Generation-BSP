@@ -15,7 +15,7 @@ public class BasicInventoryManager : MonoBehaviour
         {
             for (int i = 0; i < inventory.inventoryItems.Count; i++)
             {
-                if (inventory.inventoryItems[i].itemName != "Gem")
+                if (inventory.inventoryItems[i].itemName != "Gem" && inventory.inventoryItems[i].itemName != "Sword")
                 {
                     GameObject temp =
                     Instantiate(slot, panel.transform.position, Quaternion.identity);
