@@ -5,15 +5,14 @@ using UnityEngine;
 public class Traps : MonoBehaviour
 { 
     public ParticleSystem ps;
-    private Animator animator;
-    private float waitTime = 5f;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        Instantiate(ps, transform.position, transform.rotation);
+        if(name == "fire")
+        {
+            Instantiate(ps, transform.position, transform.rotation);
+        }
 
     }
 
