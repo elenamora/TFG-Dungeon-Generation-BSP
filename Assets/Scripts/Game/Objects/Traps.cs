@@ -9,10 +9,8 @@ public class Traps : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(name == "fire")
-        {
-            Instantiate(ps, transform.position, transform.rotation);
-        }
+        Instantiate(ps, transform.position, transform.rotation);
+        
 
     }
 
