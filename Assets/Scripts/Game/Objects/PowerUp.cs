@@ -31,9 +31,8 @@ public class PowerUp : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             AddItemToInventory();
-            ParticleSystem temp = Instantiate(ps, transform.position, transform.rotation);
+            Instantiate(ps, transform.position, transform.rotation);
             Destroy(gameObject);
-            Destroy(temp, 10f);
         }
     }
 }

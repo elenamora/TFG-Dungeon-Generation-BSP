@@ -444,6 +444,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: f9ef3581cf73142dfa148e7f7261aead, type: 2}
   data: {fileID: 11400000, guid: bb7533998431c487ab255cc2e9783eb0, type: 2}
   itemInChest: {fileID: 7310677014751258261}
+  ps: {fileID: 590396266035306503, guid: 401bb56acfdb74effa9e4c92aad0e2b1, type: 3}
   dialogBox: {fileID: 683722935181574603}
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
   winEvent: {fileID: 11400000, guid: d5306b7844b224fba8e6344ff599d2dc, type: 2}

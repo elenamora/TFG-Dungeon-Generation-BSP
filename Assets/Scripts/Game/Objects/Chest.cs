@@ -13,6 +13,7 @@ public class Chest : Interactable
     [Header("Chest")]
     [SerializeField] private ChestData data;
     [SerializeField] private SpriteRenderer itemInChest;
+    [SerializeField] private ParticleSystem ps;
 
     [Header("Dialog")]
     public GameObject dialogBox;
@@ -76,6 +77,7 @@ public class Chest : Interactable
 
         inventory.AddInventoryItem(item);
         inventory.item = item;
+        Instantiate(ps, itemInChest.transform.position, itemInChest.transform.rotation);
         isOpen = true;
         itemInChest.sprite = inventory.item.itemImage;
 

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GameState
   m_EditorClassIdentifier: 
   level: 1
-  win: 0
-  loose: 0
+  win: 1
+  loose: 1

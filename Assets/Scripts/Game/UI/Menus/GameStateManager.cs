@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
+    public GameState gameState;
 
     public void Start()
     {
         Time.timeScale = 0f;
+        gameState.win = false;
+        gameState.loose = false;
     }
 
     public void Play()

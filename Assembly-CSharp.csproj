@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\Game\Player\Weapon.cs" />
     <Compile Include="Assets\Scripts\Game\Player\WeaponList.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Dialog.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\LevelPanel.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\WeaponCard.cs" />
