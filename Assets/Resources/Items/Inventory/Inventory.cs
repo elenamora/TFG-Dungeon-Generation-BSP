@@ -9,8 +9,6 @@ public class Inventory : ScriptableObject
 
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
 
-    
-
     public void AddInventoryItem(InventoryItem item)
     {
         // If we don't have the item in our inventory we will add it

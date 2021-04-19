@@ -200,10 +200,6 @@ public class Enemy : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             collision.gameObject.GetComponent<Player>().Hurt(data.damage);
 
-            // The player will bounce back if we hit it
-            Vector2 dif = collision.transform.position - transform.position;
-            collision.transform.position = new Vector2(collision.transform.position.x + dif.x, collision.transform.position.y + dif.y);
-
         }
 
         if (collision.gameObject.CompareTag("Tile"))

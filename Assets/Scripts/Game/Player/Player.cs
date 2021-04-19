@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     public int currentHealth;
     public StatsBar healthBar;
 
+    public GameState gameState;
+    public GameEvent looseEvent;
+
     /*** ENERGY VARIABLES ***/
     [Header("Energy")]
     public int maxEnergy = 50;
@@ -73,6 +76,8 @@ public class Player : MonoBehaviour
         HurtFlash();
 
         UseItems();
+
+        isDead();
     }
 
     void Move()
@@ -132,8 +137,6 @@ public class Player : MonoBehaviour
         healthBar.SetValue(currentHealth);
         flash = true;
         flashCount = flashTime;
-
-        if (currentHealth <= 0) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
     }
 
     private void HurtFlash()
@@ -236,6 +239,21 @@ public class Player : MonoBehaviour
             
         }
             
+    }
+
+    public void isDead()
+    {
+        if(currentHealth <= 0)
+        {
+            gameState.loose = true;
+            StartCoroutine(EventCo());
+        }
+    }
+
+    IEnumerator EventCo()
+    {
+        yield return new WaitForSeconds(.4f);
+        looseEvent.Raise();
     }
 
 }

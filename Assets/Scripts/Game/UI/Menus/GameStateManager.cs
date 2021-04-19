@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WinManager : MonoBehaviour
+public class GameStateManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void Start()
     {
         Time.timeScale = 0f;
     }
 
-    public void NextLevel()
+    public void Play()
     {
         SceneManager.LoadScene("BSP");
         Time.timeScale = 1f;

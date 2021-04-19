@@ -445,6 +445,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: bb7533998431c487ab255cc2e9783eb0, type: 2}
   itemInChest: {fileID: 7310677014751258261}
   dialogBox: {fileID: 683722935181574603}
+  gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  winEvent: {fileID: 11400000, guid: d5306b7844b224fba8e6344ff599d2dc, type: 2}
 --- !u!1 &8707244410886674153
 GameObject:
   m_ObjectHideFlags: 0

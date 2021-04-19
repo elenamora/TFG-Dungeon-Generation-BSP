@@ -15,6 +15,7 @@ TagManager:
   - Chest
   - Hall
   - Dialog
+  - WinMenu
   layers:
   - Default
   - TransparentFX

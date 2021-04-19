@@ -18,6 +18,10 @@ public class Chest : Interactable
     public GameObject dialogBox;
     //public Text dialogText;
 
+    [Header("Game State")]
+    public GameState gameState;
+    public GameEvent winEvent;
+
     private bool isOpen;
 
     private Animator animator;
@@ -74,6 +78,13 @@ public class Chest : Interactable
         inventory.item = item;
         isOpen = true;
         itemInChest.sprite = inventory.item.itemImage;
+
+        if(inventory.item.name == "Gem")
+        {
+            gameState.win = true;
+            gameState.LevelUp();
+            StartCoroutine(EventCo());
+        }
         
     }
 
@@ -99,6 +110,12 @@ public class Chest : Interactable
     {
         yield return new WaitForSecondsRealtime(1f);
         dialogBox.SetActive(false);
+    }
+
+    IEnumerator EventCo()
+    {
+        yield return new WaitForSeconds(.4f);
+        winEvent.Raise();
     }
 
 }

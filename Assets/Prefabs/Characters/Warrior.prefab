@@ -105,6 +105,8 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 50
   healthBar: {fileID: 0}
+  gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  looseEvent: {fileID: 11400000, guid: 9622d32980fa141d3bdf9857eb782f61, type: 2}
   maxEnergy: 50
   currentEnergy: 0
   energyBar: {fileID: 0}
@@ -265,9 +267,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c469a0b8cb4b24122ac28f9517170330, type: 2}
   - {fileID: 11400000, guid: e3e93602059b14c5eb81ed0ea33f38bf, type: 2}
   - {fileID: 11400000, guid: bcb6b216021544143b8cb6b66dd7b710, type: 2}
-  damageWeapon: 20
   player: {fileID: 0}
   weapon: {fileID: 0}
+  damageWeapon: 20
 --- !u!60 &5166113537974450547
 PolygonCollider2D:
   m_ObjectHideFlags: 0
