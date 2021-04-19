@@ -166,4 +166,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 995f5d52108de4d7e862eee5c2079ddb, type: 2}
   currentHealth: 0
-  lootTable: {fileID: 11400000, guid: 51704a276ee39439fbedc07bbb43ce64, type: 2}
+  lootTable: {fileID: 11400000, guid: b5fae3ab27e4b47728f534a384080db6, type: 2}
