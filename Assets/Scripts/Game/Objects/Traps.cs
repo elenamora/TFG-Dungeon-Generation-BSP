@@ -17,8 +17,7 @@ public class Traps : MonoBehaviour
         if(collision.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().Hurt(5);
-        }
+        }   
     }
-
 
 }

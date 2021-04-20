@@ -303,35 +303,24 @@ public class DungeonGenerator : MonoBehaviour
 
 	public void DrawTraps()
     {
-		foreach (Rect r in dungeon.hallways)
-        {
-			//Instantiate(traps[0], new Vector3(r.x , r.y, 0f), Quaternion.identity);
-			int n = Random.Range(0, 2);
-			if(n == 0)
-			{
-				float x, y;
-				if(r.width > r.height)
-                {
-					x = r.x + r.width / 2;
-					y = r.y;
-				}
-                else
-                {
-					x = r.x;
-					y = r.y + r.height / 2;
-				}
-
-				int t = Random.Range(0, 2);
-				if (t == 0)
-				{
-					Instantiate(traps[0], new Vector3(x, y, 0f), Quaternion.identity);
-				}
-				else
-				{
-					Instantiate(traps[1], new Vector3(x, y, 0f), Quaternion.identity);
-				}
+		for(int i = 0; i < dungeon.hallways.Count; i += 3)
+		{
+			Rect r = dungeon.hallways[i];
+			float x, y;
+            if (r.width < 4 && r.height < 4)
+            {
+				x = r.x + 0.2f;
+				y = r.y + 0.2f;
+            }
+            else
+            {
+				x = r.center.x - 0.45f;
+				y = r.center.y - 0.45f;
 			}
 
+			int t = Random.Range(0, 2);
+			if (t == 0) { Instantiate(traps[0], new Vector3(x, y , 0f), Quaternion.identity); }
+			else { Instantiate(traps[1], new Vector3(x, y, 0f), Quaternion.identity); }
         }
     }
 

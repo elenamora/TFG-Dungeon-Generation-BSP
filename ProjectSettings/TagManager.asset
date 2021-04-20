@@ -16,6 +16,7 @@ TagManager:
   - Hall
   - Dialog
   - WinMenu
+  - Trap
   layers:
   - Default
   - TransparentFX

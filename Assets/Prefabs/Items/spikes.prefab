@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 8478304263206308138}
   - component: {fileID: 8478304263206308141}
   - component: {fileID: 7639727820335835095}
+  - component: {fileID: 7221816279123686097}
   m_Layer: 0
   m_Name: spikes
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,3 +143,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 769802731321936174, guid: 15a15ed4b4ae143f3b47b1edd4636dbd, type: 3}
+--- !u!50 &7221816279123686097
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8478304263206308137}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

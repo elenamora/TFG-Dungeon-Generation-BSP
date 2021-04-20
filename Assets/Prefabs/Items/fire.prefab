@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6115024464800444088}
   - component: {fileID: 6115024464800444089}
   - component: {fileID: 1578833660}
+  - component: {fileID: 6022688826654356430}
   m_Layer: 0
   m_Name: fire
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,3 +143,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 2369395246895292818, guid: 0192fe49afadb4fbf9959637c286be83, type: 3}
+--- !u!50 &6022688826654356430
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6115024464800444093}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
