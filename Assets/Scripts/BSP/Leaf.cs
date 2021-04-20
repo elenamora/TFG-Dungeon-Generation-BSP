@@ -9,10 +9,12 @@ public class Leaf
 	public Rect room;
 
 	public List<Rect> hallways = new List<Rect>();
+	public DungeonData data;
 
-	public Leaf(Rect mrect)
+	public Leaf(Rect mrect, DungeonData data)
 	{
 		rect = mrect;
+		this.data = data;
 	}
 
 	public bool Split(int minRoomSize)
@@ -35,14 +37,14 @@ public class Leaf
 		if (splitH)
 		{
 			split = (int)Random.Range(minRoomSize, rect.width - minRoomSize);
-			leftChild = new Leaf(new Rect(rect.x, rect.y, rect.width, split));
-			rightChild = new Leaf(new Rect(rect.x, rect.y + split, rect.width, rect.height - split));
+			leftChild = new Leaf(new Rect(rect.x, rect.y, rect.width, split), data);
+			rightChild = new Leaf(new Rect(rect.x, rect.y + split, rect.width, rect.height - split), data);
 		}
 		else
 		{
 			split = (int)Random.Range(minRoomSize, rect.height - minRoomSize);
-			leftChild = new Leaf(new Rect(rect.x, rect.y, split, rect.height));
-			rightChild = new Leaf(new Rect(rect.x + split, rect.y, rect.width - split, rect.height));
+			leftChild = new Leaf(new Rect(rect.x, rect.y, split, rect.height), data);
+			rightChild = new Leaf(new Rect(rect.x + split, rect.y, rect.width - split, rect.height), data);
 		}
 
 
@@ -69,7 +71,8 @@ public class Leaf
 
 			// room position will be absolute
 			room = new Rect(rect.x + roomX, rect.y + roomY, roomWidth, roomHeight);
-			rooms.Add(room);
+			//rooms.Add(room);
+			data.rooms.Add(room);
 		}
 	}
 
@@ -106,28 +109,55 @@ public class Leaf
 			// We choose randomly to go horizontal then vertical or the opposite
 			if (Random.Range(0, 1) > 2)
 			{
-				
-				hallways.Add(new Rect(leftPosition.x, leftPosition.y, Mathf.Abs(w), 1));
+				Rect r = new Rect(leftPosition.x, leftPosition.y, Mathf.Abs(w), 1);
+				hallways.Add(r);
+				data.hallways.Add(r);
 
-				if (h < 0) { hallways.Add(new Rect(rightPosition.x, leftPosition.y, 1, Mathf.Abs(h))); }
+				if (h < 0) {
+					Rect re = new Rect(rightPosition.x, leftPosition.y, 1, Mathf.Abs(h));
+					hallways.Add(re);
+					data.hallways.Add(re);
+				}
 
-				else { hallways.Add(new Rect(rightPosition.x, leftPosition.y, 1, -Mathf.Abs(h))); }
+				else {
+					Rect re = new Rect(rightPosition.x, leftPosition.y, 1, -Mathf.Abs(h));
+					hallways.Add(re);
+					data.hallways.Add(re);
+				}
 			}
 
 			else
 			{
-				if (h < 0) { hallways.Add(new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h))); }
+				if (h < 0) {
+					Rect r = new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h));
+					hallways.Add(r);
+					data.hallways.Add(r);
+				}
 
-				else { hallways.Add(new Rect(leftPosition.x, rightPosition.y, 1, Mathf.Abs(h))); }
+				else {
+					Rect r = new Rect(leftPosition.x, rightPosition.y, 1, Mathf.Abs(h));
+					hallways.Add(r);
+					data.hallways.Add(r);
+				}
 
-				hallways.Add(new Rect(leftPosition.x, rightPosition.y, Mathf.Abs(w), 1));
+				Rect re = new Rect(leftPosition.x, rightPosition.y, Mathf.Abs(w), 1);
+				hallways.Add(re);
+				data.hallways.Add(re);
 			}
 		}
 		else
 		{
-			if (h < 0) { hallways.Add(new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h))); }
+			if (h < 0) {
+				Rect r = new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h));
+				hallways.Add(r);
+				data.hallways.Add(r);
+			}
 
-			else { hallways.Add(new Rect(rightPosition.x, rightPosition.y, 1, Mathf.Abs(h))); }
+			else {
+				Rect r = new Rect(rightPosition.x, rightPosition.y, 1, Mathf.Abs(h));
+				hallways.Add(r);
+				data.hallways.Add(r);
+			}
 		}
 
 	}

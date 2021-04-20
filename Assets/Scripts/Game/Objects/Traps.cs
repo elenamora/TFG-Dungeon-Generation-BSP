@@ -10,8 +10,6 @@ public class Traps : MonoBehaviour
     void Start()
     {
         Instantiate(ps, transform.position, transform.rotation);
-        
-
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

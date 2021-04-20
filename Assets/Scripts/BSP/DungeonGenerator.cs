@@ -5,9 +5,10 @@ using UnityEngine;
 public class DungeonGenerator : MonoBehaviour
 {
 	[Header("DUNGEON VARIABLES")]
-	public int DUNGEON_W;
-	public int DUNGEON_H;
-	public int MIN_ROOM_SIZE;
+	public DungeonData dungeon;
+	private int DUNGEON_W;
+	private int DUNGEON_H;
+	private int MIN_ROOM_SIZE;
 	public GameObject floorTile;
 	public GameObject hallwayTile;
 	public GameObject wallTile;
@@ -30,9 +31,19 @@ public class DungeonGenerator : MonoBehaviour
 	[Header("ITEMS")]
 	public GameObject[] items;
 
+	/*** TRAPS***/
+	[Header("TRAPS")]
+	public List<GameObject> traps;
+
 	void Start()
 	{
-		Leaf root = new Leaf(new Rect(0, 0, DUNGEON_W, DUNGEON_H));
+		DUNGEON_W = dungeon.dungeonWidth;
+		DUNGEON_H = dungeon.dungeonHeight;
+		MIN_ROOM_SIZE = dungeon.minSizeRoom;
+		dungeon.rooms = new List<Rect>();
+		dungeon.hallways = new List<Rect>();
+		rooms = dungeon.rooms;
+		Leaf root = new Leaf(new Rect(0, 0, DUNGEON_W, DUNGEON_H), dungeon);
 		BSPTree tree = new BSPTree();
 		tree.CreateTree(root, MIN_ROOM_SIZE);
 		root.CreateRoom(MIN_ROOM_SIZE, rooms);
@@ -50,6 +61,8 @@ public class DungeonGenerator : MonoBehaviour
 		DrawEnemies();
 
 		DrawBreakable();
+
+		DrawTraps();
 
 	}
 
@@ -109,7 +122,8 @@ public class DungeonGenerator : MonoBehaviour
 		GameObject smallchest = Instantiate(items[4], new Vector3(x, Random.Range(temp.y + 1, temp.y + temp.height - 1), 0f), Quaternion.identity);
 		GameObject bigchest = Instantiate(items[5], new Vector3(x, Random.Range(temp.y + 1 + 2, temp.y + temp.height - 1 - 2), 0f), Quaternion.identity);
 
-		Instantiate(items[6], new Vector3(temp.x, temp.yMax - 0.5f, 0f), Quaternion.identity);
+		//Instantiate(traps[0], new Vector3(temp.x, temp.yMax - 0.5f, 0f), Quaternion.identity);
+		//Instantiate(traps[1], new Vector3(temp.x, temp.yMax - 0.5f - 0.5f, 0f), Quaternion.identity);
 
 
 
@@ -200,6 +214,14 @@ public class DungeonGenerator : MonoBehaviour
 					}
 				}
 			}
+
+			int n = Random.Range(0, 1);
+			if (n == 1)
+            {
+				int trap = Random.Range(0, 1);
+				if(trap == 0) { Instantiate(traps[0], new Vector3(hallway.xMax/2, hallway.yMax/2 - 0.5f, 0f), Quaternion.identity); }
+                else { Instantiate(traps[1], new Vector3(hallway.xMax/2, hallway.xMax/2 - 0.5f, 0f), Quaternion.identity); }
+            }
 			
 		}
 	}
@@ -277,6 +299,40 @@ public class DungeonGenerator : MonoBehaviour
 			//}
 			//}
 		}
+    }
+
+	public void DrawTraps()
+    {
+		foreach (Rect r in dungeon.hallways)
+        {
+			//Instantiate(traps[0], new Vector3(r.x , r.y, 0f), Quaternion.identity);
+			int n = Random.Range(0, 2);
+			if(n == 0)
+			{
+				float x, y;
+				if(r.width > r.height)
+                {
+					x = r.x + r.width / 2;
+					y = r.y;
+				}
+                else
+                {
+					x = r.x;
+					y = r.y + r.height / 2;
+				}
+
+				int t = Random.Range(0, 2);
+				if (t == 0)
+				{
+					Instantiate(traps[0], new Vector3(x, y, 0f), Quaternion.identity);
+				}
+				else
+				{
+					Instantiate(traps[1], new Vector3(x, y, 0f), Quaternion.identity);
+				}
+			}
+
+        }
     }
 
 }
