@@ -31,6 +31,7 @@ public class GameSaveManager : MonoBehaviour
     {
         SaveScriptables();
         SaveGames();
+        SaveEnemies();
     }
 
     public void SaveScriptables()
@@ -60,7 +61,22 @@ public class GameSaveManager : MonoBehaviour
             binary.Serialize(file, json);
 
             file.Close();
-        }   
+        }
+    }
+
+    // We save the information about the enemies of every game created (same as dungeons)
+    public void SaveEnemies()
+    {
+        for (int i = 0; i < gameData.enemies.Count; i++)
+        {
+            FileStream file = File.Create(Application.persistentDataPath + string.Format("/Enemy{0}.dat", i));
+            BinaryFormatter binary = new BinaryFormatter();
+
+            var json = JsonUtility.ToJson(gameData.enemies[i]);
+            binary.Serialize(file, json);
+
+            file.Close();
+        }
     }
 
     public void LoadScriptables()

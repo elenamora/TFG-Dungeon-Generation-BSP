@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameStateManager : MonoBehaviour
 {
     public GameState gameState;
+    public EnemyManager enemyManager;
+    public GameData gameData;
+
+    public GameObject winCanvas;
+    public GameObject looseCanvas;
 
     public void Start()
     {
@@ -25,5 +30,17 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1f;
 
+    }
+
+    public void Win()
+    {
+        gameData.AddEnemyManager(enemyManager);
+        winCanvas.SetActive(true);
+    }
+
+    public void Loose()
+    {
+        gameData.AddEnemyManager(enemyManager);
+        looseCanvas.SetActive(true);
     }
 }

@@ -18,4 +18,9 @@ public class GameData : ScriptableObject
         dungeons.Add(dungeonData);   
     }
 
+    public void AddEnemyManager(EnemyManager enemyManager)
+    {
+        enemies.Add(enemyManager);
+    }
+
 }
