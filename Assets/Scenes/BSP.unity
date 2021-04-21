@@ -2860,12 +2860,12 @@ MonoBehaviour:
     type: 3}
   wallTile: {fileID: 960831054101345614, guid: c11c026f907b54c1f84004676d75e6f2, type: 3}
   bounds: {fileID: 3833873884326961733, guid: 5af53112b66d846ba8285d6c749d62e5, type: 3}
+  enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
   player: {fileID: 293017531104579325, guid: 2bb0df91abd004657a525ba4b6079445, type: 3}
   enemies:
   - {fileID: 7932582979950147962, guid: ffbeb984731fe48468b894a1851ff7da, type: 3}
   - {fileID: 6757331056679263731, guid: dfa7bd5b4917a44f9925b05ae201fac9, type: 3}
   - {fileID: 7120882035668261011, guid: 02ea60fcd96894f688f08b0196a7d927, type: 3}
-  rooms: []
   items:
   - {fileID: 6178431923340471809, guid: 01f0116b72a024648b39f6302d47c0c5, type: 3}
   - {fileID: 6262758782743616679, guid: ba2f0a8a5371e435283198acd49dbd98, type: 3}

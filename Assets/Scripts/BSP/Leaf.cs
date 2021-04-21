@@ -8,7 +8,6 @@ public class Leaf
 	public Rect rect;
 	public Rect room;
 
-	public List<Rect> hallways = new List<Rect>();
 	public DungeonData data;
 
 	public Leaf(Rect mrect, DungeonData data)

@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Enemies\EnemyData.cs" />
+    <Compile Include="Assets\Resources\Enemies\EnemyManager.cs" />
     <Compile Include="Assets\Resources\Game\Dungeon\DungeonData.cs" />
     <Compile Include="Assets\Resources\Game\GameData.cs" />
     <Compile Include="Assets\Resources\Game\GameEvent\GameEvent.cs" />
@@ -80,7 +81,7 @@
     <Compile Include="Assets\Scripts\BSP\Leaf.cs" />
     <Compile Include="Assets\Scripts\Game\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Game\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Game\Enemy\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Game\GameEventListener.cs" />
     <Compile Include="Assets\Scripts\Game\GameSaveManager.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\BagManager.cs" />

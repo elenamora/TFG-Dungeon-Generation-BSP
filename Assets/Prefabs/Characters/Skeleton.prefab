@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d103d21ebc464226b90eb52cda22976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
   data: {fileID: 11400000, guid: bb58256cdd3064e78ac7cd7c42a9d0f2, type: 2}
   currentHealth: 0
   lootTable: {fileID: 11400000, guid: 6e9568d03956c47eda890d05be5e224c, type: 2}

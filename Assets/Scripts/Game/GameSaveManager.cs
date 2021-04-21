@@ -52,11 +52,11 @@ public class GameSaveManager : MonoBehaviour
     // We save the information of every Dungeon created (every game)
     public void SaveGames()
     {
-        for (int i = 0; i < gameData.games.Count; i++) { 
+        for (int i = 0; i < gameData.dungeons.Count; i++) { 
             FileStream file = File.Create(Application.persistentDataPath + string.Format("/Game{0}.dat", i));
             BinaryFormatter binary = new BinaryFormatter();
 
-            var json = JsonUtility.ToJson(gameData.games[i]);
+            var json = JsonUtility.ToJson(gameData.dungeons[i]);
             binary.Serialize(file, json);
 
             file.Close();

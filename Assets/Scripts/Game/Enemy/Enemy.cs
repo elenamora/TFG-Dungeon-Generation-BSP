@@ -5,25 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemyManager enemyManager;
+
     private float range, speed;
 
     private Transform playerTransform;
     private Animator animator;
     private GameObject homePos;
 
-    private bool playerCollision = false;
-
     public EnemyData data;
-
-    /*** HEALTH VARIABLES ***/
-    public int currentHealth;
-    //private HealthBar healthBar;
-
-    /*** HURT FLASH ***/
-    private bool flash;
-    private float flashTime = 1f;
-    private float flashCount = 0f;
-    private SpriteRenderer enemySprite;
 
     /*** ATTACK VARIABLES ***/
     private float waitToHurt = 2f;
@@ -31,9 +21,17 @@ public class Enemy : MonoBehaviour
 
     private Player player;
 
+    /*** HEALTH VARIABLES ***/
+    public int currentHealth;
+
+    /*** HURT FLASH ***/
+    private bool flash;
+    private float flashTime = 1f;
+    private float flashCount = 0f;
+    private SpriteRenderer enemySprite;
+
     /*** DIE VARIABLES ***/
     public LootTable lootTable;
-
 
     /*** PATROL VARIABLES ***/
     // A minimum and maximum time delay for taking a decision, choosing a direction to move in
@@ -88,15 +86,12 @@ public class Enemy : MonoBehaviour
 
         if (range < data.minDist)
         {
-            //if (!playerCollision)
-            //{
-                speed = data.attackSpeed;
-                animator.SetBool("isMoving", true);
-                animator.SetFloat("moveX", playerTransform.position.x - transform.position.x);
-                animator.SetFloat("moveY", playerTransform.position.y - transform.position.y);
+            speed = data.attackSpeed;
+            animator.SetBool("isMoving", true);
+            animator.SetFloat("moveX", playerTransform.position.x - transform.position.x);
+            animator.SetFloat("moveY", playerTransform.position.y - transform.position.y);
 
-                transform.position = Vector3.MoveTowards(transform.position, playerTransform.transform.position, speed * Time.deltaTime);
-            //}
+            transform.position = Vector3.MoveTowards(transform.position, playerTransform.transform.position, speed * Time.deltaTime); 
         }
     }
 
@@ -133,6 +128,10 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
+            if(data.enemyName == "Bat") { enemyManager.killedEnemies.Add(0); }
+            else if(data.enemyName == "Skeleton") { enemyManager.killedEnemies.Add(1); }
+            else if(data.enemyName == "Black") { enemyManager.killedEnemies.Add(2); }
+            
             MakeLoot();    
         }
     }
@@ -196,12 +195,9 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //collision.gameObject.SetActive(false);
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             collision.gameObject.GetComponent<Player>().Hurt(data.damage);
-
         }
-
+        
         if (collision.gameObject.CompareTag("Tile"))
         {
             if (currentMoveDirection == 0)

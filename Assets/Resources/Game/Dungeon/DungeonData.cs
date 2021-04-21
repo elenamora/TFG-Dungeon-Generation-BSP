@@ -18,6 +18,7 @@ public class DungeonData : ScriptableObject
         minSizeRoom = 6;
     }
 
+    // Every time we start a new game we create rooms and hallways from scratch
     public void ResetDungeon()
     {
         rooms = new List<Rect>();

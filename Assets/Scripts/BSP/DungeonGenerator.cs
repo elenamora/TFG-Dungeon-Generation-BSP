@@ -16,34 +16,36 @@ public class DungeonGenerator : MonoBehaviour
 	private GameObject[,] roomFloor;
 	private List<Rect> rooms;
 
+	[Header("ENEMY SPAWNER")]
+	public EnemyManager enemyManager;
+	/*** SPAWN ENEMY VARIABLES ***/
+	private EnemySpawner spawner;
+	private GameObject[] spawnedEnemies;
+	private List<List<int>> enemiesInRooms;
+
 	[Header("CHARACTERS")]
 	public GameObject player;
 	public GameObject [] enemies;
 
-	/*** SPAWN ENEMY VARIABLES ***/
-	private Spawner spawner;
-	private GameObject[] spawnedEnemies;
-	private List<List<int>> enemiesInRooms;
-
-	/*** ITEMS***/
+	/*** ITEMS ***/
 	[Header("ITEMS")]
 	public GameObject[] items;
 
-	/*** TRAPS***/
+	/*** TRAPS ***/
 	[Header("TRAPS")]
 	public List<GameObject> traps;
 
 	void Start()
 	{
+		/* Dungeon Creation */
 		dungeon.ResetDungeon();
 		gameData.AddDungeon(dungeon);
+		enemyManager.ResetEnemies();
 		rooms = dungeon.rooms;
 		Leaf root = new Leaf(new Rect(0, 0, dungeon.dungeonWidth, dungeon.dungeonHeight), dungeon);
 		BSPTree tree = new BSPTree();
 		tree.CreateTree(root, dungeon.minSizeRoom);
 		root.CreateRoom(dungeon.minSizeRoom);
-
-		spawner = new Spawner(rooms);
 
 		roomFloor = new GameObject[dungeon.dungeonWidth, dungeon.dungeonHeight];
 		DrawRooms(root);
@@ -51,6 +53,8 @@ public class DungeonGenerator : MonoBehaviour
 		DrawWalls(root);
 		DrawBounds(root);
 
+		/* Elements instances */
+		spawner = new EnemySpawner(rooms, enemyManager);
 		DrawPlayer();
 		DrawEnemies();
 
@@ -172,10 +176,9 @@ public class DungeonGenerator : MonoBehaviour
 
 	public void DrawEnemies()
     {
-
         enemiesInRooms = spawner.EnemiesInRooms();
 
-		spawnedEnemies = new GameObject[spawner.numOfEnemies];
+		spawnedEnemies = new GameObject[enemyManager.numOfEnemies];
 
 		int numEnem = 0;
 
@@ -189,24 +192,25 @@ public class DungeonGenerator : MonoBehaviour
 
 				switch (enemiesInRooms[i][j])
 				{
-					case 0:
+					case 0: 
 						spawnedEnemies[numEnem] = Instantiate(enemies[0], new Vector3(x, y, 0f), Quaternion.identity);
-						numEnem++;
+						enemyManager.initialEnemies.Add(0);
 						break;
 
 					case 1:
 						spawnedEnemies[numEnem] = Instantiate(enemies[1], new Vector3(x, y, 0f), Quaternion.identity);
+						enemyManager.initialEnemies.Add(1);
 						numEnem++;
 						break;
 
-					case 2:
+					case 2: 
 						spawnedEnemies[numEnem] = Instantiate(enemies[2], new Vector3(x, y, 0f), Quaternion.identity);
+						enemyManager.initialEnemies.Add(2);
 						numEnem++;
 						break;
 				}
 			}
 		}
-
 	}
 
 	public void DrawBreakable()
