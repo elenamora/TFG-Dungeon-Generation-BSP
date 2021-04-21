@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\Enemies\EnemyData.cs" />
     <Compile Include="Assets\Resources\Game\Dungeon\DungeonData.cs" />
+    <Compile Include="Assets\Resources\Game\GameData.cs" />
     <Compile Include="Assets\Resources\Game\GameEvent\GameEvent.cs" />
     <Compile Include="Assets\Resources\Game\GameState.cs" />
     <Compile Include="Assets\Resources\Items\Chests\ChestData.cs" />

@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{62873BB6-A352-5450-430A-56E3FCEBDD74}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/Enemy/Spawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/GameSaveManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="330" Column="16" />
-      <File FileName="Assets/Scripts/Game/GameSaveManager.cs" />
-      <File FileName="Assets/Scripts/Game/Player/Player.cs" />
-      <File FileName="Assets/Scripts/Game/UI/Menus/GameStateManager.cs" />
-      <File FileName="Assets/Scripts/Game/Objects/Traps.cs" Line="13" Column="6" />
-      <File FileName="Assets/Resources/Game/Dungeon/DungeonData.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="46" Column="29" />
+      <File FileName="Assets/Scripts/Game/GameSaveManager.cs" Line="33" Column="1" />
+      <File FileName="Assets/Scripts/Game/UI/Menus/GameStateManager.cs" Line="13" Column="31" />
+      <File FileName="Assets/Resources/Game/Dungeon/DungeonData.cs" Line="7" Column="29" />
       <File FileName="Assets/Scripts/BSP/Leaf.cs" Line="27" Column="40" />
-      <File FileName="Assets/Scripts/Game/Enemy/Spawner.cs" Line="36" Column="1" />
+      <File FileName="Assets/Resources/Game/GameData.cs" Line="19" Column="35" />
+      <File FileName="Assets/Resources/Items/Inventory/InventoryItem.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/Items/Inventory/Inventory.cs" Line="16" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

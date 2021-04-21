@@ -2853,6 +2853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dungeon: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
+  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
   floorTile: {fileID: 3655886575808039511, guid: 6de8effe9037743418c0ff508fa07989,
     type: 3}
   hallwayTile: {fileID: 3655886575808039511, guid: 6de8effe9037743418c0ff508fa07989,
@@ -3687,9 +3688,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ce8c0b0cb3d451db5207cee54c9792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 11400000, guid: f9ef3581cf73142dfa148e7f7261aead, type: 2}
-  - {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  objects: []
+  dungeonData: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
+  games: []
 --- !u!4 &1907499277
 Transform:
   m_ObjectHideFlags: 0

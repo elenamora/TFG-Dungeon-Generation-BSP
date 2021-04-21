@@ -6,6 +6,7 @@ public class DungeonGenerator : MonoBehaviour
 {
 	[Header("DUNGEON VARIABLES")]
 	public DungeonData dungeon;
+	public GameData gameData;
 	private int DUNGEON_W;
 	private int DUNGEON_H;
 	private int MIN_ROOM_SIZE;
@@ -40,8 +41,9 @@ public class DungeonGenerator : MonoBehaviour
 		DUNGEON_W = dungeon.dungeonWidth;
 		DUNGEON_H = dungeon.dungeonHeight;
 		MIN_ROOM_SIZE = dungeon.minSizeRoom;
-		dungeon.rooms = new List<Rect>();
-		dungeon.hallways = new List<Rect>();
+		dungeon.ResetDungeon();
+		dungeon.numGames++;
+		gameData.AddGame(dungeon);
 		rooms = dungeon.rooms;
 		Leaf root = new Leaf(new Rect(0, 0, DUNGEON_W, DUNGEON_H), dungeon);
 		BSPTree tree = new BSPTree();

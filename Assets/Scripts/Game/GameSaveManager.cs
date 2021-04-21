@@ -10,6 +10,8 @@ public class GameSaveManager : MonoBehaviour
 
     public List<ScriptableObject> objects = new List<ScriptableObject>();
 
+    public GameData gameData;
+
     private void Awake()
     {
         // We only want one gameSave object
@@ -28,6 +30,7 @@ public class GameSaveManager : MonoBehaviour
     private void OnDisable()
     {
         SaveScriptables();
+        SaveGames();
     }
 
     public void SaveScriptables()
@@ -37,11 +40,26 @@ public class GameSaveManager : MonoBehaviour
             FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.dat", i));
             BinaryFormatter binary = new BinaryFormatter();
 
+            Debug.Log(Application.persistentDataPath);
+
             var json = JsonUtility.ToJson(objects[i]);
             binary.Serialize(file, json);
 
             file.Close();
         }
+    }
+
+    public void SaveGames()
+    {
+        for (int i = 0; i < gameData.games.Count; i++) { 
+            FileStream file = File.Create(Application.persistentDataPath + string.Format("/Game{0}.dat", i));
+            BinaryFormatter binary = new BinaryFormatter();
+
+            var json = JsonUtility.ToJson(gameData.games[i]);
+            binary.Serialize(file, json);
+
+            file.Close();
+        }   
     }
 
     public void LoadScriptables()
