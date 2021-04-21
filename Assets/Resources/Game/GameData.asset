@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fbdf65f7f0794339a80bb47bc7327e5, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  dungeon: {fileID: 0}
   games: []

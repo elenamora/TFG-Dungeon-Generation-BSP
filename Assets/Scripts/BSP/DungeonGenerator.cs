@@ -7,9 +7,6 @@ public class DungeonGenerator : MonoBehaviour
 	[Header("DUNGEON VARIABLES")]
 	public DungeonData dungeon;
 	public GameData gameData;
-	private int DUNGEON_W;
-	private int DUNGEON_H;
-	private int MIN_ROOM_SIZE;
 	public GameObject floorTile;
 	public GameObject hallwayTile;
 	public GameObject wallTile;
@@ -38,32 +35,26 @@ public class DungeonGenerator : MonoBehaviour
 
 	void Start()
 	{
-		DUNGEON_W = dungeon.dungeonWidth;
-		DUNGEON_H = dungeon.dungeonHeight;
-		MIN_ROOM_SIZE = dungeon.minSizeRoom;
 		dungeon.ResetDungeon();
-		dungeon.numGames++;
-		gameData.AddGame(dungeon);
+		gameData.AddDungeon(dungeon);
 		rooms = dungeon.rooms;
-		Leaf root = new Leaf(new Rect(0, 0, DUNGEON_W, DUNGEON_H), dungeon);
+		Leaf root = new Leaf(new Rect(0, 0, dungeon.dungeonWidth, dungeon.dungeonHeight), dungeon);
 		BSPTree tree = new BSPTree();
-		tree.CreateTree(root, MIN_ROOM_SIZE);
-		root.CreateRoom(MIN_ROOM_SIZE, rooms);
+		tree.CreateTree(root, dungeon.minSizeRoom);
+		root.CreateRoom(dungeon.minSizeRoom);
 
 		spawner = new Spawner(rooms);
 
-		roomFloor = new GameObject[DUNGEON_W, DUNGEON_H];
+		roomFloor = new GameObject[dungeon.dungeonWidth, dungeon.dungeonHeight];
 		DrawRooms(root);
 		DrawHallways(root);
 		DrawWalls(root);
-
-		DrawPlayer();
 		DrawBounds(root);
 
+		DrawPlayer();
 		DrawEnemies();
 
 		DrawBreakable();
-
 		DrawTraps();
 
 	}
@@ -201,7 +192,7 @@ public class DungeonGenerator : MonoBehaviour
 		DrawHallways(leaf.leftChild);
 		DrawHallways(leaf.rightChild);
 
-		foreach (Rect hallway in leaf.hallways)
+		foreach (Rect hallway in dungeon.hallways)
 		{
 			for (int i = (int)hallway.x; i < hallway.xMax; i++)
 			{

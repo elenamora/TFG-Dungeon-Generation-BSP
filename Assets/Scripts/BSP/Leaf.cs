@@ -51,11 +51,11 @@ public class Leaf
 		return true;
 	}
 
-	public void CreateRoom(int minRoomSize, List<Rect> rooms)
+	public void CreateRoom(int minRoomSize)
 	{
-		if (leftChild != null) { leftChild.CreateRoom(minRoomSize, rooms); }
+		if (leftChild != null) { leftChild.CreateRoom(minRoomSize); }
 
-		if (rightChild != null) { rightChild.CreateRoom(minRoomSize, rooms); }
+		if (rightChild != null) { rightChild.CreateRoom(minRoomSize); }
 
 		if (leftChild != null && rightChild != null) { CreateHallways(leftChild.GetRoom(), rightChild.GetRoom()); }
 
@@ -71,7 +71,6 @@ public class Leaf
 
 			// room position will be absolute
 			room = new Rect(rect.x + roomX, rect.y + roomY, roomWidth, roomHeight);
-			//rooms.Add(room);
 			data.rooms.Add(room);
 		}
 	}
@@ -109,62 +108,41 @@ public class Leaf
 			// We choose randomly to go horizontal then vertical or the opposite
 			if (Random.Range(0, 1) > 2)
 			{
-				Rect r = new Rect(leftPosition.x, leftPosition.y, Mathf.Abs(w), 1);
-				hallways.Add(r);
-				data.hallways.Add(r);
+				data.hallways.Add(new Rect(leftPosition.x, leftPosition.y, Mathf.Abs(w), 1));
 
 				if (h < 0) {
-					Rect re = new Rect(rightPosition.x, leftPosition.y, 1, Mathf.Abs(h));
-					hallways.Add(re);
-					data.hallways.Add(re);
+					data.hallways.Add(new Rect(rightPosition.x, leftPosition.y, 1, Mathf.Abs(h)));
 				}
 
 				else {
-					Rect re = new Rect(rightPosition.x, leftPosition.y, 1, -Mathf.Abs(h));
-					hallways.Add(re);
-					data.hallways.Add(re);
+					data.hallways.Add(new Rect(rightPosition.x, leftPosition.y, 1, -Mathf.Abs(h)));
 				}
 			}
 
 			else
 			{
 				if (h < 0) {
-					Rect r = new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h));
-					hallways.Add(r);
-					data.hallways.Add(r);
+					data.hallways.Add(new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h)));
 				}
 
 				else {
-					Rect r = new Rect(leftPosition.x, rightPosition.y, 1, Mathf.Abs(h));
-					hallways.Add(r);
-					data.hallways.Add(r);
+					data.hallways.Add(new Rect(leftPosition.x, rightPosition.y, 1, Mathf.Abs(h)));
 				}
 
-				Rect re = new Rect(leftPosition.x, rightPosition.y, Mathf.Abs(w), 1);
-				hallways.Add(re);
-				data.hallways.Add(re);
+				data.hallways.Add(new Rect(leftPosition.x, rightPosition.y, Mathf.Abs(w), 1));
 			}
 		}
 		else
 		{
 			if (h < 0) {
-				Rect r = new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h));
-				hallways.Add(r);
-				data.hallways.Add(r);
+				data.hallways.Add(new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h)));
 			}
 
 			else {
-				Rect r = new Rect(rightPosition.x, rightPosition.y, 1, Mathf.Abs(h));
-				hallways.Add(r);
-				data.hallways.Add(r);
+				data.hallways.Add(new Rect(rightPosition.x, rightPosition.y, 1, Mathf.Abs(h)));
 			}
 		}
 
 	}
-
-	public List<Rect> GetHallways()
-    {
-		return hallways;
-    }
 
 }

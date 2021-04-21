@@ -3689,8 +3689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects: []
-  dungeonData: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
-  games: []
+  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
 --- !u!4 &1907499277
 Transform:
   m_ObjectHideFlags: 0

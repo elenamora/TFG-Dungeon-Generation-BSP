@@ -49,6 +49,7 @@ public class GameSaveManager : MonoBehaviour
         }
     }
 
+    // We save the information of every Dungeon created (every game)
     public void SaveGames()
     {
         for (int i = 0; i < gameData.games.Count; i++) { 

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Key
   itemDescription: It will open things
   itemImage: {fileID: 21300000, guid: 34ca87ad80a114b5ebea38c85e510efa, type: 3}
-  quantity: 16
+  quantity: 15
   usable: 0
   unique: 0
   data: {fileID: 0}

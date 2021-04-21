@@ -11,14 +11,11 @@ public class DungeonData : ScriptableObject
     public List<Rect> rooms;
     public List<Rect> hallways;
 
-    public int numGames;
-
     public DungeonData()
     {
         dungeonWidth = 50;
         dungeonHeight = 30;
         minSizeRoom = 6;
-        numGames = -1;
     }
 
     public void ResetDungeon()
