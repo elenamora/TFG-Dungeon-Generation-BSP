@@ -12,13 +12,13 @@ public class DungeonGenerator : MonoBehaviour
 	public GameObject wallTile;
 	public GameObject bounds;
 
+	/*** DUNGEON VARIABLES ***/
+	private GameObject[,] roomFloor;
+	private List<Rect> rooms;
+
 	[Header("CHARACTERS")]
 	public GameObject player;
 	public GameObject [] enemies;
-
-	private GameObject[,] roomFloor;
-
-	public List<Rect> rooms;
 
 	/*** SPAWN ENEMY VARIABLES ***/
 	private Spawner spawner;
@@ -57,6 +57,51 @@ public class DungeonGenerator : MonoBehaviour
 		DrawBreakable();
 		DrawTraps();
 
+	}
+	public void DrawRooms(Leaf leaf)
+	{
+		if (leaf.leftChild == null && leaf.rightChild == null)
+		{
+			for (int i = (int)leaf.room.x; i < leaf.room.xMax; i++)
+			{
+				for (int j = (int)leaf.room.y; j < leaf.room.yMax; j++)
+				{
+					GameObject instance = Instantiate(floorTile, new Vector3(i, j, 0f), Quaternion.identity);
+					instance.transform.SetParent(transform);
+					roomFloor[i, j] = instance;
+				}
+			}
+		}
+		else
+		{
+			DrawRooms(leaf.leftChild);
+			DrawRooms(leaf.rightChild);
+		}
+	}
+
+	public void DrawHallways(Leaf leaf)
+	{
+		if (leaf == null) { return; }
+
+		DrawHallways(leaf.leftChild);
+		DrawHallways(leaf.rightChild);
+
+		foreach (Rect hallway in dungeon.hallways)
+		{
+			for (int i = (int)hallway.x; i < hallway.xMax; i++)
+			{
+				for (int j = (int)hallway.y; j < hallway.yMax; j++)
+				{
+					if (roomFloor[i, j] == null)
+					{
+						GameObject instance = Instantiate(hallwayTile, new Vector3(i, j, 0f), Quaternion.identity);
+						instance.gameObject.tag = "Hall";
+						instance.transform.SetParent(transform);
+						roomFloor[i, j] = instance;
+					}
+				}
+			}
+		}
 	}
 
 	public void DrawWalls(Leaf root)
@@ -164,61 +209,6 @@ public class DungeonGenerator : MonoBehaviour
 
 	}
 
-	public void DrawRooms(Leaf leaf)
-	{
-		if (leaf.leftChild == null && leaf.rightChild == null)
-		{
-			for (int i = (int)leaf.room.x; i < leaf.room.xMax; i++)
-			{
-				for (int j = (int)leaf.room.y; j < leaf.room.yMax; j++)
-				{
-					GameObject instance = Instantiate(floorTile, new Vector3(i, j, 0f), Quaternion.identity);
-					instance.transform.SetParent(transform);
-					roomFloor[i, j] = instance;
-				}
-			}
-		}
-		else
-		{
-			DrawRooms(leaf.leftChild);
-			DrawRooms(leaf.rightChild);
-		}
-	}
-
-	public void DrawHallways(Leaf leaf)
-	{
-		if (leaf == null) { return; }
-
-		DrawHallways(leaf.leftChild);
-		DrawHallways(leaf.rightChild);
-
-		foreach (Rect hallway in dungeon.hallways)
-		{
-			for (int i = (int)hallway.x; i < hallway.xMax; i++)
-			{
-				for (int j = (int)hallway.y; j < hallway.yMax; j++)
-				{
-					if (roomFloor[i, j] == null)
-					{
-						GameObject instance = Instantiate(hallwayTile, new Vector3(i, j, 0f), Quaternion.identity);
-						instance.gameObject.tag = "Hall";
-						instance.transform.SetParent(transform);
-						roomFloor[i, j] = instance;
-					}
-				}
-			}
-
-			int n = Random.Range(0, 1);
-			if (n == 1)
-            {
-				int trap = Random.Range(0, 1);
-				if(trap == 0) { Instantiate(traps[0], new Vector3(hallway.xMax/2, hallway.yMax/2 - 0.5f, 0f), Quaternion.identity); }
-                else { Instantiate(traps[1], new Vector3(hallway.xMax/2, hallway.xMax/2 - 0.5f, 0f), Quaternion.identity); }
-            }
-			
-		}
-	}
-
 	public void DrawBreakable()
     {
 		foreach (Rect room in rooms)
@@ -284,10 +274,6 @@ public class DungeonGenerator : MonoBehaviour
 				 
 
 			}
-
-
-
-
 
 			//}
 			//}
