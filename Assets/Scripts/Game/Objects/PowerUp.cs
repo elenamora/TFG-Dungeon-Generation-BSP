@@ -10,6 +10,8 @@ public class PowerUp : MonoBehaviour
     [SerializeField]
     private InventoryItem inventoryItem;
 
+    public ItemManager itemManager;
+
     public ParticleSystem ps;
 
     public void AddItemToInventory()
@@ -32,6 +34,7 @@ public class PowerUp : MonoBehaviour
         {
             AddItemToInventory();
             Instantiate(ps, transform.position, transform.rotation);
+            itemManager.pickedItems += 1;
             Destroy(gameObject);
         }
     }

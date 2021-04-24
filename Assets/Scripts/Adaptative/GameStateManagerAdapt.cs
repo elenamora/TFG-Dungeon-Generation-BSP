@@ -8,6 +8,8 @@ public class GameStateManagerAdapt : MonoBehaviour
     public GameState gameState;
     public EnemyManager enemyManager;
     public GameData gameData;
+    public DungeonData dungeon;
+    public ItemManager itemManager;
 
     public GameObject winCanvas;
     public GameObject looseCanvas;
@@ -35,12 +37,16 @@ public class GameStateManagerAdapt : MonoBehaviour
     public void Win()
     {
         gameData.AddEnemyManager(enemyManager);
+        gameData.AddDungeon(dungeon);
+        gameData.AddItemManager(itemManager);
         winCanvas.SetActive(true);
     }
 
     public void Loose()
     {
         gameData.AddEnemyManager(enemyManager);
+        gameData.AddDungeon(dungeon);
+        gameData.AddItemManager(itemManager);
         looseCanvas.SetActive(true);
     }
 }

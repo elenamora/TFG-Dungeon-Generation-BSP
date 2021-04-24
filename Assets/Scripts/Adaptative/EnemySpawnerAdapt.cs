@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawnerAdapt
 {
-    public GameData gameData;
+    public GameData data;
     private List<Rect> rooms;
 
     // LOW, MEDIUM, HIGH (Room's evil level)
@@ -20,7 +20,7 @@ public class EnemySpawnerAdapt
     public EnemySpawnerAdapt(List<Rect> rooms, GameData gameData)
     {
         this.rooms = rooms;
-        this.gameData = gameData;
+        this.data = gameData;
         enemiesInRooms = new List<List<int>>();
         minSize = gameData.playerType.minRoomSizeEnemy;
     }
@@ -30,9 +30,9 @@ public class EnemySpawnerAdapt
     {
         evilLevel = new List<Evil>(rooms.Count);
 
-        int low = (int)Mathf.Round(rooms.Count * gameData.playerType.lowPerc);
-        int medium = (int)Mathf.Round(rooms.Count * gameData.playerType.mediumPerc);
-        int high = (int)Mathf.Round(rooms.Count * gameData.playerType.highPerc);
+        int low = (int)Mathf.Round(rooms.Count * data.playerType.lowPerc);
+        int medium = (int)Mathf.Round(rooms.Count * data.playerType.mediumPerc);
+        int high = (int)Mathf.Round(rooms.Count * data.playerType.highPerc);
 
         for (int i = 0; i < low; i++) { evilLevel.Add(Evil.LOW); }
 
@@ -77,7 +77,7 @@ public class EnemySpawnerAdapt
 
                         else
                         {
-                            int num = Random.Range(1, 3);
+                            int num = Random.Range(data.playerType.minLowEnemies, data.playerType.maxLowEnemies);
                             for (int e = 0; e < num; e++)
                             {
                                 int enemy = Random.Range(0, 1);
@@ -97,7 +97,7 @@ public class EnemySpawnerAdapt
 
                         else
                         {
-                            int num = Random.Range(2, 4);
+                            int num = Random.Range(data.playerType.minMediumEnemies, data.playerType.maxMediumEnemies);
                             for (int e = 0; e < num; e++)
                             {
                                 int enemy = Random.Range(0, 1);
@@ -118,7 +118,7 @@ public class EnemySpawnerAdapt
 
                         else
                         {
-                            int num = Random.Range(3, 5);
+                            int num = Random.Range(data.playerType.minHighEnemies, data.playerType.maxHighEnemies);
                             for (int e = 0; e < num; e++)
                             {
                                 int enemy = Random.Range(0, 1);

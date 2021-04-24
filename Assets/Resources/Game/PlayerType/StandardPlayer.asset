@@ -18,3 +18,9 @@ MonoBehaviour:
   lowPerc: 0.2
   mediumPerc: 0.5
   highPerc: 0.3
+  minLowEnemies: 1
+  maxLowEnemies: 3
+  minMediumEnemies: 2
+  maxMediumEnemies: 4
+  minHighEnemies: 3
+  maxHighEnemies: 5

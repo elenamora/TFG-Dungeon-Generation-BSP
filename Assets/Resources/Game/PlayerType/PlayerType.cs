@@ -12,12 +12,21 @@ public class PlayerType : ScriptableObject
     public int minRoomSizeEnemy;
 
     // Percentage of evil's level in the rooms (LOW, MEDIUM, HIGH) 
+    [Header("% of Evil in Rooms")]
     public float lowPerc;
     public float mediumPerc;
     public float highPerc;
 
     // Quantity of enemies if the room is > minRoomSizeEnemy depending on its level of evil
-    public int minLowEnemies, maxLowEnemies;
-    public int minMediumEnemies, maxMediumEnemies;
-    public int minHighEnemies, maxHighEnemies;
+    [Header("Number in Low Evil Rooms")]
+    public int minLowEnemies;
+    public int maxLowEnemies;
+
+    [Header("Number in Medium Evil Rooms")]
+    public int minMediumEnemies;
+    public int maxMediumEnemies;
+
+    [Header("Number in High Evil Rooms")]
+    public int minHighEnemies;
+    public int maxHighEnemies;
 }

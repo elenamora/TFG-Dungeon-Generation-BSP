@@ -1894,6 +1894,8 @@ MonoBehaviour:
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
   enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
   gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
+  dungeon: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
+  itemManager: {fileID: 11400000, guid: 3da721175353443b2ae7fccf3dcc7362, type: 2}
   winCanvas: {fileID: 1820358518}
   looseCanvas: {fileID: 844133331}
 --- !u!1 &855727879
@@ -3056,6 +3058,7 @@ MonoBehaviour:
   - {fileID: 7932582979950147962, guid: ffbeb984731fe48468b894a1851ff7da, type: 3}
   - {fileID: 6757331056679263731, guid: dfa7bd5b4917a44f9925b05ae201fac9, type: 3}
   - {fileID: 7120882035668261011, guid: 02ea60fcd96894f688f08b0196a7d927, type: 3}
+  itemManager: {fileID: 11400000, guid: 3da721175353443b2ae7fccf3dcc7362, type: 2}
   items:
   - {fileID: 6178431923340471809, guid: 01f0116b72a024648b39f6302d47c0c5, type: 3}
   - {fileID: 6262758782743616679, guid: ba2f0a8a5371e435283198acd49dbd98, type: 3}
@@ -3713,6 +3716,8 @@ MonoBehaviour:
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
   enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
   gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
+  dungeon: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
+  itemManager: {fileID: 11400000, guid: 3da721175353443b2ae7fccf3dcc7362, type: 2}
   winCanvas: {fileID: 1820358518}
   looseCanvas: {fileID: 844133331}
 --- !u!114 &1820358520
