@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844133332}
+      - m_Target: {fileID: 844133337}
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844133332}
+      - m_Target: {fileID: 844133337}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: 844133335}
   - component: {fileID: 844133334}
   - component: {fileID: 844133333}
-  - component: {fileID: 844133332}
+  - component: {fileID: 844133337}
   m_Layer: 5
   m_Name: LooseCanvas
   m_TagString: WinMenu
@@ -1799,23 +1799,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &844133332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844133331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e3be2fe8f43448e59046f79625d3f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
-  enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
-  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
-  winCanvas: {fileID: 1820358518}
-  looseCanvas: {fileID: 844133331}
 --- !u!114 &844133333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,6 +1879,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &844133337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844133331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f607e479cb73b4860b63b1761b1ed3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
+  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
+  winCanvas: {fileID: 1820358518}
+  looseCanvas: {fileID: 844133331}
 --- !u!1 &855727879
 GameObject:
   m_ObjectHideFlags: 0
@@ -2989,7 +2989,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1399017278}
-  - component: {fileID: 1399017277}
+  - component: {fileID: 1399017279}
+  - component: {fileID: 1399017280}
   m_Layer: 0
   m_Name: DungeonGenerator
   m_TagString: GameController
@@ -2997,7 +2998,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1399017277
+--- !u!4 &1399017278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399017276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.90323526, y: -0.4249385, z: -0.28379086}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1399017279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3006,7 +3021,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1399017276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122a22c20e487494db4ec388462a9099, type: 3}
+  m_Script: {fileID: 11500000, guid: da19d9129b4934502bc8cdf297e36d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
+  playerTypes:
+  - {fileID: 11400000, guid: 561cfc3153da94588aaa3087f1494662, type: 2}
+  - {fileID: 11400000, guid: b7be8f5a5013549f4a679261dc5143fe, type: 2}
+  - {fileID: 11400000, guid: daffa01ac2463414dacdea78297ba537, type: 2}
+  - {fileID: 11400000, guid: 5a72db0b931244411b4c9dbee124aa20, type: 2}
+--- !u!114 &1399017280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399017276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ec56550725d43fcb2d8ab9136b9db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dungeon: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
@@ -3033,20 +3066,6 @@ MonoBehaviour:
   traps:
   - {fileID: 8478304263206308137, guid: cd5aedea521924bf8be09d1d5754f178, type: 3}
   - {fileID: 6115024464800444093, guid: f77bd53b7d9d94eb79c4b9901f3fa440, type: 3}
---- !u!4 &1399017278
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399017276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.90323526, y: -0.4249385, z: -0.28379086}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399664724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3688,7 +3707,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1820358518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e3be2fe8f43448e59046f79625d3f90, type: 3}
+  m_Script: {fileID: 11500000, guid: f607e479cb73b4860b63b1761b1ed3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
@@ -3810,7 +3829,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844133332}
+      - m_Target: {fileID: 844133337}
         m_MethodName: Loose
         m_Mode: 1
         m_Arguments:

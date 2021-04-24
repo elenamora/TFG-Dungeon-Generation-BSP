@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemySpawner
 {
-    public EnemyManager data;
     private List<Rect> rooms;
 
     // LOW, MEDIUM, HIGH (Room's evil level)
@@ -14,11 +13,12 @@ public class EnemySpawner
     // BAT (0), SKELETON (1), BLACK (2)
     public List<List<int>> enemiesInRooms;
     public int numOfEnemies;
+    private int minSize;
 
-    public EnemySpawner(List<Rect> rooms, EnemyManager data)
+    public EnemySpawner(List<Rect> rooms)
     {
         this.rooms = rooms;
-        this.data = data;
+        minSize = 10;
         enemiesInRooms = new List<List<int>>();
     }
 
@@ -27,9 +27,9 @@ public class EnemySpawner
     {
         evilLevel = new List<Evil>(rooms.Count);
 
-        int low = (int)Mathf.Round(rooms.Count * data.lowPerc);
-        int medium = (int)Mathf.Round(rooms.Count * data.mediumPerc);
-        int high = (int)Mathf.Round(rooms.Count * data.highPerc);
+        int low = (int)Mathf.Round(rooms.Count * 0.2f);
+        int medium = (int)Mathf.Round(rooms.Count * 0.5f);
+        int high = (int)Mathf.Round(rooms.Count * 0.3f);
 
         for (int i = 0; i < low; i++) { evilLevel.Add(Evil.LOW); }
 
@@ -50,7 +50,7 @@ public class EnemySpawner
 
             if (i == 0)
             {
-                if (rooms[0].height < data.minSize && rooms[0].width < data.minSize) { continue; }
+                if (rooms[0].height < minSize && rooms[0].width < minSize) { continue; }
 
                 else { enemiesInRooms[0].Add(0); numOfEnemies++; }
             }
@@ -60,7 +60,7 @@ public class EnemySpawner
                 switch (evilLevel[i])
                 {
                     case Evil.LOW:
-                        if (rooms[i].height < data.minSize && rooms[i].height < data.minSize)
+                        if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             int num = Random.Range(0, 1);
                             if (num == 1)
@@ -86,7 +86,7 @@ public class EnemySpawner
                         break;
 
                     case Evil.MEDIUM:
-                        if (rooms[i].height < data.minSize && rooms[i].height < data.minSize)
+                        if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             enemiesInRooms[i].Add(1);
                             numOfEnemies++;
@@ -107,7 +107,7 @@ public class EnemySpawner
 
                     case Evil.HIGH:
 
-                        if (rooms[i].height < data.minSize && rooms[i].height < data.minSize)
+                        if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             enemiesInRooms[i].Add(2);
                             numOfEnemies++;
@@ -128,7 +128,7 @@ public class EnemySpawner
                 }
             }
         }
-        data.numOfEnemies = numOfEnemies;
+        //data.numOfEnemies = numOfEnemies;
 
         return enemiesInRooms;
     }

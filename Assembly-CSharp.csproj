@@ -70,12 +70,17 @@
     <Compile Include="Assets\Resources\Game\GameData.cs" />
     <Compile Include="Assets\Resources\Game\GameEvent\GameEvent.cs" />
     <Compile Include="Assets\Resources\Game\GameState.cs" />
+    <Compile Include="Assets\Resources\Game\PlayerType\PlayerType.cs" />
     <Compile Include="Assets\Resources\Items\Chests\ChestData.cs" />
     <Compile Include="Assets\Resources\Items\Inventory\Inventory.cs" />
     <Compile Include="Assets\Resources\Items\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Resources\Items\Loots\LootTable.cs" />
     <Compile Include="Assets\Resources\Items\PowerUps\PowerUpData.cs" />
     <Compile Include="Assets\Resources\Weapons\WeaponData.cs" />
+    <Compile Include="Assets\Scripts\Adaptative\AdaptDungeonGeneration.cs" />
+    <Compile Include="Assets\Scripts\Adaptative\AdaptativeGame.cs" />
+    <Compile Include="Assets\Scripts\Adaptative\EnemySpawnerAdapt.cs" />
+    <Compile Include="Assets\Scripts\Adaptative\GameStateManagerAdapt.cs" />
     <Compile Include="Assets\Scripts\BSP\BSPTree.cs" />
     <Compile Include="Assets\Scripts\BSP\DungeonGenerator.cs" />
     <Compile Include="Assets\Scripts\BSP\Leaf.cs" />

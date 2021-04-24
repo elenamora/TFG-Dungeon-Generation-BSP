@@ -7,6 +7,7 @@ public class GameData : ScriptableObject
 {
     public List<DungeonData> dungeons;
     public List<EnemyManager> enemies;
+    public PlayerType playerType;
 
     public GameData()
     {

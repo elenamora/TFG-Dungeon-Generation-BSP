@@ -39,7 +39,6 @@ public class DungeonGenerator : MonoBehaviour
 	{
 		/* Dungeon Creation */
 		dungeon.ResetDungeon();
-		gameData.AddDungeon(dungeon);
 		enemyManager.ResetEnemies();
 		rooms = dungeon.rooms;
 		Leaf root = new Leaf(new Rect(0, 0, dungeon.dungeonWidth, dungeon.dungeonHeight), dungeon);
@@ -54,7 +53,7 @@ public class DungeonGenerator : MonoBehaviour
 		DrawBounds(root);
 
 		/* Elements instances */
-		spawner = new EnemySpawner(rooms, enemyManager);
+		spawner = new EnemySpawner(rooms);
 		DrawPlayer();
 		DrawEnemies();
 

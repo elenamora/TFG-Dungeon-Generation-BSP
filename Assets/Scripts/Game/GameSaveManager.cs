@@ -96,6 +96,43 @@ public class GameSaveManager : MonoBehaviour
         }
     }
 
+    public void LoadGames()
+    {
+        for (int i = 0; i < gameData.dungeons.Count; i++)
+        {
+            if (File.Exists(Application.persistentDataPath + string.Format("/Game{0}.dat", i)))
+            {
+                FileStream file = File.Open(Application.persistentDataPath + string.Format("/Game{0}.dat", i), FileMode.Open);
+
+                BinaryFormatter binary = new BinaryFormatter();
+
+                JsonUtility.FromJsonOverwrite((string)binary.Deserialize(file), gameData.dungeons[i]);
+
+                file.Close();
+            }
+        }
+    }
+
+    public void LoadEnemies()
+    {
+        for (int i = 0; i < gameData.enemies.Count; i++)
+        {
+            if (File.Exists(Application.persistentDataPath + string.Format("/Enemy{0}.dat", i)))
+            {
+                FileStream file = File.Open(Application.persistentDataPath + string.Format("/Enemy{0}.dat", i), FileMode.Open);
+
+                BinaryFormatter binary = new BinaryFormatter();
+
+                JsonUtility.FromJsonOverwrite((string)binary.Deserialize(file), gameData.enemies[i]);
+
+                file.Close();
+            }
+        }
+    }
+
+
+
+
     public void ResetScriptables()
     {
         for(int i = 0; i < objects.Count; i++)

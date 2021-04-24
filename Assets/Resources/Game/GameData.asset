@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dungeons: []
   enemies: []
+  playerType: {fileID: 11400000, guid: b7be8f5a5013549f4a679261dc5143fe, type: 2}
