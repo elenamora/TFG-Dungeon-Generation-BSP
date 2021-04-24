@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawnerAdapt : MonoBehaviour
+public class EnemySpawnerAdapt
 {
-    public EnemyManager data;
     public GameData gameData;
     private List<Rect> rooms;
 
@@ -16,12 +15,14 @@ public class EnemySpawnerAdapt : MonoBehaviour
     public List<List<int>> enemiesInRooms;
     public int numOfEnemies;
 
-    public EnemySpawnerAdapt(List<Rect> rooms, EnemyManager data, GameData gameData)
+    private int minSize;
+
+    public EnemySpawnerAdapt(List<Rect> rooms, GameData gameData)
     {
         this.rooms = rooms;
-        this.data = data;
         this.gameData = gameData;
         enemiesInRooms = new List<List<int>>();
+        minSize = gameData.playerType.minRoomSizeEnemy;
     }
 
     // Associate a level of evil to each room, with the initial ones being less evil than the last ones
@@ -52,7 +53,7 @@ public class EnemySpawnerAdapt : MonoBehaviour
 
             if (i == 0)
             {
-                if (rooms[0].height < data.minSize && rooms[0].width < data.minSize) { continue; }
+                if (rooms[0].height < minSize && rooms[0].width < minSize) { continue; }
 
                 else { enemiesInRooms[0].Add(0); numOfEnemies++; }
             }
@@ -62,7 +63,7 @@ public class EnemySpawnerAdapt : MonoBehaviour
                 switch (evilLevel[i])
                 {
                     case Evil.LOW:
-                        if (rooms[i].height < data.minSize && rooms[i].height < data.minSize)
+                        if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             int num = Random.Range(0, 1);
                             if (num == 1)
@@ -88,7 +89,7 @@ public class EnemySpawnerAdapt : MonoBehaviour
                         break;
 
                     case Evil.MEDIUM:
-                        if (rooms[i].height < data.minSize && rooms[i].height < data.minSize)
+                        if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             enemiesInRooms[i].Add(1);
                             numOfEnemies++;
@@ -109,7 +110,7 @@ public class EnemySpawnerAdapt : MonoBehaviour
 
                     case Evil.HIGH:
 
-                        if (rooms[i].height < data.minSize && rooms[i].height < data.minSize)
+                        if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             enemiesInRooms[i].Add(2);
                             numOfEnemies++;
@@ -130,7 +131,7 @@ public class EnemySpawnerAdapt : MonoBehaviour
                 }
             }
         }
-        data.numOfEnemies = numOfEnemies;
+        //data.numOfEnemies = numOfEnemies;
 
         return enemiesInRooms;
     }

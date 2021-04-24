@@ -54,7 +54,7 @@ public class AdaptDungeonGeneration : MonoBehaviour
 		DrawBounds(root);
 
 		/* Elements instances */
-		spawner = new EnemySpawnerAdapt(rooms, enemyManager, gameData);
+		spawner = new EnemySpawnerAdapt(rooms, gameData);
 		DrawPlayer();
 		DrawEnemies();
 
@@ -178,7 +178,7 @@ public class AdaptDungeonGeneration : MonoBehaviour
 	{
 		enemiesInRooms = spawner.EnemiesInRooms();
 
-		spawnedEnemies = new GameObject[enemyManager.numOfEnemies];
+		spawnedEnemies = new GameObject[spawner.numOfEnemies];
 
 		int numEnem = 0;
 

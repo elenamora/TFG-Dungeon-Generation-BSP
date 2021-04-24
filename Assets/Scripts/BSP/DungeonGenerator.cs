@@ -177,7 +177,7 @@ public class DungeonGenerator : MonoBehaviour
     {
         enemiesInRooms = spawner.EnemiesInRooms();
 
-		spawnedEnemies = new GameObject[enemyManager.numOfEnemies];
+		spawnedEnemies = new GameObject[spawner.numOfEnemies];
 
 		int numEnem = 0;
 

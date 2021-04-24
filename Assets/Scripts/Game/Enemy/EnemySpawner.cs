@@ -128,8 +128,6 @@ public class EnemySpawner
                 }
             }
         }
-        //data.numOfEnemies = numOfEnemies;
-
         return enemiesInRooms;
     }
 

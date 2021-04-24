@@ -1614,10 +1614,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
-  enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
-  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
-  winCanvas: {fileID: 928669881}
-  looseCanvas: {fileID: 1290009080}
 --- !u!1 &942435086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,10 +2410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
-  enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
-  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
-  winCanvas: {fileID: 928669881}
-  looseCanvas: {fileID: 1290009080}
 --- !u!114 &1290009083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2765,9 +2757,9 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 928669887}
-        m_MethodName: Win
-        m_Mode: 1
+      - m_Target: {fileID: 928669881}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2806,9 +2798,9 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1290009081}
-        m_MethodName: Loose
-        m_Mode: 1
+      - m_Target: {fileID: 1290009080}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

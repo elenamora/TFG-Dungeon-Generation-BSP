@@ -16,8 +16,8 @@ public class PlayerType : ScriptableObject
     public float mediumPerc;
     public float highPerc;
 
-    // Quantity range of enemies if the room is > minRoomSizeEnemy depending on its level of evil
-    public int[,] lowEnemies;
-    public int[,] mediumEnemies;
-    public int[,] highEnemies;
+    // Quantity of enemies if the room is > minRoomSizeEnemy depending on its level of evil
+    public int minLowEnemies, maxLowEnemies;
+    public int minMediumEnemies, maxMediumEnemies;
+    public int minHighEnemies, maxHighEnemies;
 }
