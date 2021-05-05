@@ -19,14 +19,8 @@ public class AdaptativeGame : MonoBehaviour
         AssignPlayerType();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void OnEnable()
     {
-        //gameData.playerType = playerTypes[0];
         AssignPlayerType();
     }
 
@@ -54,16 +48,18 @@ public class AdaptativeGame : MonoBehaviour
 
     public void PickPlayer()
     {
-        if(gameData.enemies.Count < 2) { player = Type.STANDARD; Debug.Log("hola"); }
+        if(gameData.enemies.Count < 2) { player = Type.STANDARD; }
 
         else
         {
             float e = ComputeEnemiesLeft();
-            Debug.Log(e);
+            float i = ComputeItemsPicked();
 
-            if (e > 0.7) player = Type.EXPLORER;
+            if (e > 0.7 && i > 0.5) player = Type.EXPLORER;
 
-            else if (e < 0.3) player = Type.KILLER;
+            else if (e < 0.25 && i > 0.8) player = Type.ACHIEVER;
+
+            else if (e < 0.25 && i < 0.5) player = Type.KILLER;
 
             else player = Type.STANDARD;
         }
@@ -74,17 +70,39 @@ public class AdaptativeGame : MonoBehaviour
     // porcentaje de enemigos matados respecto a los enemigos que teníamos inicialmente. Luego se hace la media.
     public float ComputeEnemiesLeft()
     {
-        float enemiesLeft = 0;
-        foreach(EnemyManager e in gameData.enemies)
+        float enemiesLeft = 0f;
+        for (int i = 0; i < gameData.enemies.Count; i++)
         {
-            int dif = e.initialEnemies.Count - e.killedEnemies.Count;
-            enemiesLeft += dif / e.initialEnemies.Count;
-        }
+            int dif = gameData.enemies[i].initialEnemies.Count - gameData.enemies[i].killedEnemies.Count;
+            enemiesLeft += dif / gameData.enemies[i].initialEnemies.Count;
 
-        Debug.Log(enemiesLeft / gameData.enemies.Count);
+            Debug.Log("Initial enemies  " + gameData.enemies[i].initialEnemies.Count);
+            Debug.Log("Killed Enenmies  " + gameData.enemies[i].killedEnemies.Count);
+            Debug.Log("Dif = initial enemies - killed enemies  " + dif);
+
+        }
 
         return enemiesLeft / gameData.enemies.Count;
     }
 
+    public float ComputeItemsPicked()
+    {
+        float itemsPicked = 0f;
+        for( int i = 0; i < gameData.items.Count; i++)
+        {
+            int dif = gameData.items[i].initialItems - gameData.enemies[i].killedEnemies.Count;
+
+            itemsPicked += dif / gameData.items[i].initialItems;
+
+
+            Debug.Log("Initial items  " + gameData.items[i].initialItems);
+            Debug.Log("Killed Enenmies  " + gameData.enemies[i].killedEnemies.Count);
+            Debug.Log("Dif = initial items - killed enemies  " + dif);
+
+        }
+
+        return itemsPicked/ gameData.items.Count;
+
+    }
 
 }

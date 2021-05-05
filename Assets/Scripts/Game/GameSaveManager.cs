@@ -131,8 +131,6 @@ public class GameSaveManager : MonoBehaviour
     }
 
 
-
-
     public void ResetScriptables()
     {
         for(int i = 0; i < objects.Count; i++)

@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{62873BB6-A352-5450-430A-56E3FCEBDD74}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Adaptative/AdaptDungeonGeneration.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Adaptative/AdaptativeGame.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game/GameSaveManager.cs" Line="121" Column="14" />
+      <File FileName="Assets/Scripts/Game/GameSaveManager.cs" Line="27" Column="27" />
       <File FileName="Assets/Resources/Game/Dungeon/DungeonData.cs" Line="9" Column="28" />
       <File FileName="Assets/Resources/Game/GameData.cs" Line="18" Column="41" />
       <File FileName="Assets/Resources/Enemies/EnemyManager.cs" Line="6" Column="1" />
-      <File FileName="Assets/Resources/Game/PlayerType/PlayerType.cs" Line="19" Column="16" />
-      <File FileName="Assets/Scripts/Game/AdaptativeGame.cs" Line="30" Column="28" />
+      <File FileName="Assets/Resources/Game/PlayerType/PlayerType.cs" Line="15" Column="27" />
+      <File FileName="Assets/Scripts/Game/AdaptativeGame.cs" Line="100" Column="71" />
       <File FileName="Assets/Scripts/Adaptative/AdaptDungeonGeneration.cs" Line="278" Column="36" />
-      <File FileName="Assets/Scripts/Adaptative/EnemySpawnerAdapt.cs" Line="22" Column="28" />
-      <File FileName="Assets/Scripts/Adaptative/GameStateManagerAdapt.cs" Line="40" Column="35" />
+      <File FileName="Assets/Scripts/Adaptative/EnemySpawnerAdapt.cs" Line="121" Column="114" />
+      <File FileName="Assets/Scripts/Adaptative/GameStateManagerAdapt.cs" Line="49" Column="46" />
       <File FileName="Assets/Resources/Items/PowerUps/ItemManager.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/Game/Objects/PowerUp.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
