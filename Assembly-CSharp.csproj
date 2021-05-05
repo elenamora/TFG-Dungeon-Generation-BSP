@@ -156,6 +156,7 @@
     <Compile Include="Assets\Scripts\Adaptative\AdaptativeGame.cs" />
     <Compile Include="Assets\Scripts\Adaptative\EnemySpawnerAdapt.cs" />
     <Compile Include="Assets\Scripts\Adaptative\GameStateManagerAdapt.cs" />
+    <Compile Include="Assets\Scripts\Adaptative\UI\WeaponSelectionAdapt.cs" />
     <Compile Include="Assets\Scripts\BSP\BSPTree.cs" />
     <Compile Include="Assets\Scripts\BSP\DungeonGenerator.cs" />
     <Compile Include="Assets\Scripts\BSP\Leaf.cs" />
@@ -188,14 +189,14 @@
     <Compile Include="Assets\Scripts\Game\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Game\Player\Weapon.cs" />
     <Compile Include="Assets\Scripts\Game\Player\WeaponList.cs" />
-    <Compile Include="Assets\Scripts\Game\UI\Dialog.cs" />
-    <Compile Include="Assets\Scripts\Game\UI\LevelPanel.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\GameScreen\Dialog.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\GameScreen\LevelPanel.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\GameScreen\StatsBar.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\WeaponCard.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\WeaponSelection.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\PauseManager.cs" />
-    <Compile Include="Assets\Scripts\Game\UI\StatsBar.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

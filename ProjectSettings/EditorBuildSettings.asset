@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BSP.unity
     guid: 0e36aa35b3d574f9dba12acdcc949ecf
+  - enabled: 1
+    path: Assets/Scenes/MenuAdapt.unity
+    guid: e852f8a2b677d414184206bffbd41c2a
+  - enabled: 1
+    path: Assets/Scenes/BSPAdapt.unity
+    guid: e05fb1f7fb01346a7894d1d7fa04c084
   m_configObjects: {}
