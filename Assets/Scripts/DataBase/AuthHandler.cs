@@ -6,7 +6,7 @@ using FullSerializer;
 
 public static class AuthHandler
 {
-    private const string apiKey = "AIzaSyDoAqIAUGaJwkgsJbIyIRDhBefkWXTPF3k";
+    private const string apiKey = "AIzaSyCoREi7iwuL7KJoZzquSDpWv_0SgVRKl0Y";
 
     public delegate void SignUpSuccess();
     public delegate void SignInSuccess();

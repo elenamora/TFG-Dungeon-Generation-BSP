@@ -4,7 +4,7 @@ using Proyecto26;
 
 public static class DataBaseHandler
 {
-    private const string projectId = "testing-312216";
+    private const string projectId = "tfgdungeongeneration";
     private static readonly string databaseURL = $"https://{projectId}-default-rtdb.europe-west1.firebasedatabase.app/";
 
     private static fsSerializer serializer = new fsSerializer();

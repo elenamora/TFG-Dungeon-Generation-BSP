@@ -160,6 +160,7 @@
     <Compile Include="Assets\Scripts\BSP\DungeonGenerator.cs" />
     <Compile Include="Assets\Scripts\BSP\Leaf.cs" />
     <Compile Include="Assets\Scripts\DataBase\AuthHandler.cs" />
+    <Compile Include="Assets\Scripts\DataBase\DataBaseController.cs" />
     <Compile Include="Assets\Scripts\DataBase\DataBaseHandler.cs" />
     <Compile Include="Assets\Scripts\DataBase\DataModels\Game.cs" />
     <Compile Include="Assets\Scripts\DataBase\DataModels\GameSession.cs" />
