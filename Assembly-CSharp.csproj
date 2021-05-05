@@ -155,7 +155,7 @@
     <Compile Include="Assets\Scripts\Adaptative\AdaptDungeonGeneration.cs" />
     <Compile Include="Assets\Scripts\Adaptative\AdaptativeGame.cs" />
     <Compile Include="Assets\Scripts\Adaptative\EnemySpawnerAdapt.cs" />
-    <Compile Include="Assets\Scripts\Adaptative\GameStateManagerAdapt.cs" />
+    <Compile Include="Assets\Scripts\Adaptative\UI\GameStateManagerAdapt.cs" />
     <Compile Include="Assets\Scripts\Adaptative\UI\MainMenu\WeaponSelectionAdapt.cs" />
     <Compile Include="Assets\Scripts\Adaptative\UI\PauseManagerAdapt.cs" />
     <Compile Include="Assets\Scripts\BSP\BSPTree.cs" />
