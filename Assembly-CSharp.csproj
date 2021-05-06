@@ -194,6 +194,7 @@
     <Compile Include="Assets\Scripts\Game\UI\GameScreen\LevelPanel.cs" />
     <Compile Include="Assets\Scripts\Game\UI\GameScreen\StatsBar.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\GameStateManager.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\GameMenu.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\SignInUp.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Menus\MainMenu\WeaponCard.cs" />

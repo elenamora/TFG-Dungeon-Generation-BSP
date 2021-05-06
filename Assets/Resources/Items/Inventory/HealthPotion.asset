@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Health Potion
   itemDescription: Restore your life
   itemImage: {fileID: 21300000, guid: a1aba53c06b4f47f3bab36e4b2a6a7ac, type: 3}
-  quantity: 3
+  quantity: 0
   usable: 1
   unique: 0
   data: {fileID: 11400000, guid: 7480e61d0a1d747e895bd9bc44b13d96, type: 2}

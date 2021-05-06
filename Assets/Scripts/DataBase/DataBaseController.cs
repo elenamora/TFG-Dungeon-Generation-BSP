@@ -31,8 +31,8 @@ public class DataBaseController : MonoBehaviour
     public void GetInventory()
     {
         DataBaseHandler.GetInventory(AuthHandler.userId, (inventory) => {
-            Debug.Log(inventory.coins);
-            Debug.Log(inventory.gems);
+            Debug.Log(inventory.coin);
+            Debug.Log(inventory.gem);
 
         }, AuthHandler.idToken);
     }

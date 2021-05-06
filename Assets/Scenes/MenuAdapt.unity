@@ -3092,7 +3092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c91fe574894548e58a278174c535e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: f9ef3581cf73142dfa148e7f7261aead, type: 2}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   objectName: {fileID: 1580749309}
   description: {fileID: 610065685}
   slot: {fileID: 5454431933638692903, guid: 044fba495971a4f709013bc1b3cc0d35, type: 3}
@@ -4291,6 +4291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1535632555}
+  - component: {fileID: 1535632556}
   m_Layer: 5
   m_Name: GameMenu
   m_TagString: Untagged
@@ -4318,6 +4319,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1535632556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535632554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76872f9554a094dca88f6682fc6be571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
+  gameMenu: {fileID: 1535632554}
+  inventoryMenu: {fileID: 1120983917}
 --- !u!1 &1555505199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5087,6 +5103,7 @@ MonoBehaviour:
   username: {fileID: 0}
   gameMenu: {fileID: 1535632554}
   mainMenu: {fileID: 1639308981}
+  playerInventory: {fileID: 0}
 --- !u!1001 &1651819684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5894,20 +5911,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1120983917}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1535632554}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1535632556}
+        m_MethodName: GoToInventory
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6164,6 +6170,7 @@ MonoBehaviour:
   username: {fileID: 294502164}
   gameMenu: {fileID: 1535632554}
   mainMenu: {fileID: 2019638928}
+  playerInventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
 --- !u!1001 &2028058809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6528,7 +6535,7 @@ PrefabInstance:
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}
@@ -6538,17 +6545,17 @@ PrefabInstance:
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}
@@ -6588,12 +6595,12 @@ PrefabInstance:
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454431933638692902, guid: 044fba495971a4f709013bc1b3cc0d35,
         type: 3}

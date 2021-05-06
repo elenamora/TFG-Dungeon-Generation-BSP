@@ -7,7 +7,8 @@ public class Inventory : ScriptableObject
 {
     public InventoryItem item;
 
-    public List<InventoryItem> inventoryItems = new List<InventoryItem>();
+    public List<InventoryItem> inventoryItems;
+
 
     public void AddInventoryItem(InventoryItem item)
     {

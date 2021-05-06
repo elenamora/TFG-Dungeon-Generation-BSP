@@ -14,13 +14,37 @@ public class SignInUp : MonoBehaviour
     public GameObject gameMenu;
     public GameObject mainMenu;
 
+    public Inventory playerInventory;
+
     public void SignIn()
     {
         AuthHandler.SignIn(email.text, pswd.text);
         email.text = "";
         pswd.text = "";
-        StartCoroutine(CoSign());
-        
+        StartCoroutine(CoSignIn());   
+    }
+
+    IEnumerator CoSignIn()
+    {
+        yield return new WaitForSeconds(1f);
+        if (AuthHandler.resp == "OK")
+        {
+            gameMenu.SetActive(true);
+            mainMenu.SetActive(false);
+        }
+        else
+        {
+            hint.color = Color.red;
+            hint.text = "Incorrect User or Password";
+        }
+    }
+
+    public void SignUpMenu()
+    {
+        hint.color = Color.black;
+        hint.text = "";
+        email.text = "";
+        pswd.text = "";
     }
 
     public void SignUp()
@@ -36,24 +60,16 @@ public class SignInUp : MonoBehaviour
             email.text = "";
             pswd.text = "";
             username.text = "";
-            StartCoroutine(CoSign());
+            StartCoroutine(CoSignUp());
         } 
     }
 
-    public void SignUpMenu()
-    {
-        hint.color = Color.black;
-        hint.text = "";
-        email.text = "";
-        pswd.text = "";
-    }
-
-    IEnumerator CoSign()
+    IEnumerator CoSignUp()
     {
         yield return new WaitForSeconds(0.6f);
         if (AuthHandler.resp == "OK")
         {
-            DataBaseHandler.PostInventory(new InventoryData(1, 3, 2, 1, 1), AuthHandler.userId, () => { }, AuthHandler.idToken);
+            DataBaseHandler.PostInventory(new InventoryData(0, 0, 0, 0, 0), AuthHandler.userId, () => { }, AuthHandler.idToken);
             gameMenu.SetActive(true);
             mainMenu.SetActive(false);
         }
@@ -63,6 +79,8 @@ public class SignInUp : MonoBehaviour
             hint.text = "Incorrect User or Password";
         }
     }
+
+   
 
     public void BackToSignIn()
     {

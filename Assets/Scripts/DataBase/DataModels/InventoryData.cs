@@ -3,18 +3,18 @@
 [Serializable]
 public class InventoryData
 {
-    public int coins;
-    public int healthPotions;
-    public int energyPotions;
-    public int keys;
-    public int gems;
+    public int coin;
+    public int healthPotion;
+    public int energyPotion;
+    public int key;
+    public int gem;
 
-    public InventoryData(int coins, int health, int energy, int key, int gem)
+    public InventoryData(int coins, int health, int energy, int keys, int gems)
     {
-        this.coins = coins;
-        healthPotions = health;
-        energyPotions = energy;
-        keys = key;
-        gems = gem;
+        coin = coins;
+        healthPotion = health;
+        energyPotion = energy;
+        key = keys;
+        gem = gems;
     }
 }
