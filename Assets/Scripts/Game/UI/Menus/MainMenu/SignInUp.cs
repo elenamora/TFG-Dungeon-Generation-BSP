@@ -50,9 +50,10 @@ public class SignInUp : MonoBehaviour
 
     IEnumerator CoSign()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.6f);
         if (AuthHandler.resp == "OK")
         {
+            DataBaseHandler.PostInventory(new InventoryData(1, 3, 2, 1, 1), AuthHandler.userId, () => { }, AuthHandler.idToken);
             gameMenu.SetActive(true);
             mainMenu.SetActive(false);
         }

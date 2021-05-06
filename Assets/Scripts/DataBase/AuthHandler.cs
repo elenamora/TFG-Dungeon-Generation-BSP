@@ -34,6 +34,8 @@ public static class AuthHandler
             response =>
             {
                 Debug.Log("User Created");
+                userId = response.localId;
+                idToken = response.idToken;
                 resp = "OK";
                 DataBaseHandler.PostUser(user, response.localId, () => { }, response.idToken);
                 

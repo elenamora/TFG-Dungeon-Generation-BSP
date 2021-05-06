@@ -5,12 +5,13 @@
       <File FileName="Assets/Resources/Game/Dungeon/DungeonData.cs" Line="9" Column="28" />
       <File FileName="Assets/Resources/Game/GameData.cs" Line="15" Column="6" />
       <File FileName="Assets/Resources/Enemies/EnemyManager.cs" Line="6" Column="1" />
-      <File FileName="Assets/Scripts/Adaptative/AdaptDungeonGeneration.cs" Line="278" Column="36" />
+      <File FileName="Assets/Scripts/Adaptative/AdaptDungeonGeneration.cs" Line="217" Column="29" />
       <File FileName="Assets/Resources/Items/PowerUps/ItemManager.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/DataBase/DataBaseController.cs" Line="10" Column="9" />
-      <File FileName="Assets/Scripts/DataBase/DataBaseHandler.cs" Line="19" Column="1" />
-      <File FileName="Assets/Scripts/Adaptative/UI/GameStateManagerAdapt.cs" Line="41" Column="11" />
-      <File FileName="Assets/Scripts/Game/UI/Menus/MainMenu/SignInUp.cs" Line="34" Column="13" />
+      <File FileName="Assets/Scripts/DataBase/DataBaseController.cs" Line="27" Column="44" />
+      <File FileName="Assets/Scripts/DataBase/DataBaseHandler.cs" Line="57" Column="23" />
+      <File FileName="Assets/Scripts/Adaptative/UI/GameStateManagerAdapt.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/Game/UI/Menus/MainMenu/SignInUp.cs" Line="68" Column="42" />
+      <File FileName="Assets/Scripts/DataBase/AuthHandler.cs" Line="38" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
