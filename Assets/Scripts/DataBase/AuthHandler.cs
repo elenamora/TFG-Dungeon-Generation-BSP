@@ -71,7 +71,6 @@ public static class AuthHandler
                     Debug.Log(error);
                     resp = "NOK";
                 });
-        //return "";
     }
 
 }

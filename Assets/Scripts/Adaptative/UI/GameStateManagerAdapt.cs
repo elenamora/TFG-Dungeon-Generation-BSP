@@ -7,7 +7,6 @@ public class GameStateManagerAdapt : MonoBehaviour
 {
     public GameState gameState;
     public EnemyManager enemyManager;
-    public GameData gameData;
     public DungeonData dungeon;
     public ItemManager itemManager;
 
@@ -36,17 +35,21 @@ public class GameStateManagerAdapt : MonoBehaviour
 
     public void Win()
     {
-        gameData.AddEnemyManager(enemyManager);
-        gameData.AddDungeon(dungeon);
-        gameData.AddItemManager(itemManager);
+        //gameData.AddEnemyManager(enemyManager);
+        //gameData.AddDungeon(dungeon);
+        //gameData.AddItemManager(itemManager);
+        Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
+        DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
         winCanvas.SetActive(true);
     }
 
     public void Loose()
     {
-        gameData.AddEnemyManager(enemyManager);
-        gameData.AddDungeon(dungeon);
-        gameData.AddItemManager(itemManager);
+        //gameData.AddEnemyManager(enemyManager);
+        //gameData.AddDungeon(dungeon);
+        //gameData.AddItemManager(itemManager);
+        Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
+        DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
         looseCanvas.SetActive(true);
     }
 }

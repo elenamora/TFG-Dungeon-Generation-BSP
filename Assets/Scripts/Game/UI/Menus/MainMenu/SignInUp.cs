@@ -16,10 +16,11 @@ public class SignInUp : MonoBehaviour
 
     public void SignIn()
     {
+        AuthHandler.SignIn(email.text, pswd.text);
         email.text = "";
         pswd.text = "";
-        AuthHandler.SignIn(email.text, pswd.text);
         StartCoroutine(CoSign());
+        
     }
 
     public void SignUp()
@@ -31,10 +32,10 @@ public class SignInUp : MonoBehaviour
         }
         else
         {
+            AuthHandler.SignUp(email.text, pswd.text, new User(username.text));
             email.text = "";
             pswd.text = "";
             username.text = "";
-            AuthHandler.SignUp(email.text, pswd.text, new User(username.text));
             StartCoroutine(CoSign());
         } 
     }
