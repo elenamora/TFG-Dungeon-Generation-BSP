@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class SignInUp : MonoBehaviour
 {
-    public Text email;
-    public Text pswd;
+    public InputField email;
+    public InputField pswd;
     public Text hint;
-    public Text username;
+    public InputField username;
 
     [Header("Menus")]
     public GameObject gameMenu;
@@ -16,6 +16,8 @@ public class SignInUp : MonoBehaviour
 
     public void SignIn()
     {
+        email.text = "";
+        pswd.text = "";
         AuthHandler.SignIn(email.text, pswd.text);
         StartCoroutine(CoSign());
     }
@@ -29,6 +31,9 @@ public class SignInUp : MonoBehaviour
         }
         else
         {
+            email.text = "";
+            pswd.text = "";
+            username.text = "";
             AuthHandler.SignUp(email.text, pswd.text, new User(username.text));
             StartCoroutine(CoSign());
         } 
@@ -38,6 +43,8 @@ public class SignInUp : MonoBehaviour
     {
         hint.color = Color.black;
         hint.text = "";
+        email.text = "";
+        pswd.text = "";
     }
 
     IEnumerator CoSign()
@@ -55,4 +62,10 @@ public class SignInUp : MonoBehaviour
         }
     }
 
+    public void BackToSignIn()
+    {
+        email.text = "";
+        pswd.text = "";
+        username.text = "";
+    }
 }

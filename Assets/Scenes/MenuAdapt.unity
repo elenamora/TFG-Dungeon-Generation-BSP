@@ -3278,6 +3278,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2019638930}
+        m_MethodName: BackToSignIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1170589432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5070,8 +5081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14e1a3dd94dd4eb4987c5833b6dcbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  email: {fileID: 1124568419}
-  pswd: {fileID: 1825526209}
+  email: {fileID: 1281769723}
+  pswd: {fileID: 1637176844}
   hint: {fileID: 1409073321}
   username: {fileID: 0}
   gameMenu: {fileID: 1535632554}
@@ -6147,10 +6158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14e1a3dd94dd4eb4987c5833b6dcbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  email: {fileID: 1748961813}
-  pswd: {fileID: 1242265397}
+  email: {fileID: 956762518}
+  pswd: {fileID: 788165878}
   hint: {fileID: 109756965}
-  username: {fileID: 1324040020}
+  username: {fileID: 294502164}
   gameMenu: {fileID: 1535632554}
   mainMenu: {fileID: 2019638928}
 --- !u!1001 &2028058809
