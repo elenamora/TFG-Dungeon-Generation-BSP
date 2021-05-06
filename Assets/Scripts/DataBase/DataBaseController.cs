@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class DataBaseController : MonoBehaviour
 {
-    /*
-    public void SIn()
-    {
-        AuthHandler.SignIn(email.text, pswd.text);
-    }
-
-    public void SUp()
-    {
-        AuthHandler.SignUp(email.text, pswd.text, new User("Inés"));
-    }*/
-
+    
     public void PlayGame()
     {
         Game game = new Game(1, 1, 1, 1);

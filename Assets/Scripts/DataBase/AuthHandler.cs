@@ -16,6 +16,8 @@ public static class AuthHandler
     public static string idToken; // Key that proves the request is authenticated and the identity of the user
     public static string userId;
 
+    public static string resp;
+
     /*
      * Sings up user with Firebase Auth using Email and Password method
      * Uploads the user object to Firebase Database
@@ -32,10 +34,13 @@ public static class AuthHandler
             response =>
             {
                 Debug.Log("User Created");
+                resp = "OK";
                 DataBaseHandler.PostUser(user, response.localId, () => { }, response.idToken);
+                
             }).Catch(error =>
             {
                 Debug.Log(error);
+                resp = "NOK";
             });
     }
 
@@ -58,12 +63,15 @@ public static class AuthHandler
 
                 userId = response.localId;
                 idToken = response.idToken;
-                DataBaseHandler.GetUser(userId, user => {}, response.idToken);
-
+                resp = "OK";
+                DataBaseHandler.GetUser(userId, user => { }, response.idToken);
+                
             }).Catch(error =>
-            {
-                Debug.Log(error);
-            });
+                {
+                    Debug.Log(error);
+                    resp = "NOK";
+                });
+        //return "";
     }
 
 }
