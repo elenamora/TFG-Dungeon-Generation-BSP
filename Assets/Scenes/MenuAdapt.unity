@@ -357,7 +357,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 90e4fc99ceb6048f7a9a5041895d6886, type: 3}
-    m_FontSize: 16
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -6149,7 +6149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   email: {fileID: 1748961813}
   pswd: {fileID: 1242265397}
-  hint: {fileID: 1242265397}
+  hint: {fileID: 109756965}
   username: {fileID: 1324040020}
   gameMenu: {fileID: 1535632554}
   mainMenu: {fileID: 2019638928}

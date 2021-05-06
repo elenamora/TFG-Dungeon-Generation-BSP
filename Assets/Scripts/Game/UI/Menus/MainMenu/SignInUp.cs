@@ -22,9 +22,16 @@ public class SignInUp : MonoBehaviour
 
     public void SignUp()
     {
-        AuthHandler.SignUp(email.text, pswd.text, new User(username.text));
-        StartCoroutine(CoSign());
-        
+        if (string.IsNullOrEmpty(email.text) || string.IsNullOrEmpty(pswd.text) || string.IsNullOrEmpty(username.text))
+        {
+            hint.color = Color.red;
+            hint.text = "All fields must be filled";
+        }
+        else
+        {
+            AuthHandler.SignUp(email.text, pswd.text, new User(username.text));
+            StartCoroutine(CoSign());
+        } 
     }
 
     public void SignUpMenu()
@@ -35,7 +42,7 @@ public class SignInUp : MonoBehaviour
 
     IEnumerator CoSign()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         if (AuthHandler.resp == "OK")
         {
             gameMenu.SetActive(true);
