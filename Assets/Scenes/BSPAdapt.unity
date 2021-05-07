@@ -1893,9 +1893,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
   enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
-  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
   dungeon: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
   itemManager: {fileID: 11400000, guid: 3da721175353443b2ae7fccf3dcc7362, type: 2}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   winCanvas: {fileID: 1820358518}
   looseCanvas: {fileID: 844133331}
 --- !u!1 &855727879
@@ -2453,6 +2453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1172947269}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
 --- !u!114 &1172947271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3715,9 +3716,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
   enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
-  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
   dungeon: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
   itemManager: {fileID: 11400000, guid: 3da721175353443b2ae7fccf3dcc7362, type: 2}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   winCanvas: {fileID: 1820358518}
   looseCanvas: {fileID: 844133331}
 --- !u!114 &1820358520
@@ -4090,7 +4091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2776e7b81f4e24601859b8b1a6f85b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: f9ef3581cf73142dfa148e7f7261aead, type: 2}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   slot: {fileID: 450179767641784612, guid: fccd82788e0584bca81d10a9d82a739b, type: 3}
   panel: {fileID: 2010565661}
 --- !u!114 &2010565664

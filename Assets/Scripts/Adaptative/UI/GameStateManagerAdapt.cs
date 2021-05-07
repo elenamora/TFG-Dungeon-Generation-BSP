@@ -10,6 +10,8 @@ public class GameStateManagerAdapt : MonoBehaviour
     public DungeonData dungeon;
     public ItemManager itemManager;
 
+    public Inventory inventory;
+
     public GameObject winCanvas;
     public GameObject looseCanvas;
 
@@ -40,6 +42,9 @@ public class GameStateManagerAdapt : MonoBehaviour
         //gameData.AddItemManager(itemManager);
         Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
         DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
+
+        UpdateInventory();
+
         winCanvas.SetActive(true);
     }
 
@@ -50,6 +55,40 @@ public class GameStateManagerAdapt : MonoBehaviour
         //gameData.AddItemManager(itemManager);
         Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
         DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
+
+        UpdateInventory();
+
         looseCanvas.SetActive(true);
+    }
+
+
+    public void UpdateInventory()
+    {
+        int coin = 0, health = 0, energy = 0, key = 0, gem = 0;
+
+        foreach (InventoryItem item in inventory.inventoryItems)
+        {
+            switch (item.itemName)
+            {
+                case "Coin":
+                    coin = item.quantity;
+                    break;
+                case "Health Potion":
+                    health = item.quantity;
+                    break;
+                case "Energy Potion":
+                    energy = item.quantity;
+                    break;
+                case "Gem":
+                    gem = item.quantity;
+                    break;
+                case "Key":
+                    key = item.quantity;
+                    break;
+            }
+        }
+
+        InventoryData temp = new InventoryData(coin, health, energy, key, gem);
+        DataBaseHandler.PostInventory(temp, AuthHandler.userId, () => { }, AuthHandler.idToken);
     }
 }
