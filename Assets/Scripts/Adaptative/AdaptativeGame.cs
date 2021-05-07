@@ -9,19 +9,35 @@ public class AdaptativeGame : MonoBehaviour
 
     private enum Type {STANDARD, EXPLORER, ACHIEVER, KILLER};
 
-    private GameSaveManager gameSave;
     private Type player;
+    private int numGames;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        gameSave = GameSaveManager.gameSave;
+        DataBaseHandler.GetGames(AuthHandler.userId, AuthHandler.idToken, games =>
+        {
+            numGames = games.Count;
+        });
+        //gameSave = GameSaveManager.gameSave;
+        StartCoroutine(CoAssignPlayerType());
+
+    }
+
+    IEnumerator CoAssignPlayerType()
+    {
+        yield return new WaitForSeconds(0.1f);
         AssignPlayerType();
     }
 
     public void OnEnable()
     {
-        AssignPlayerType();
+        DataBaseHandler.GetGames(AuthHandler.userId, AuthHandler.idToken, games =>
+        {
+            numGames = games.Count;
+        });
+        StartCoroutine(CoAssignPlayerType());
     }
 
     public void AssignPlayerType()
@@ -48,7 +64,7 @@ public class AdaptativeGame : MonoBehaviour
 
     public void PickPlayer()
     {
-        if(gameData.enemies.Count < 2) { player = Type.STANDARD; }
+        if(numGames < 2) { player = Type.STANDARD; }
 
         else
         {
@@ -71,6 +87,18 @@ public class AdaptativeGame : MonoBehaviour
     public float ComputeEnemiesLeft()
     {
         float enemiesLeft = 0f;
+        DataBaseHandler.GetGames(AuthHandler.userId, AuthHandler.idToken, games =>
+        {
+            foreach (var game in games)
+            {
+                int dif = game.Value.initialEnemies - game.Value.killedEnemies;
+                enemiesLeft += dif / game.Value.initialEnemies;
+            }
+        });
+
+        return enemiesLeft / numGames;
+
+        /*
         for (int i = 0; i < gameData.enemies.Count; i++)
         {
             int dif = gameData.enemies[i].initialEnemies.Count - gameData.enemies[i].killedEnemies.Count;
@@ -80,14 +108,26 @@ public class AdaptativeGame : MonoBehaviour
             Debug.Log("Killed Enenmies  " + gameData.enemies[i].killedEnemies.Count);
             Debug.Log("Dif = initial enemies - killed enemies  " + dif);
 
-        }
-
-        return enemiesLeft / gameData.enemies.Count;
+        }*/
     }
 
     public float ComputeItemsPicked()
     {
         float itemsPicked = 0f;
+        DataBaseHandler.GetGames(AuthHandler.userId, AuthHandler.idToken, games =>
+        {
+            foreach (var game in games)
+            {
+                int dif = game.Value.initialItems - game.Value.killedEnemies;
+
+                itemsPicked += dif / game.Value.initialItems;
+            }
+            
+        });
+
+        return itemsPicked / numGames;
+
+        /*
         for( int i = 0; i < gameData.items.Count; i++)
         {
             int dif = gameData.items[i].initialItems - gameData.enemies[i].killedEnemies.Count;
@@ -99,10 +139,7 @@ public class AdaptativeGame : MonoBehaviour
             Debug.Log("Killed Enenmies  " + gameData.enemies[i].killedEnemies.Count);
             Debug.Log("Dif = initial items - killed enemies  " + dif);
 
-        }
-
-        return itemsPicked/ gameData.items.Count;
-
+        }*/
     }
 
 }

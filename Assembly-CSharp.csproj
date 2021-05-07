@@ -176,7 +176,6 @@
     <Compile Include="Assets\Scripts\Game\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Game\GameEventListener.cs" />
-    <Compile Include="Assets\Scripts\Game\GameSaveManager.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\BagManager.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\BasicInventoryManager.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\InventoryManager.cs" />

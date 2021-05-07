@@ -80,8 +80,6 @@ public class SignInUp : MonoBehaviour
         }
     }
 
-   
-
     public void BackToSignIn()
     {
         email.text = "";

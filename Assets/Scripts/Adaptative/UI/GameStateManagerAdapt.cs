@@ -24,8 +24,14 @@ public class GameStateManagerAdapt : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("BSPAdapt");
         Time.timeScale = 1f;
+        StartCoroutine(CoPlay());
+    }
+
+    IEnumerator CoPlay()
+    {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("BSPAdapt");
     }
 
     public void BackToMenu()
@@ -37,9 +43,6 @@ public class GameStateManagerAdapt : MonoBehaviour
 
     public void Win()
     {
-        //gameData.AddEnemyManager(enemyManager);
-        //gameData.AddDungeon(dungeon);
-        //gameData.AddItemManager(itemManager);
         Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
         DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
 
@@ -50,9 +53,6 @@ public class GameStateManagerAdapt : MonoBehaviour
 
     public void Loose()
     {
-        //gameData.AddEnemyManager(enemyManager);
-        //gameData.AddDungeon(dungeon);
-        //gameData.AddItemManager(itemManager);
         Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
         DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
 

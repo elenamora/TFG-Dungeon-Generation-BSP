@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameData", menuName = "My Game/ Game/ GameData")]
 public class GameData : ScriptableObject
 {
+    /*
     public List<DungeonData> dungeons;
     public List<EnemyManager> enemies;
     public List<ItemManager> items;
@@ -31,6 +32,8 @@ public class GameData : ScriptableObject
     public void AddItemManager(ItemManager itemManager)
     {
         items.Add(itemManager);
-    }
+    }*/
+
+    public PlayerType playerType;
 
 }
