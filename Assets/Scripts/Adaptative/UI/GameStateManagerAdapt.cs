@@ -53,14 +53,6 @@ public class GameStateManagerAdapt : MonoBehaviour
         DataBaseHandler.PostUser(new User(gameData.username, gameData.level), AuthHandler.userId, () => { }, AuthHandler.idToken);
 
         winCanvas.SetActive(true);
-        //StartCoroutine(CoUpdateUserLevel());
-    }
-
-    IEnumerator CoUpdateUserLevel()
-    {
-        yield return new WaitForSeconds(0.1f);
-        DataBaseHandler.PostUser(new User(gameData.username, gameData.level), AuthHandler.userId, () => { }, AuthHandler.idToken);
-
     }
 
     public void Loose()

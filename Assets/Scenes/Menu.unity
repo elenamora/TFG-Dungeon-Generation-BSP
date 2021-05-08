@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c91fe574894548e58a278174c535e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: f9ef3581cf73142dfa148e7f7261aead, type: 2}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   objectName: {fileID: 226530880}
   description: {fileID: 1853733341}
   slot: {fileID: 5454431933638692903, guid: 044fba495971a4f709013bc1b3cc0d35, type: 3}

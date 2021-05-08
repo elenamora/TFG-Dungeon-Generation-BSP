@@ -43,16 +43,10 @@ public class GameStateManager : MonoBehaviour
     public void Win()
     {
         UpdateInventory();
-        winCanvas.SetActive(true);
-        //gameData.level++;
-        //StartCoroutine(CoUpdateUserLevel());
-    }
-
-    IEnumerator CoUpdateUserLevel()
-    {
-        yield return new WaitForSeconds(0.1f);
+        gameData.level++;
         DataBaseHandler.PostUser(new User(gameData.username, gameData.level), AuthHandler.userId, () => { }, AuthHandler.idToken);
 
+        winCanvas.SetActive(true);
     }
 
     public void Loose()
