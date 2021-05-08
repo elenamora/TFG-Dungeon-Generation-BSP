@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class LevelPanel : MonoBehaviour
 {
-    public GameState gameState;
+    public GameData gameData;
     public GameEvent startLevel;
     public GameObject levelScreen;
     [SerializeField] private Text numLevel;
@@ -12,7 +12,7 @@ public class LevelPanel : MonoBehaviour
     public void Start()
     {
         Time.timeScale = 0f;
-        numLevel.text = "Level " + gameState.level;
+        numLevel.text = "Level " + gameData.level;
         
         
 

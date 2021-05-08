@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c459a68329846889c4c7a2f7daf77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  gameData: {fileID: 0}
   startLevel: {fileID: 11400000, guid: aaaa7d1a4008847158c41906e34d3ff8, type: 2}
   levelScreen: {fileID: 232459207}
   numLevel: {fileID: 2111048317}
@@ -1615,6 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
   inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   winCanvas: {fileID: 928669881}
   looseCanvas: {fileID: 1290009080}
@@ -2414,6 +2415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  gameData: {fileID: 0}
   inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   winCanvas: {fileID: 928669881}
   looseCanvas: {fileID: 1290009080}

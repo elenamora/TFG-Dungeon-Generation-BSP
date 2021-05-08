@@ -1895,6 +1895,7 @@ MonoBehaviour:
   enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
   dungeon: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
   itemManager: {fileID: 11400000, guid: 3da721175353443b2ae7fccf3dcc7362, type: 2}
+  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
   inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   winCanvas: {fileID: 1820358518}
   looseCanvas: {fileID: 844133331}
@@ -3718,6 +3719,7 @@ MonoBehaviour:
   enemyManager: {fileID: 11400000, guid: 7e73657955c994b24a5f2093016b88e0, type: 2}
   dungeon: {fileID: 11400000, guid: 65390bc863be84c11b01c639f229c910, type: 2}
   itemManager: {fileID: 11400000, guid: 3da721175353443b2ae7fccf3dcc7362, type: 2}
+  gameData: {fileID: 11400000, guid: 51ac6557f9ddb433cad94c3687557431, type: 2}
   inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
   winCanvas: {fileID: 1820358518}
   looseCanvas: {fileID: 844133331}

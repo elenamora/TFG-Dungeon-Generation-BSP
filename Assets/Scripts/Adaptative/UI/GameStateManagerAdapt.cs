@@ -10,6 +10,8 @@ public class GameStateManagerAdapt : MonoBehaviour
     public DungeonData dungeon;
     public ItemManager itemManager;
 
+    public GameData gameData;
+
     public Inventory inventory;
 
     public GameObject winCanvas;
@@ -47,8 +49,18 @@ public class GameStateManagerAdapt : MonoBehaviour
         DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
 
         UpdateInventory();
+        gameData.level++;
+        DataBaseHandler.PostUser(new User(gameData.username, gameData.level), AuthHandler.userId, () => { }, AuthHandler.idToken);
 
         winCanvas.SetActive(true);
+        //StartCoroutine(CoUpdateUserLevel());
+    }
+
+    IEnumerator CoUpdateUserLevel()
+    {
+        yield return new WaitForSeconds(0.1f);
+        DataBaseHandler.PostUser(new User(gameData.username, gameData.level), AuthHandler.userId, () => { }, AuthHandler.idToken);
+
     }
 
     public void Loose()

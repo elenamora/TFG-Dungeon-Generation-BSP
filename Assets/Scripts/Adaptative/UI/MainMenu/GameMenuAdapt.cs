@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameMenuAdapt : MonoBehaviour
 {
@@ -9,6 +10,23 @@ public class GameMenuAdapt : MonoBehaviour
     public GameObject gameMenu;
     public GameObject inventoryMenu;
     public GameObject weaponSelectionMenu;
+
+    public Text username;
+    public Text level;
+
+    public GameData gameData;
+
+    public void Start()
+    {
+        DataBaseHandler.GetUser(AuthHandler.userId, (user) => {
+            username.text = user.username;
+            level.text = user.level.ToString();
+            gameData.username = user.username;
+            gameData.level = user.level;
+
+        }, AuthHandler.idToken);
+    }
+
 
     public void GoToInventory()
     {

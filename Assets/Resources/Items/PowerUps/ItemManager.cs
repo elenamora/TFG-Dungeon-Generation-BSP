@@ -12,7 +12,6 @@ public class ItemManager : ScriptableObject
     {
         initialItems = 0;
         pickedItems = 0;
-
     }
 
     public void ResetItems()

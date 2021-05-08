@@ -7,6 +7,8 @@ public class GameStateManager : MonoBehaviour
 {
     public GameState gameState;
 
+    public GameData gameData;
+
     public Inventory inventory;
 
     public GameObject winCanvas;
@@ -42,6 +44,15 @@ public class GameStateManager : MonoBehaviour
     {
         UpdateInventory();
         winCanvas.SetActive(true);
+        //gameData.level++;
+        //StartCoroutine(CoUpdateUserLevel());
+    }
+
+    IEnumerator CoUpdateUserLevel()
+    {
+        yield return new WaitForSeconds(0.1f);
+        DataBaseHandler.PostUser(new User(gameData.username, gameData.level), AuthHandler.userId, () => { }, AuthHandler.idToken);
+
     }
 
     public void Loose()
@@ -49,7 +60,6 @@ public class GameStateManager : MonoBehaviour
         UpdateInventory();
         looseCanvas.SetActive(true);
     }
-
 
     public void UpdateInventory()
     {

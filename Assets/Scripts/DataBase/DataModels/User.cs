@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 [Serializable]
 public class User
@@ -7,10 +6,10 @@ public class User
     public string username;
     public int level;
 
-    public User(string username)
+    public User(string username, int level)
     {
         this.username = username;
-        level = 1;
+        this.level = level;
     }
 
 }

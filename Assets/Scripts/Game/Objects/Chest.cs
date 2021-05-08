@@ -84,7 +84,6 @@ public class Chest : Interactable
         if(inventory.item.name == "Gem")
         {
             gameState.win = true;
-            gameState.LevelUp();
             StartCoroutine(EventCo());
         }
         

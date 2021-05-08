@@ -52,7 +52,7 @@ public class SignInSignUpAdapt : MonoBehaviour
         }
         else
         {
-            AuthHandler.SignUp(email.text, pswd.text, new User(username.text));
+            AuthHandler.SignUp(email.text, pswd.text, new User(username.text, 1));
             email.text = "";
             pswd.text = "";
             username.text = "";
