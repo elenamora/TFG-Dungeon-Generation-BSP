@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
@@ -51,5 +52,10 @@ public class GameMenu : MonoBehaviour
         gameMenu.SetActive(false);
         weaponSelectionMenu.SetActive(true);
 
+    }
+
+    public void ExitGame()
+    {
+        SceneManager.LoadScene("LoginRegister");
     }
 }

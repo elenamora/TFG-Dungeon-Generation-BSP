@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SignInUp : MonoBehaviour
 {
@@ -9,10 +9,6 @@ public class SignInUp : MonoBehaviour
     public InputField pswd;
     public Text hint;
     public InputField username;
-
-    [Header("Menus")]
-    public GameObject gameMenu;
-    public GameObject mainMenu;
 
     public Inventory playerInventory;
 
@@ -29,8 +25,7 @@ public class SignInUp : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (AuthHandler.resp == "OK")
         {
-            gameMenu.SetActive(true);
-            mainMenu.SetActive(false);
+            SceneManager.LoadScene("Menu");
         }
         else
         {
@@ -70,8 +65,7 @@ public class SignInUp : MonoBehaviour
         if (AuthHandler.resp == "OK")
         {
             DataBaseHandler.PostInventory(new InventoryData(0, 0, 0, 0, 0), AuthHandler.userId, () => { }, AuthHandler.idToken);
-            gameMenu.SetActive(true);
-            mainMenu.SetActive(false);
+            SceneManager.LoadScene("Menu");
         }
         else
         {

@@ -880,6 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 604711992}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
 --- !u!1 &631452752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1615,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
+  winCanvas: {fileID: 928669881}
+  looseCanvas: {fileID: 1290009080}
 --- !u!1 &942435086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,6 +2414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
+  inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
+  winCanvas: {fileID: 928669881}
+  looseCanvas: {fileID: 1290009080}
 --- !u!114 &1290009083
 MonoBehaviour:
   m_ObjectHideFlags: 0
