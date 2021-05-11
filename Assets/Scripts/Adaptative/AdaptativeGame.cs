@@ -10,18 +10,17 @@ public class AdaptativeGame : MonoBehaviour
     private enum Type {STANDARD, EXPLORER, ACHIEVER, KILLER};
 
     private Type player;
+    private float enemiesPerc;
+    private float itemsPerc;
     private int numGames;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        DataBaseHandler.GetGames(AuthHandler.userId, AuthHandler.idToken, games =>
-        {
-            numGames = games.Count;
-        });
         //gameSave = GameSaveManager.gameSave;
-        StartCoroutine(CoAssignPlayerType());
+        ComputeEnemiesItems();
+        Invoke("AssignPlayerType", 0.5f);
 
     }
 
@@ -29,15 +28,6 @@ public class AdaptativeGame : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         AssignPlayerType();
-    }
-
-    public void OnEnable()
-    {
-        DataBaseHandler.GetGames(AuthHandler.userId, AuthHandler.idToken, games =>
-        {
-            numGames = games.Count;
-        });
-        StartCoroutine(CoAssignPlayerType());
     }
 
     public void AssignPlayerType()
@@ -64,18 +54,17 @@ public class AdaptativeGame : MonoBehaviour
 
     public void PickPlayer()
     {
-        if(numGames < 2) { player = Type.STANDARD; }
+        Debug.Log("Perc " + enemiesPerc);
+
+        if (numGames < 2) { player = Type.STANDARD; }
 
         else
         {
-            float e = ComputeEnemiesLeft();
-            float i = ComputeItemsPicked();
+            if (enemiesPerc > 0.7 && itemsPerc > 0.5) player = Type.EXPLORER;
 
-            if (e > 0.7 && i > 0.5) player = Type.EXPLORER;
+            else if (enemiesPerc < 0.25 && itemsPerc > 0.8) player = Type.ACHIEVER;
 
-            else if (e < 0.25 && i > 0.8) player = Type.ACHIEVER;
-
-            else if (e < 0.25 && i < 0.5) player = Type.KILLER;
+            else if (enemiesPerc < 0.25 && itemsPerc < 0.5) player = Type.KILLER;
 
             else player = Type.STANDARD;
         }
@@ -84,31 +73,36 @@ public class AdaptativeGame : MonoBehaviour
     }
 
     // porcentaje de enemigos matados respecto a los enemigos que teníamos inicialmente. Luego se hace la media.
-    public float ComputeEnemiesLeft()
+    public void ComputeEnemiesItems()
     {
         float enemiesLeft = 0f;
+        float itemsPicked = 0f;
         DataBaseHandler.GetGames(AuthHandler.userId, AuthHandler.idToken, games =>
         {
             foreach (var game in games)
             {
-                int dif = game.Value.initialEnemies - game.Value.killedEnemies;
-                enemiesLeft += dif / game.Value.initialEnemies;
+                // Enemies
+                float en = game.Value.initialEnemies - game.Value.killedEnemies;
+                enemiesLeft += en / game.Value.initialEnemies;
+
+                // Items
+                // it: number of items picked without taking into account the loot items from killed enemies
+                float it;
+                if (game.Value.killedEnemies < game.Value.itemsPicked)
+                    it = game.Value.itemsPicked - game.Value.killedEnemies;
+                else it = 0;
+                 
+                itemsPicked += it / game.Value.initialItems;
+                Debug.Log(itemsPicked);
             }
+
+            numGames = games.Count;
+
+            enemiesPerc = enemiesLeft / numGames;
+            itemsPerc = itemsPicked / numGames;
+            
         });
 
-        return enemiesLeft / numGames;
-
-        /*
-        for (int i = 0; i < gameData.enemies.Count; i++)
-        {
-            int dif = gameData.enemies[i].initialEnemies.Count - gameData.enemies[i].killedEnemies.Count;
-            enemiesLeft += dif / gameData.enemies[i].initialEnemies.Count;
-
-            Debug.Log("Initial enemies  " + gameData.enemies[i].initialEnemies.Count);
-            Debug.Log("Killed Enenmies  " + gameData.enemies[i].killedEnemies.Count);
-            Debug.Log("Dif = initial enemies - killed enemies  " + dif);
-
-        }*/
     }
 
     public float ComputeItemsPicked()
