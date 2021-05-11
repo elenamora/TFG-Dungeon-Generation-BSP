@@ -18,16 +18,9 @@ public class AdaptativeGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameSave = GameSaveManager.gameSave;
         ComputeEnemiesItems();
         Invoke("AssignPlayerType", 0.5f);
 
-    }
-
-    IEnumerator CoAssignPlayerType()
-    {
-        yield return new WaitForSeconds(0.1f);
-        AssignPlayerType();
     }
 
     public void AssignPlayerType()
@@ -54,8 +47,6 @@ public class AdaptativeGame : MonoBehaviour
 
     public void PickPlayer()
     {
-        Debug.Log("Perc " + enemiesPerc);
-
         if (numGames < 2) { player = Type.STANDARD; }
 
         else
@@ -105,35 +96,5 @@ public class AdaptativeGame : MonoBehaviour
 
     }
 
-    public float ComputeItemsPicked()
-    {
-        float itemsPicked = 0f;
-        DataBaseHandler.GetGames(AuthHandler.userId, AuthHandler.idToken, games =>
-        {
-            foreach (var game in games)
-            {
-                int dif = game.Value.initialItems - game.Value.killedEnemies;
-
-                itemsPicked += dif / game.Value.initialItems;
-            }
-            
-        });
-
-        return itemsPicked / numGames;
-
-        /*
-        for( int i = 0; i < gameData.items.Count; i++)
-        {
-            int dif = gameData.items[i].initialItems - gameData.enemies[i].killedEnemies.Count;
-
-            itemsPicked += dif / gameData.items[i].initialItems;
-
-
-            Debug.Log("Initial items  " + gameData.items[i].initialItems);
-            Debug.Log("Killed Enenmies  " + gameData.enemies[i].killedEnemies.Count);
-            Debug.Log("Dif = initial items - killed enemies  " + dif);
-
-        }*/
-    }
 
 }
