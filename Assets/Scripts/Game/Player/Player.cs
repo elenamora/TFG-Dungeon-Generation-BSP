@@ -252,14 +252,7 @@ public class Player : MonoBehaviour
             isAlive = false;
             gameState.loose = true;
             looseEvent.Raise();
-            //StartCoroutine(EventCo());
         }
-    }
-
-    IEnumerator EventCo()
-    {
-        yield return new WaitForSeconds(.4f);
-        looseEvent.Raise();
     }
 
 }
