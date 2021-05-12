@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     public int currentHealth;
     public StatsBar healthBar;
 
+    private bool isAlive;
+
     public GameState gameState;
     public GameEvent looseEvent;
 
@@ -66,6 +68,8 @@ public class Player : MonoBehaviour
 
         playerSprite = GetComponent<SpriteRenderer>();
         attackCount = attackTime;
+
+        isAlive = true;
     }
 
     // Update is called once per frame
@@ -77,7 +81,7 @@ public class Player : MonoBehaviour
 
         UseItems();
 
-        isDead();
+        if(isAlive) isDead();
     }
 
     void Move()
@@ -245,8 +249,10 @@ public class Player : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
+            isAlive = false;
             gameState.loose = true;
-            StartCoroutine(EventCo());
+            looseEvent.Raise();
+            //StartCoroutine(EventCo());
         }
     }
 
