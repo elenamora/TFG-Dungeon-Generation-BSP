@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Skeleton
   enemyModel: {fileID: 6757331056679263731, guid: dfa7bd5b4917a44f9925b05ae201fac9,
     type: 3}
-  health: 50
+  health: 20
   damage: 10
   minDist: 5
   attackSpeed: 2

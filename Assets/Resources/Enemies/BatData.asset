@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Bat
   enemyModel: {fileID: 7932582979950147962, guid: ffbeb984731fe48468b894a1851ff7da,
     type: 3}
-  health: 20
+  health: 10
   damage: 5
   minDist: 5
   attackSpeed: 0.5

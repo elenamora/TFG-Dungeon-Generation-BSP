@@ -8,7 +8,7 @@ public class WeaponCard : MonoBehaviour
     [SerializeField] private WeaponData data;
     [SerializeField] private Image image;
     [SerializeField] private Text damage;
-    [SerializeField] private Text range;
+    [SerializeField] private Text energy;
     [SerializeField] private Text description;
 
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class WeaponCard : MonoBehaviour
     {
         image.sprite = data.image;
         damage.text = "" + data.damage;
-        range.text = "" + data.range;
+        energy.text = "" + data.energy;
         description.text = "" + data.description;
        
     }

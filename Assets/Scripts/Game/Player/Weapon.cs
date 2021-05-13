@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     public GameObject weapon;
 
     public int damageWeapon;
+    public int energyLoss;
 
     void Start()
     {
@@ -24,12 +25,15 @@ public class Weapon : MonoBehaviour
         {
             case "sword":
                 damageWeapon = weaponData[0].damage;
+                energyLoss = weaponData[0].energy;
                 break;
             case "axe":
                 damageWeapon = weaponData[1].damage;
+                energyLoss = weaponData[1].energy;
                 break;
             case "hammer":
                 damageWeapon = weaponData[2].damage;
+                energyLoss = weaponData[2].energy;
                 break;
         }  
     }
@@ -38,7 +42,7 @@ public class Weapon : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            player.currentEnergy -= 5;
+            player.currentEnergy -= energyLoss;
             player.energyBar.SetValue(player.currentEnergy);
 
             Enemy enemy;

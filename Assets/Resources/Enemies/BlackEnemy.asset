@@ -15,8 +15,8 @@ MonoBehaviour:
   enemyName: Black
   enemyModel: {fileID: 7120882035668261011, guid: 02ea60fcd96894f688f08b0196a7d927,
     type: 3}
-  health: 20
-  damage: 5
+  health: 30
+  damage: 15
   minDist: 6
   attackSpeed: 3
   patrolSpeed: 0.5

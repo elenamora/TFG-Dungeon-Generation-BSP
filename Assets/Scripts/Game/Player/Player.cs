@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     /*** HEALTH VARIABLES ***/
     [Header("Health")]
-    public int maxHealth = 50;
+    public int maxHealth = 100;
     public int currentHealth;
     public StatsBar healthBar;
 
