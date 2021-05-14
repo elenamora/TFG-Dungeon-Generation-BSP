@@ -329,7 +329,7 @@ PrefabInstance:
     - target: {fileID: 1232939509314138809, guid: 05ce90730ba234e9f95a3c722b247b72,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectHammer
+      value: SelectAxe
       objectReference: {fileID: 0}
     - target: {fileID: 1232939509314138809, guid: 05ce90730ba234e9f95a3c722b247b72,
         type: 3}
@@ -461,7 +461,7 @@ PrefabInstance:
         type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: bcb6b216021544143b8cb6b66dd7b710,
+      objectReference: {fileID: 11400000, guid: e3e93602059b14c5eb81ed0ea33f38bf,
         type: 2}
     m_RemovedComponents:
     - {fileID: 2139904882507264247, guid: 05ce90730ba234e9f95a3c722b247b72, type: 3}
@@ -2801,7 +2801,7 @@ PrefabInstance:
     - target: {fileID: 1232939509314138809, guid: 05ce90730ba234e9f95a3c722b247b72,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectAxe
+      value: SelectSword
       objectReference: {fileID: 0}
     - target: {fileID: 1232939509314138809, guid: 05ce90730ba234e9f95a3c722b247b72,
         type: 3}
@@ -2933,6 +2933,12 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: e3e93602059b14c5eb81ed0ea33f38bf,
+        type: 2}
+    - target: {fileID: 5521465953253516469, guid: 05ce90730ba234e9f95a3c722b247b72,
+        type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: c469a0b8cb4b24122ac28f9517170330,
         type: 2}
     m_RemovedComponents:
     - {fileID: 2139904882507264247, guid: 05ce90730ba234e9f95a3c722b247b72, type: 3}
@@ -3154,7 +3160,7 @@ PrefabInstance:
     - target: {fileID: 1232939509314138809, guid: 05ce90730ba234e9f95a3c722b247b72,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSword
+      value: SelectHammer
       objectReference: {fileID: 0}
     - target: {fileID: 1232939509314138809, guid: 05ce90730ba234e9f95a3c722b247b72,
         type: 3}
@@ -3291,7 +3297,7 @@ PrefabInstance:
         type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: c469a0b8cb4b24122ac28f9517170330,
+      objectReference: {fileID: 11400000, guid: bcb6b216021544143b8cb6b66dd7b710,
         type: 2}
     m_RemovedComponents:
     - {fileID: 2139904882507264247, guid: 05ce90730ba234e9f95a3c722b247b72, type: 3}

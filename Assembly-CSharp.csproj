@@ -132,6 +132,7 @@
     <Compile Include="Assets\Resources\Items\Loots\LootTable.cs" />
     <Compile Include="Assets\Resources\Items\PowerUps\ItemManager.cs" />
     <Compile Include="Assets\Resources\Items\PowerUps\PowerUpData.cs" />
+    <Compile Include="Assets\Resources\Player\PlayerData.cs" />
     <Compile Include="Assets\Resources\Weapons\WeaponData.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\Common.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\Extensions.cs" />
@@ -164,7 +165,6 @@
     <Compile Include="Assets\Scripts\BSP\DungeonGenerator.cs" />
     <Compile Include="Assets\Scripts\BSP\Leaf.cs" />
     <Compile Include="Assets\Scripts\DataBase\AuthHandler.cs" />
-    <Compile Include="Assets\Scripts\DataBase\DataBaseController.cs" />
     <Compile Include="Assets\Scripts\DataBase\DataBaseHandler.cs" />
     <Compile Include="Assets\Scripts\DataBase\DataModels\Game.cs" />
     <Compile Include="Assets\Scripts\DataBase\DataModels\GameSession.cs" />

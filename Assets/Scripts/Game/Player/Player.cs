@@ -13,9 +13,10 @@ public class Player : MonoBehaviour
 
     public Inventory inventory;
 
+    public PlayerData data;
+
     /*** HEALTH VARIABLES ***/
     [Header("Health")]
-    public int maxHealth = 100;
     public int currentHealth;
     public StatsBar healthBar;
 
@@ -26,7 +27,6 @@ public class Player : MonoBehaviour
 
     /*** ENERGY VARIABLES ***/
     [Header("Energy")]
-    public int maxEnergy = 50;
     public int currentEnergy;
     public StatsBar energyBar;
 
@@ -59,12 +59,12 @@ public class Player : MonoBehaviour
             else if (bar.CompareTag("Energy")) { energyBar = bar; }
         }
 
-        currentHealth = maxHealth;
-        healthBar.SetMax(maxHealth);
+        currentHealth = data.health;
+        healthBar.SetMax(data.health);
 
 
-        currentEnergy = maxEnergy;
-        energyBar.SetMax(maxEnergy);
+        currentEnergy = data.energy;
+        energyBar.SetMax(data.energy);
 
         playerSprite = GetComponent<SpriteRenderer>();
         attackCount = attackTime;
@@ -195,9 +195,9 @@ public class Player : MonoBehaviour
 
     public int IncreaseHealth(int health)
     {
-        if ((currentHealth + health) <= maxHealth) { currentHealth += health; }
+        if ((currentHealth + health) <= data.health) { currentHealth += health; }
 
-        else if (currentHealth + health > maxHealth) { currentHealth = maxHealth; }
+        else if (currentHealth + health > data.health) { currentHealth = data.health; }
 
         healthBar.SetValue(currentHealth);
 
@@ -207,9 +207,9 @@ public class Player : MonoBehaviour
 
     public int IncreaseEnergy(int energy)
     {
-        if ((currentEnergy + energy) <= maxEnergy) { currentEnergy += energy; }
+        if ((currentEnergy + energy) <= data.energy) { currentEnergy += energy; }
 
-        else if (currentEnergy + energy > maxEnergy) { currentEnergy = maxEnergy; }
+        else if (currentEnergy + energy > data.energy) { currentEnergy = data.energy; }
 
         energyBar.SetValue(currentEnergy);
 
@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
 
     public void UseItems()
     {
-        if (Input.GetKeyDown(KeyCode.R) && currentHealth < maxHealth)
+        if (Input.GetKeyDown(KeyCode.R) && currentHealth < data.health)
         {
             foreach (InventoryItem item in inventory.inventoryItems)
             {
@@ -230,7 +230,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && currentEnergy < maxEnergy)
+        if (Input.GetKeyDown(KeyCode.E) && currentEnergy < data.energy)
         {
             foreach (InventoryItem item in inventory.inventoryItems)
             {

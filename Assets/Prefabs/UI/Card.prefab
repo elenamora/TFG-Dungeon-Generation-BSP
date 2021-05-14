@@ -292,7 +292,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: e3e93602059b14c5eb81ed0ea33f38bf, type: 2}
   image: {fileID: 1232939510224021152}
   damage: {fileID: 1232939509930564344}
-  energy: {fileID: 0}
+  energy: {fileID: 1232939509993832111}
   description: {fileID: 1232939510159628846}
 --- !u!1 &1232939509930564346
 GameObject:
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1232939509993832108}
   - component: {fileID: 1232939509993832111}
   m_Layer: 5
-  m_Name: dist
+  m_Name: num
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

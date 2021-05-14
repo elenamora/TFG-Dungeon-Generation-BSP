@@ -102,12 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 6faa8d0674a2149e2835398af3340fdf, type: 2}
-  maxHealth: 50
+  data: {fileID: 11400000, guid: a7d8a60a2dfed48c1b040ac79646820e, type: 2}
   currentHealth: 50
   healthBar: {fileID: 0}
   gameState: {fileID: 11400000, guid: 7be0aa6896e78471ca5e3f400d69d368, type: 2}
   looseEvent: {fileID: 11400000, guid: 9622d32980fa141d3bdf9857eb782f61, type: 2}
-  maxEnergy: 50
   currentEnergy: 0
   energyBar: {fileID: 0}
 --- !u!95 &4353630679019141074
@@ -270,6 +269,7 @@ MonoBehaviour:
   player: {fileID: 0}
   weapon: {fileID: 0}
   damageWeapon: 20
+  energyLoss: 0
 --- !u!60 &5166113537974450547
 PolygonCollider2D:
   m_ObjectHideFlags: 0
