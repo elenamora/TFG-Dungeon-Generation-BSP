@@ -1,17 +1,14 @@
 ﻿<Properties StartupConfiguration="{62873BB6-A352-5450-430A-56E3FCEBDD74}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Adaptative/UI/MainMenu/WeaponSelectionAdapt.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Adaptative/UI/MainMenu/GameMenuAdapt.cs">
     <Files>
       <File FileName="Assets/Resources/Game/Dungeon/DungeonData.cs" Line="9" Column="28" />
       <File FileName="Assets/Resources/Game/GameData.cs" Line="11" Column="22" />
-      <File FileName="Assets/Resources/Enemies/EnemyManager.cs" Line="6" Column="1" />
+      <File FileName="Assets/Resources/Enemies/EnemyManager.cs" Line="7" Column="6" />
       <File FileName="Assets/Scripts/Adaptative/AdaptDungeonGeneration.cs" Line="41" Column="1" />
       <File FileName="Assets/Resources/Items/PowerUps/ItemManager.cs" Line="14" Column="25" />
-      <File FileName="Assets/Scripts/Game/UI/Menus/MainMenu/GameMenu.cs" Line="28" Column="6" />
-      <File FileName="Assets/Scripts/Adaptative/UI/GameStateManagerAdapt.cs" Line="63" Column="27" />
-      <File FileName="Assets/Scripts/Game/UI/Menus/GameStateManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/Player/Player.cs" Line="221" Column="72" />
-      <File FileName="Assets/Scripts/Game/Player/Weapon.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/Adaptative/UI/MainMenu/WeaponSelectionAdapt.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/UI/Menus/MainMenu/GameMenu.cs" Line="53" Column="14" />
+      <File FileName="Assets/Scripts/Adaptative/UI/GameStateManagerAdapt.cs" Line="91" Column="27" />
+      <File FileName="Assets/Scripts/Adaptative/UI/MainMenu/GameMenuAdapt.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -33,7 +30,7 @@
                 <Node name="Adaptative" expanded="True">
                   <Node name="UI" expanded="True">
                     <Node name="MainMenu" expanded="True">
-                      <Node name="WeaponSelectionAdapt.cs" selected="True" />
+                      <Node name="GameMenuAdapt.cs" selected="True" />
                     </Node>
                   </Node>
                 </Node>

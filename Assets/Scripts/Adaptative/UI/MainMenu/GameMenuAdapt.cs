@@ -31,11 +31,27 @@ public class GameMenuAdapt : MonoBehaviour
     public void GoToInventory()
     {
         DataBaseHandler.GetInventory(AuthHandler.userId, (inventory) => {
-            playerInventory.inventoryItems[0].quantity = inventory.coin;
-            playerInventory.inventoryItems[1].quantity = inventory.healthPotion;
-            playerInventory.inventoryItems[2].quantity = inventory.energyPotion;
-            playerInventory.inventoryItems[3].quantity = inventory.key;
-            playerInventory.inventoryItems[4].quantity = inventory.gem;
+            foreach (InventoryItem item in playerInventory.inventoryItems)
+            {
+                switch (item.name)
+                {
+                    case "Coin":
+                        item.quantity = inventory.coin;
+                        break;
+                    case "Health Potion":
+                        item.quantity = inventory.healthPotion;
+                        break;
+                    case "Energy Potion":
+                        item.quantity = inventory.energyPotion;
+                        break;
+                    case "Gem":
+                        item.quantity = inventory.gem;
+                        break;
+                    case "Key":
+                        item.quantity = inventory.key;
+                        break;
+                }
+            }
 
             StartCoroutine(CoRout());
 
@@ -53,11 +69,27 @@ public class GameMenuAdapt : MonoBehaviour
     public void GoToGame()
     {
         DataBaseHandler.GetInventory(AuthHandler.userId, (inventory) => {
-            playerInventory.inventoryItems[0].quantity = inventory.coin;
-            playerInventory.inventoryItems[1].quantity = inventory.healthPotion;
-            playerInventory.inventoryItems[2].quantity = inventory.energyPotion;
-            playerInventory.inventoryItems[3].quantity = inventory.key;
-            playerInventory.inventoryItems[4].quantity = inventory.gem;
+            foreach (InventoryItem item in playerInventory.inventoryItems)
+            {
+                switch (item.name)
+                {
+                    case "Coin":
+                        item.quantity = inventory.coin;
+                        break;
+                    case "Health Potion":
+                        item.quantity = inventory.healthPotion;
+                        break;
+                    case "Energy Potion":
+                        item.quantity = inventory.energyPotion;
+                        break;
+                    case "Gem":
+                        item.quantity = inventory.gem;
+                        break;
+                    case "Key":
+                        item.quantity = inventory.key;
+                        break;
+                }
+            }
 
             StartCoroutine(CoGoToGame());
 

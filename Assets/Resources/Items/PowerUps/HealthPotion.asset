@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poweUpName: Health Potion
   powerUpDescription: 
-  extraHealth: 50
+  extraHealth: 20
   extraEnergy: 0
   extraMoney: 0
