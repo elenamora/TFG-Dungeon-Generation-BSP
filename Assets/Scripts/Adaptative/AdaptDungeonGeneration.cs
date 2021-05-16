@@ -59,6 +59,7 @@ public class AdaptDungeonGeneration : MonoBehaviour
 		/* Elements instances */
 		spawner = new EnemySpawnerAdapt(rooms, gameData);
 		DrawPlayer();
+		DrawChests();
 		DrawEnemies();
 
 		DrawBreakable();
@@ -152,29 +153,25 @@ public class AdaptDungeonGeneration : MonoBehaviour
 
 	public void DrawPlayer()
 	{
-		//int index = Random.Range(0, rooms.Count);
 		Rect temp = rooms[0];
 		float x = Random.Range(temp.x + 1, temp.x + temp.width - 1);
 		float y = Random.Range(temp.y + 1, temp.y + temp.height - 1);
 
 		player = Instantiate(player, new Vector3(x, y, 0f), Quaternion.identity);
-		/*
-		foreach (GameObject item in items)
-        {
-			Instantiate(item, new Vector3(x, Random.Range(temp.y + 1 + i, temp.y + temp.height - 1 - i), 0f), Quaternion.identity);
-			i++;
-		}*/
-		GameObject smallchest = Instantiate(items[4], new Vector3(x, Random.Range(temp.y + 1, temp.y + temp.height - 1), 0f), Quaternion.identity);
-		GameObject bigchest = Instantiate(items[5], new Vector3(x, Random.Range(temp.y + 1 + 2, temp.y + temp.height - 1 - 2), 0f), Quaternion.identity);
+	}
 
-		//Instantiate(traps[0], new Vector3(temp.x, temp.yMax - 0.5f, 0f), Quaternion.identity);
-		//Instantiate(traps[1], new Vector3(temp.x, temp.yMax - 0.5f - 0.5f, 0f), Quaternion.identity);
+	public void DrawChests()
+	{
+		// Instantiate the small chest in a random room between the first and the last room
+		int index;
+		if (rooms.Count > 5) index = Random.Range(2, rooms.Count - 1);
+		else index = 1;
 
+		Rect temp = rooms[index];
+		Instantiate(items[4], temp.center, Quaternion.identity);
 
-
-		//float x2 = Random.Range(temp.x + 1, temp.x + temp.width - 1);
-		//float y2 = Random.Range(temp.y + 1, temp.y + temp.height - 1);
-
+		// Instantiate the big in the last room
+		Instantiate(items[5], rooms[rooms.Count - 1].center, Quaternion.identity);
 	}
 
 	public void DrawEnemies()
