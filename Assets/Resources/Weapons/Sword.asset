@@ -15,5 +15,5 @@ MonoBehaviour:
   weaponName: Sword
   image: {fileID: 21300000, guid: e5735ff78930046afa28999f152359c7, type: 3}
   damage: 5
-  energy: 5
+  energy: 3
   description: Medium weapon

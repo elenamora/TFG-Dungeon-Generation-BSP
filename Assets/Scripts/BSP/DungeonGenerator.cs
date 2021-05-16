@@ -282,7 +282,7 @@ public class DungeonGenerator : MonoBehaviour
 
 	public void DrawTraps()
     {
-		for(int i = 0; i < dungeon.hallways.Count; i += 3)
+		for(int i = 1; i < dungeon.hallways.Count; i += 3)
 		{
 			Rect r = dungeon.hallways[i];
 			float x, y;

@@ -16,7 +16,7 @@ public class Traps : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            collision.gameObject.GetComponent<Player>().Hurt(5);
+            collision.gameObject.GetComponent<Player>().Hurt(20);
         }   
     }
 

@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     private float flashTime = 1f;
     private float flashCount = 0f;
     private SpriteRenderer playerSprite;
-    private SpriteRenderer weaponSprite;
+    //private SpriteRenderer weaponSprite;
 
     /*** ATTACK VARIABLES ***/
     private bool attacking;
@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         bars = FindObjectsOfType<StatsBar>();
+        //weaponSprite = GameObject.FindGameObjectWithTag("Weapon").GetComponent<SpriteRenderer>();
 
         foreach (StatsBar bar in bars)
         {

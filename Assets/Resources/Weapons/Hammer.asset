@@ -15,5 +15,5 @@ MonoBehaviour:
   weaponName: Hammer
   image: {fileID: 21300000, guid: b8b3d8d4f5792445c9a7bf6b3bc8e6b7, type: 3}
   damage: 3
-  energy: 3
+  energy: 1
   description: Long-range weapon

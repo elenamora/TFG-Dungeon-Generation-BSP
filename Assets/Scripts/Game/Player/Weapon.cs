@@ -51,7 +51,7 @@ public class Weapon : MonoBehaviour
             enemy.Hurt(damageWeapon);
 
             // The enemy will bounce back if we hit it
-            Vector2 dif = collision.transform.position - transform.position;
+            Vector2 dif = (collision.transform.position - transform.position)*2;
             collision.transform.position = new Vector2(collision.transform.position.x + dif.x, collision.transform.position.y + dif.y); 
         }
 
