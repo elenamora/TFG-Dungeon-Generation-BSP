@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{62873BB6-A352-5450-430A-56E3FCEBDD74}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/Objects/Traps.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/Player/Weapon.cs">
     <Files>
       <File FileName="Assets/Resources/Game/Dungeon/DungeonData.cs" Line="9" Column="28" />
       <File FileName="Assets/Resources/Game/GameData.cs" Line="11" Column="22" />
@@ -11,8 +11,6 @@
       <File FileName="Assets/Scripts/Adaptative/UI/MainMenu/GameMenuAdapt.cs" Line="41" Column="34" />
       <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="285" Column="16" />
       <File FileName="Assets/Scripts/Game/Player/Weapon.cs" Line="17" Column="61" />
-      <File FileName="Assets/Scripts/Game/Player/Player.cs" Line="41" Column="7" />
-      <File FileName="Assets/Scripts/Game/Objects/Traps.cs" Line="19" Column="64" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -40,10 +38,10 @@
                 <Node name="DataBase" expanded="True" />
                 <Node name="Game" expanded="True">
                   <Node name="Enemy" expanded="True" />
-                  <Node name="Objects" expanded="True">
-                    <Node name="Traps.cs" selected="True" />
+                  <Node name="Objects" expanded="True" />
+                  <Node name="Player" expanded="True">
+                    <Node name="Weapon.cs" selected="True" />
                   </Node>
-                  <Node name="Player" expanded="True" />
                   <Node name="UI" expanded="True">
                     <Node name="Menus" expanded="True">
                       <Node name="MainMenu" expanded="True" />
