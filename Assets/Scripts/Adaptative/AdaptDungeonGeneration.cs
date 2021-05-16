@@ -43,6 +43,8 @@ public class AdaptDungeonGeneration : MonoBehaviour
 		enemyManager.ResetEnemies();
 		itemManager.ResetItems();
 		rooms = dungeon.rooms;
+		gameData.playerType.getHeightWidth();
+		Debug.Log(gameData.playerType.dungeonWidth + ", " + gameData.playerType.dungeonHeight);
 		Leaf root = new Leaf(new Rect(0, 0, gameData.playerType.dungeonWidth, gameData.playerType.dungeonHeight), dungeon);
 		BSPTree tree = new BSPTree();
 		tree.CreateTree(root, dungeon.minSizeRoom);

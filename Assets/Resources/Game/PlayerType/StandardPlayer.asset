@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d3c621a39244f97a735c5061f2c8be, type: 3}
   m_Name: StandardPlayer
   m_EditorClassIdentifier: 
-  dungeonWidth: 50
-  dungeonHeight: 30
+  minWidth: 50
+  maxWidth: 50
+  minHeight: 30
+  maxHeight: 30
+  dungeonWidth: 0
+  dungeonHeight: 0
   minRoomSizeEnemy: 10
   lowPerc: 0.2
   mediumPerc: 0.5

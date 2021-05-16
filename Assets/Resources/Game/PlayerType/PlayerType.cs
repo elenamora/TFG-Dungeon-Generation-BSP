@@ -5,6 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerType", menuName = "My Game/ Player/ PlayerType")]
 public class PlayerType : ScriptableObject
 {
+    public int minWidth;
+    public int maxWidth;
+
+    public int minHeight;
+    public int maxHeight;
+
     public int dungeonWidth;
     public int dungeonHeight;
 
@@ -29,4 +35,10 @@ public class PlayerType : ScriptableObject
     [Header("Number in High Evil Rooms")]
     public int minHighEnemies;
     public int maxHighEnemies;
+
+    public void getHeightWidth()
+    {
+        dungeonWidth = Random.Range(minWidth, maxWidth);
+        dungeonHeight = Random.Range(minHeight, maxHeight);
+    }
 }
