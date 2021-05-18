@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Gem
   m_EditorClassIdentifier: 
   itemName: Gem
-  itemDescription: Find it to win the game
+  itemDescription: You must find it to win the game!
   itemImage: {fileID: 21300000, guid: 07bdd7a28077b43879c01cfb26722031, type: 3}
-  quantity: 0
+  quantity: 29
   usable: 0
   unique: 0
   data: {fileID: 0}

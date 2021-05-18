@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameStateManager : MonoBehaviour
 {
     public GameState gameState;
+    public EnemyManager enemyManager;
+    public DungeonData dungeon;
+    public ItemManager itemManager;
 
     public GameData gameData;
 
@@ -42,6 +45,9 @@ public class GameStateManager : MonoBehaviour
 
     public void Win()
     {
+        Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
+        DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
+
         UpdateInventory();
         gameData.level++;
         DataBaseHandler.PostUser(new User(gameData.username, gameData.level), AuthHandler.userId, () => { }, AuthHandler.idToken);
@@ -51,6 +57,9 @@ public class GameStateManager : MonoBehaviour
 
     public void Loose()
     {
+        Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
+        DataBaseHandler.PostGame(game, AuthHandler.userId, () => { }, AuthHandler.idToken);
+
         UpdateInventory();
         looseCanvas.SetActive(true);
     }

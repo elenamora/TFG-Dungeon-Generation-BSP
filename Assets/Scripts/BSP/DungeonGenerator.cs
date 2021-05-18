@@ -29,6 +29,7 @@ public class DungeonGenerator : MonoBehaviour
 
 	/*** ITEMS ***/
 	[Header("ITEMS")]
+	public ItemManager itemManager;
 	public GameObject[] items;
 
 	/*** TRAPS ***/
@@ -40,6 +41,7 @@ public class DungeonGenerator : MonoBehaviour
 		/* Dungeon Creation */
 		dungeon.ResetDungeon();
 		enemyManager.ResetEnemies();
+		itemManager.ResetItems();
 		rooms = dungeon.rooms;
 		Leaf root = new Leaf(new Rect(0, 0, dungeon.dungeonWidth, dungeon.dungeonHeight), dungeon);
 		BSPTree tree = new BSPTree();
@@ -270,6 +272,7 @@ public class DungeonGenerator : MonoBehaviour
 					Vector3 pos = possiblePositions[Random.Range(0, possiblePositions.Count)];
 
 					Instantiate(items[3], pos, Quaternion.identity);
+					itemManager.initialItems += 1;
 				}
 				 
 
