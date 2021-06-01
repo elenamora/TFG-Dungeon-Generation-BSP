@@ -79,7 +79,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    /*
+     * Defines the movement of the enemy
+     * If the player is close enough, the enemy will change its speed and direction to attack the player.
+     * If it is not, the Patrol function will be called.
+     */
     public void Move()
     {
         Patrol();
@@ -95,6 +99,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /*
+     * Defines the movement of the enemy while the player is not close.
+     */
     public void Patrol()
     {
         speed = data.patrolSpeed;
@@ -118,6 +125,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /*
+     * Method that will subtract life from the enemy when he is attacked by the player.
+     */
     public void Hurt(int damage)
     {
         currentHealth -= damage;
@@ -125,6 +135,9 @@ public class Enemy : MonoBehaviour
         flash = true;
         flashCount = flashTime;
 
+        // If the enemy dies a number (0 for BAT, 1 for SKELETON and 2 for BLACK) will be added to the list of killed
+        // enemies that has the enemyManager. That way we can keep track of how many enemies the player has killed and
+        // what kind they are.
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
@@ -136,6 +149,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /*
+     * Method called when the enemy is hurt.
+     * Enemy sprite will flash for a second to indicate visually that he has been hurt.
+     */
     private void HurtFlash()
     {
         // We change the alpha channel every 6th of a second to create the flash 
@@ -178,6 +195,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /*
+     * Function that will instantiate a powerup depending on the loot Table of each enemy.
+     */
     public void MakeLoot()
     {
         if (lootTable != null)
@@ -191,13 +211,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /*
+     * Method that is activated when the enemy collides with any other GameObject from the game.
+     */
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // If the enemy collides with the Player, the Hurt() method of the player will be called and the Player's health
+        // will decrease.
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<Player>().Hurt(data.damage);
         }
-        
+
+        // If the enemy collides with the wall he will change its direction, without waiting for the patrol method to change it
+        // It will check in which direction is was moving when colliding so its more probable that the enemy won't get stuck.
         if (collision.gameObject.CompareTag("Tile"))
         {
             if (currentMoveDirection == 0)
@@ -225,11 +252,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /*
+     * If the enemy keeps touching the player after colliding with him on the Update method we'll wait some time before 
+     * the enemy is able to hurt the player again.
+     */
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) { isTouching = true; }  
     }
 
+    /*
+     * If the player moves away the enemy and the player won't be touching anymore and we'll reset the time the enemy
+     * has to wait to hurt the player.
+     */
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

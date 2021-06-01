@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Controls the state of the game and the possibilities that the player has
+ * 
+ */
+
 public class GameStateManager : MonoBehaviour
 {
     public GameState gameState;
@@ -24,6 +29,9 @@ public class GameStateManager : MonoBehaviour
         gameState.loose = false;
     }
 
+    /*
+     * Function called when starting a new game. It will reload the BSP scene in order to create everything from scratch
+     */
     public void Play()
     {
         Time.timeScale = 1f;
@@ -36,6 +44,9 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene("BSP");
     }
 
+    /*
+     * Function called from the pause, win and loose menus that allows the player to go back to the scene Menu
+     */
     public void BackToMenu()
     {
         SceneManager.LoadScene("Menu");
@@ -43,6 +54,13 @@ public class GameStateManager : MonoBehaviour
 
     }
 
+    /*
+     * Function called when the event Win is raised.
+     *  Post all the game related information to the database.
+     *  Update the inventory with the picked up and spent object from that particular game.
+     *  Update the user level.
+     *  Activate the Win canvas.
+     */
     public void Win()
     {
         Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
@@ -55,6 +73,12 @@ public class GameStateManager : MonoBehaviour
         winCanvas.SetActive(true);
     }
 
+    /*
+     * Function called when the event Loose is raised.
+     *  Post all the game related information to the database.
+     *  Update the inventory with the picked up and spent object from that particular game.
+     *  Activate the Loose canvas.
+     */
     public void Loose()
     {
         Game game = new Game(itemManager.initialItems, itemManager.pickedItems, enemyManager.initialEnemies.Count, enemyManager.killedEnemies.Count);
@@ -64,6 +88,10 @@ public class GameStateManager : MonoBehaviour
         looseCanvas.SetActive(true);
     }
 
+    /*
+     * Function called when the game finishes, whether the player wins or looses.
+     *  Post the actualized number of inventory items to the player inventory in the database
+     */
     public void UpdateInventory()
     {
         int coin = 0, health = 0, energy = 0, key = 0, gem = 0;

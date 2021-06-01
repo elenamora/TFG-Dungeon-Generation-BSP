@@ -17,3 +17,4 @@ MonoBehaviour:
     type: 3}
   health: 100
   energy: 100
+  speed: 4

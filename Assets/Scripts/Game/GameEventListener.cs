@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+/*
+ * Listens if an event has been raised and executes an specific function depending on the event
+ * 
+ */
+
 public class GameEventListener : MonoBehaviour
 {
     public GameEvent Event;

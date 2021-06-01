@@ -39,11 +39,14 @@ public class EnemySpawner
     }
 
 
-
+    /*
+     * Once we have the Evil level of each room a number of enemies will be added taking into account the aforementioned level.
+     */
     public List<List<int>> EnemiesInRooms()
     {
         EvilLevel();
 
+        //An bat will be added in the same room where the player starts only if its big enough.
         for (int i = 0; i < rooms.Count; i++)
         {
             enemiesInRooms.Add(new List<int>());
@@ -59,7 +62,9 @@ public class EnemySpawner
             {
                 switch (evilLevel[i])
                 {
+                    // In the LOW evil rooms there will be bats or skeletons
                     case Evil.LOW:
+                        // If the room is too small we'll only have 0 or 1 enemy
                         if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             int num = Random.Range(0, 1);
@@ -72,6 +77,7 @@ public class EnemySpawner
                             }
                         }
 
+                        // If the room is big enough we'll have between 1 and 3 enemies.
                         else
                         {
                             int num = Random.Range(1, 3);
@@ -85,13 +91,15 @@ public class EnemySpawner
 
                         break;
 
+                    // In the MEDIUM evil rooms there will be bats or skeletons
                     case Evil.MEDIUM:
+                        // If the room is too small we'll have an skeleton
                         if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             enemiesInRooms[i].Add(1);
                             numOfEnemies++;
                         }
-
+                        // If the room is big enough we'll have between 2 and 4 enemies.
                         else
                         {
                             int num = Random.Range(2, 4);
@@ -105,14 +113,15 @@ public class EnemySpawner
 
                         break;
 
+                    // In the HIGH evil rooms there will be skeletons or black enemies
                     case Evil.HIGH:
-
+                        // If the room is too small we'll have a black enemy
                         if (rooms[i].height < minSize && rooms[i].height < minSize)
                         {
                             enemiesInRooms[i].Add(2);
                             numOfEnemies++;
                         }
-
+                        // If the room is big enough we'll have between 3 and 5 enemies.
                         else
                         {
                             int num = Random.Range(3, 5);
@@ -131,36 +140,4 @@ public class EnemySpawner
         return enemiesInRooms;
     }
 
-    /*
-     public void SpawnEnemies(List<Rect> rooms)
-     {
-         EnemiesInRooms(rooms);
-         spawnedEnemies = new GameObject[numOfEnemies];
-         int numEnem = 0;
-         for (int i = 0; i < rooms.Count; i++)
-         {
-             for ( int j = 0; j < enemiesInRooms[i].Count; j++)
-             {
-                 Rect temp = rooms[i];
-                 float x = Random.Range(temp.x + 1, temp.x + temp.width - 1);
-                 float y = Random.Range(temp.y + 1, temp.y + temp.height - 1);
-                 switch (enemiesInRooms[i][j])
-                 {
-                     case Enemies.BAT:
-                         spawnedEnemies[numEnem] = Instantiate(enemyType[0], new Vector3(x, y, 0f), Quaternion.identity);
-                         numEnem++;
-                         break;
-                     case Enemies.SKELETON:
-                         spawnedEnemies[numEnem] = Instantiate(enemyType[1], new Vector3(x, y, 0f), Quaternion.identity);
-                         numEnem++;
-                         break;
-                     case Enemies.BLACK:
-                         spawnedEnemies[numEnem] = Instantiate(enemyType[2], new Vector3(x, y, 0f), Quaternion.identity);
-                         numEnem++;
-                         break;
-                 }
-             }   
-         }
-
-     }*/
 }

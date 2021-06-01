@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{62873BB6-A352-5450-430A-56E3FCEBDD74}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/UI/Menus/GameStateManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BSP/DungeonGenerator.cs">
     <Files>
-      <File FileName="Assets/Scripts/Adaptative/AdaptDungeonGeneration.cs" Line="62" Column="16" />
-      <File FileName="Assets/Scripts/Adaptative/UI/GameStateManagerAdapt.cs" Line="91" Column="27" />
-      <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="166" Column="28" />
-      <File FileName="Assets/Scripts/Game/UI/Menus/GameStateManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Adaptative/AdaptDungeonGeneration.cs" Line="277" Column="36" />
+      <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="275" Column="36" />
+      <File FileName="Assets/Scripts/Adaptative/UI/GameStateManagerAdapt.cs" Line="11" Column="36" />
+      <File FileName="Assets/Scripts/Game/UI/Menus/GameStateManager.cs" Line="13" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -29,7 +29,9 @@
                     <Node name="MainMenu" expanded="True" />
                   </Node>
                 </Node>
-                <Node name="BSP" expanded="True" />
+                <Node name="BSP" expanded="True">
+                  <Node name="DungeonGenerator.cs" selected="True" />
+                </Node>
                 <Node name="DataBase" expanded="True" />
                 <Node name="Game" expanded="True">
                   <Node name="Enemy" expanded="True" />
@@ -38,7 +40,6 @@
                   <Node name="UI" expanded="True">
                     <Node name="Menus" expanded="True">
                       <Node name="MainMenu" expanded="True" />
-                      <Node name="GameStateManager.cs" selected="True" />
                     </Node>
                   </Node>
                 </Node>

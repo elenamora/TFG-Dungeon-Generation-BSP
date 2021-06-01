@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 {
     private float horizontal;
     private float vertical;
-    private float speed = 4.0f;
     Rigidbody2D rb;
     private Animator animator;
 
@@ -15,15 +14,15 @@ public class Player : MonoBehaviour
 
     public PlayerData data;
 
+    public GameState gameState;
+    public GameEvent looseEvent;
+
     /*** HEALTH VARIABLES ***/
     [Header("Health")]
     public int currentHealth;
     public StatsBar healthBar;
 
     private bool isAlive;
-
-    public GameState gameState;
-    public GameEvent looseEvent;
 
     /*** ENERGY VARIABLES ***/
     [Header("Energy")]
@@ -85,17 +84,22 @@ public class Player : MonoBehaviour
         if(isAlive) isDead();
     }
 
+    /*
+     * Function that defines the movement of the player.
+     * The player will move with the use of the arrow keys or 'wasd'
+     */
     void Move()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
         // If we move in diagonal we will have half the speed so we always have the same speed
-        if(vertical != 0 && horizontal != 0) { speed /= 2; }
-        else { speed = 4f; }
+        if(vertical != 0 && horizontal != 0) { data.speed /= 2; }
+        else { data.speed = 4f; }
 
-        rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+        rb.velocity = new Vector2(horizontal * data.speed, vertical * data.speed);
 
+        // Activate the animation depending on which direction the player is moving
         animator.SetFloat("moveX", rb.velocity.x);
         animator.SetFloat("moveY", rb.velocity.y);
 
@@ -106,8 +110,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
+     * Function that defines how the player will attack.
+     * The player will use Space key to perform an attack.
+     */
     void Attack()
     {
+        // The attack will last for a short amount of time, once that time has passed the attack animation will deactivate
+        // and the attack time will be restored.
         if (attacking)
         {
             attackCount -= Time.deltaTime;
@@ -119,6 +129,8 @@ public class Player : MonoBehaviour
                 attackCount = attackTime;
             }
         }
+        // If the Space key is pressed the player will initialize an attack, provided that he has enough energy
+		// to perform the attack.
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (currentEnergy > 0)
@@ -136,6 +148,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
+     * Method that will subtract life from the player when he is attacked by an enemy.
+     */
     public void Hurt(int damage)
     {
         currentHealth -= damage;
@@ -144,6 +159,10 @@ public class Player : MonoBehaviour
         flashCount = flashTime;
     }
 
+    /*
+     * Method called when the player is hurt.
+     * Player sprite will flash for a second to indicate visually that he has been hurt.
+     */
     private void HurtFlash()
     {
         // We change the alpha channel every 6th of a second to create the flash 
@@ -194,6 +213,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
+     * Method that will increase life from the player when he uses a health potion, without exceeding the maximum possible.
+     */
     public int IncreaseHealth(int health)
     {
         if ((currentHealth + health) <= data.health) { currentHealth += health; }
@@ -206,6 +228,9 @@ public class Player : MonoBehaviour
 
     }
 
+    /*
+     * Method that will increase energy from the player when he uses an energy potion, without exceeding the maximum possible.
+     */
     public int IncreaseEnergy(int energy)
     {
         if ((currentEnergy + energy) <= data.energy) { currentEnergy += energy; }
@@ -217,8 +242,14 @@ public class Player : MonoBehaviour
         return currentEnergy;
     }
 
+    /*
+     * Method that defines the uses of the energy and health potion by the player.
+     */
     public void UseItems()
     {
+        // If the player presses de R key and his health is not maximum, the method will check the player has health
+        // potions available in his inventory. If that's the case the method IncreaseHealth will be called and the player
+        // will loose one health potion.
         if (Input.GetKeyDown(KeyCode.R) && currentHealth < data.health)
         {
             foreach (InventoryItem item in inventory.inventoryItems)
@@ -230,7 +261,9 @@ public class Player : MonoBehaviour
                 }
             }
         }
-
+        // If the player presses de E key and his energy is not maximum, the method will check the player has energy
+        // potions available in his inventory. If that's the case the method IncreaseEnergy will be called and the player
+        // will loose one energy potion.
         if (Input.GetKeyDown(KeyCode.E) && currentEnergy < data.energy)
         {
             foreach (InventoryItem item in inventory.inventoryItems)
@@ -246,6 +279,10 @@ public class Player : MonoBehaviour
             
     }
 
+    /*
+     * Method to check if the player has lost all his health points.
+     * If the player is dead the event looseEvent will be raised and the game will end.
+     */
     public void isDead()
     {
         if(currentHealth <= 0)

@@ -16,31 +16,44 @@ public class Leaf
 		this.data = data;
 	}
 
+	/*
+	 * Method that will split recursively the initial dungeon until we reach a minsize and cannot split anymore
+	 * @param: minRoomSize The minimum size that a room can have
+	 * Output: Boolean that will indicate if we can split or not a given area
+	 */
 	public bool Split(int minRoomSize)
 	{
+		// If the node we want to split has a child it isn't a leaf which means we've already split it
 		if (leftChild != null || rightChild != null)
 		{
 			return false;
 		}
 
+		// MinSizeRoom = 6 => 3x3(widthxheight)
+		// Choose the minimum between width and height. If that minimum is less than the minRoomSize we don't split
+		if (Mathf.Min(rect.width, rect.height) / 2 < minRoomSize) { return false; }
+
+		// Select randomly if split vertically or horizontally
 		bool splitH = Random.Range(0, 1) > 2;
 
+		// If the width is larger than the height by a 25% the split will be vertical
 		if (rect.width / rect.height >= 1.25) { splitH = false; }
 
+		// If the height is larger than the width by a 25% the split will be horizontal
 		else if (rect.height / rect.width >= 1.25) { splitH = true; }
-
-		if (Mathf.Min(rect.width, rect.height) / 2 < minRoomSize) { return false; }
 
 		int split;
 
 		if (splitH)
 		{
+			// Random position between the minRoomSize and the width - minRoomSize
 			split = (int)Random.Range(minRoomSize, rect.width - minRoomSize);
 			leftChild = new Leaf(new Rect(rect.x, rect.y, rect.width, split), data);
 			rightChild = new Leaf(new Rect(rect.x, rect.y + split, rect.width, rect.height - split), data);
 		}
 		else
 		{
+			// Random position between the minRoomSize and the height - minRoomSize
 			split = (int)Random.Range(minRoomSize, rect.height - minRoomSize);
 			leftChild = new Leaf(new Rect(rect.x, rect.y, split, rect.height), data);
 			rightChild = new Leaf(new Rect(rect.x + split, rect.y, rect.width - split, rect.height), data);
@@ -50,14 +63,20 @@ public class Leaf
 		return true;
 	}
 
+	/*
+	 * Function called to create rooms inside each leaf node
+	 * @param: minRoomSize The minimum size that a room can hav
+	 */
 	public void CreateRoom(int minRoomSize)
 	{
+		// If there exists a child we'll recursively call this function since the rooms have to be drawn inside de leaf nodes
 		if (leftChild != null) { leftChild.CreateRoom(minRoomSize); }
 
 		if (rightChild != null) { rightChild.CreateRoom(minRoomSize); }
 
 		if (leftChild != null && rightChild != null) { CreateHallways(leftChild.GetRoom(), rightChild.GetRoom()); }
 
+		// If there aren't any children it means it is a leaf node so we can create a room
 		if (leftChild == null && rightChild == null)
 		{
 			float roomWidth, roomHeight, roomX, roomY;
@@ -83,6 +102,11 @@ public class Leaf
 		return room;
 	}
 
+	/*
+	 * Function that will create a hallway between two rooms
+	 * @param: leftRoom Rectangle that represents the left room
+	 * @param: rightRoom Rectangle that represents the right room
+	 */
 	public void CreateHallways(Rect leftRoom, Rect rightRoom)
     {
 		

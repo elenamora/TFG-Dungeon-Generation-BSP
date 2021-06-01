@@ -12,5 +12,7 @@ public class PlayerData : ScriptableObject
 
     public int health;
     public int energy;
+
+    public float speed;
     
 }

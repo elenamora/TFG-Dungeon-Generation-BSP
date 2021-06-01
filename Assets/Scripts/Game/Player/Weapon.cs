@@ -18,6 +18,11 @@ public class Weapon : MonoBehaviour
         FindWeapon();
     }
 
+    /*
+     * This function will assign values to the damage the weapon can have and the energy loss that the player will suffer
+     * when attacking.
+     * The values will depend on the weapon choosen by the player on the menu before starting the game
+     */
     private void FindWeapon()
     {
         string name = weapon.name;
@@ -38,8 +43,13 @@ public class Weapon : MonoBehaviour
         }  
     }
 
+    /*
+     * Method that will be activated when the weapon collides with the enemy and any object of type breakable (like pots)
+     * The weapon acts like an extension of the player.
+     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // If the weapon collides with the enemy besides hurting the enemy the player will loss part of his energy
         if (collision.gameObject.CompareTag("Enemy"))
         {
             player.currentEnergy -= energyLoss;
@@ -55,6 +65,7 @@ public class Weapon : MonoBehaviour
             collision.transform.position = new Vector2(collision.transform.position.x + dif.x, collision.transform.position.y + dif.y); 
         }
 
+        // If the weapon collides with a breakable object the function BreakItem will be called
         if (collision.gameObject.CompareTag("Breakable"))
         {
             collision.GetComponent<Breakable>().BreakItem();
