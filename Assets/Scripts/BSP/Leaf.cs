@@ -128,11 +128,13 @@ public class Leaf
 		// LeftPosition and RightPosition are not align horizontally
 		if (w != 0)
 		{
-			// We choose randomly to go horizontal then vertical or the opposite
+			// We choose randomly to go horizontally then vertically or the opposite
 			if (Random.Range(0, 1) > 2)
 			{
+				// Create a horizontal rectangle
 				data.hallways.Add(new Rect(leftPosition.x, leftPosition.y, Mathf.Abs(w), 1));
 
+				// Create a vertical rectangle
 				if (h < 0) {
 					data.hallways.Add(new Rect(rightPosition.x, leftPosition.y, 1, Mathf.Abs(h)));
 				}
@@ -144,6 +146,7 @@ public class Leaf
 
 			else
 			{
+				// Create a vertical rectangle
 				if (h < 0) {
 					data.hallways.Add(new Rect(leftPosition.x, leftPosition.y, 1, Mathf.Abs(h)));
 				}
@@ -152,9 +155,11 @@ public class Leaf
 					data.hallways.Add(new Rect(leftPosition.x, rightPosition.y, 1, Mathf.Abs(h)));
 				}
 
+				// Create a horizontal rectangle
 				data.hallways.Add(new Rect(leftPosition.x, rightPosition.y, Mathf.Abs(w), 1));
 			}
 		}
+		// If the positions are align we create a straight hallway between the rooms
 		else
 		{
 			if (h < 0) {
