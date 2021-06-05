@@ -12,6 +12,9 @@ public class Traps : MonoBehaviour
         Instantiate(ps, transform.position, transform.rotation);
     }
 
+    /*
+     * If the player is on top of a trap this function will be called and the player will lost 20 points of life
+     */
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")

@@ -14,6 +14,9 @@ public class Breakable : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    /*
+     * If the player breaks an item the breaking animation will start and the MakeLoot function will be called
+     */
     public void BreakItem()
     {
         animator.SetBool("isBroken", true);
@@ -27,6 +30,9 @@ public class Breakable : MonoBehaviour
         MakeLoot();
     }
 
+    /*
+     * It will instantiate a random powerup on the item position given the LootTable of the breakable object
+     */
     public void MakeLoot()
     {
         if (lootTable != null)

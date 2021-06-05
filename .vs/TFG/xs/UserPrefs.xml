@@ -1,58 +1,20 @@
 ﻿<Properties StartupConfiguration="{62873BB6-A352-5450-430A-56E3FCEBDD74}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BSP/DungeonGenerator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/Objects/Interactable.cs">
     <Files>
-      <File FileName="Assets/Scripts/Adaptative/AdaptDungeonGeneration.cs" Line="277" Column="36" />
-      <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="275" Column="36" />
-      <File FileName="Assets/Scripts/Adaptative/UI/GameStateManagerAdapt.cs" Line="11" Column="36" />
-      <File FileName="Assets/Scripts/Game/UI/Menus/GameStateManager.cs" Line="13" Column="17" />
+      <File FileName="Assets/Scripts/BSP/Leaf.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BSP/DungeonGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/Enemy/EnemySpawner.cs" />
+      <File FileName="Assets/Scripts/Game/Player/Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/Objects/PowerUp.cs" Line="38" Column="54" />
+      <File FileName="Assets/Scripts/Game/Objects/Breakable.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/Objects/Traps.cs" Line="16" Column="113" />
+      <File FileName="Assets/Scripts/Game/Objects/Interactable.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/Objects/Chest.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="TFG" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="Enemies" expanded="True" />
-                <Node name="Game" expanded="True">
-                  <Node name="Dungeon" expanded="True" />
-                  <Node name="PlayerType" expanded="True" />
-                </Node>
-                <Node name="Items" expanded="True">
-                  <Node name="PowerUps" expanded="True" />
-                </Node>
-                <Node name="Player" expanded="True" />
-                <Node name="Weapons" expanded="True" />
-              </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="Adaptative" expanded="True">
-                  <Node name="UI" expanded="True">
-                    <Node name="MainMenu" expanded="True" />
-                  </Node>
-                </Node>
-                <Node name="BSP" expanded="True">
-                  <Node name="DungeonGenerator.cs" selected="True" />
-                </Node>
-                <Node name="DataBase" expanded="True" />
-                <Node name="Game" expanded="True">
-                  <Node name="Enemy" expanded="True" />
-                  <Node name="Objects" expanded="True" />
-                  <Node name="Player" expanded="True" />
-                  <Node name="UI" expanded="True">
-                    <Node name="Menus" expanded="True">
-                      <Node name="MainMenu" expanded="True" />
-                    </Node>
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="12211cff-e189-4e8d-874f-d753f5e32e14" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="40e832c5-5dea-4db3-97a3-a4855763d851" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
