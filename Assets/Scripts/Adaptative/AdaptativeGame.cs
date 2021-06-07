@@ -45,8 +45,12 @@ public class AdaptativeGame : MonoBehaviour
         }
     }
 
+    /*
+     * Depending on the percentages obtained in COmputeenemiesItems assign the type of player
+     */
     public void PickPlayer()
     {
+        // There'll be adaptation once the player has played at least two games
         if (numGames < 2) { player = Type.STANDARD; }
 
         else
@@ -63,7 +67,9 @@ public class AdaptativeGame : MonoBehaviour
 
     }
 
-    // porcentaje de enemigos matados respecto a los enemigos que teníamos inicialmente. Luego se hace la media.
+    /*
+     * Compute the percentage of enemies left and items picked of each game and the do the aritmetic mean
+     */
     public void ComputeEnemiesItems()
     {
         float enemiesLeft = 0f;
@@ -84,7 +90,6 @@ public class AdaptativeGame : MonoBehaviour
                 else it = 0;
                  
                 itemsPicked += it / game.Value.initialItems;
-                Debug.Log(itemsPicked);
             }
 
             numGames = games.Count;
